@@ -1,0 +1,678 @@
+@media (min-width:1600px){
+   .layout{
+    min-width: 1600px;
+   }
+
+   .layout__menu{
+    padding: 5rem 9.5rem;
+   }
+
+   .layout__banner{
+    min-height: 85rem;
+    margin: 0 9.5rem;
+    padding-right: 0;
+    padding-left: 20rem;
+    padding-top: 25rem;
+    padding-bottom: 30rem;
+   }
+
+   .services__service{
+    padding: 7rem 5rem;
+   }
+}
+
+@media (min-width:1199px) and (max-width:1400px){
+   /*.services__grid,
+   .projects__grid,
+   .stats__container,
+   .contact__container, */
+   .reviews__grid,
+   .clients__container,
+   .news__container,
+   .footer__container{
+      max-width: 100%;
+      padding-left: 3rem;
+      padding-right: 3rem;
+   }
+
+   .projects__all{
+      gap: 3rem;
+   }
+
+}
+
+@media (min-width:1000px){
+   .navbar__mobile-btn{
+    display: none;
+   }
+}
+
+
+@media (max-width:1200px){
+   .layout{
+      min-width: 992px;
+   }
+   .nav__item{
+      margin: 0 2rem;
+   }
+
+   .banner__title{
+      font-size: 6REM;
+   }
+
+   .layout__services{
+      margin: 10rem 7rem;
+      margin-bottom: 0;
+   }
+
+   /*.services__grid,
+   .projects__grid,
+   .stats__container,
+   .contact__container, */
+   .reviews__grid,
+   .clients__container,
+   .news__container,
+   .footer__container{
+      max-width: 96rem;
+   }
+
+   
+.services__service{
+    padding: 4rem 1.5rem;
+}
+
+.service__container-img{
+   max-width: 6rem;
+}
+
+.projects__all{
+      gap: 3rem;
+   }
+
+   .layout__stats,
+   .layout__clients{
+      padding: 10rem 7rem;
+   }
+
+   .clients__title{
+      width: 70%;
+   }
+
+   .clients__description{
+      width: 60%;
+   }
+
+   .layout__news{
+      padding: 10rem 0;
+   }
+
+   .news__list{
+      display: flex;
+      flex-direction: column;
+   }
+
+   .news__new:last-child{
+      border-left: 0;
+      padding-left: 0;
+   }
+
+   .layout__contact{
+      padding-top: 10rem;
+      padding-bottom:7rem;
+   }
+
+
+
+}
+
+@media (max-width:1000px){
+   .layout{
+      min-width: auto;
+   }
+
+   .navbar__nav{
+      display: none;
+   }
+
+   .navbar__mobile-btn{
+    display: block;
+   }
+
+   .layout__banner{
+      min-height: 100%;
+      margin: 0 3rem;
+   }
+
+   .banner__content{
+      width: 65%;
+   }
+
+   .banner__title{
+      font-size: 5rem;
+   }
+
+   .banner__bnt{
+      padding: 2rem 3.5rem;
+   }
+
+   .shapes__item{
+      width: 50%;
+   }
+
+    /*.services__grid,
+   .projects__grid,
+   .stats__container,
+   .contact__container, */
+   .reviews__grid,
+   .clients__container,
+   .news__container,
+   .footer__container{
+      max-width: 72rem;
+   }
+
+
+   .layout__services{
+      padding-bottom: 4rem;
+   }
+
+   .services__subtitle,
+   .projects__subtitle,
+   .stats__subtitle,
+   .reviews__subtitle,
+   .clients__subtitle,
+   .news__subtitle,
+   .contact__subtitle{
+    font-size: 1.8rem;
+}
+
+   .services__title,
+   .projects__title,
+   .stats__title,
+   .reviews__title,
+   .news__title,
+   .contact__title{
+      font-size: 5rem;
+   }
+
+   .services__list{
+      flex-direction: column;
+   }
+
+   .services__service{
+      width: 95%;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      padding: 4rem 2.5rem;
+   }
+
+   .service-shapes--shape2{
+      display: none;
+   }
+
+   .layout__projects{
+      padding: 8rem 4rem;
+   }
+
+   .project-shapes--shape2{
+      display: none;
+   }
+
+   .layout__stats, 
+   .layout__clients{
+      padding:8rem 5rem;
+   }
+
+   .stats__description,
+   .clients__description{
+      font-size: 1.7rem;
+      width: 100%;
+   }
+
+   .stats__progress{
+      flex-wrap: wrap;
+   }
+
+   .stats__stat{
+      width: calc(50% - 1.5rem);
+   }
+
+   .layout__reviews{
+      padding-top: 8rem;
+      padding-bottom: 5rem;
+   }
+
+   .review__description,
+   .news__description{
+   width: 100%;
+   font-size: 1.7rem;
+   }
+
+   .reviews__container{
+      flex-direction: column;
+   }
+
+   .clients__title{
+      width: 100%;
+      font-size: 5rem;
+   }
+
+   .clients__logos{
+      flex-wrap: wrap;
+   }
+
+   .clients__item{
+      width: calc(50% - 3rem);
+   }
+
+   .layout__news{
+      padding: 8rem 0;
+   }
+
+   .layout__contact{
+      padding-top: 8rem;
+      padding-bottom: 4rem;
+   }
+
+   .layout__contact::before{
+      height: 51rem;
+   }
+
+   .contact__title{
+      width: 100%;
+   }
+
+   .contact__btn{
+      padding: 1.8rem 3.5rem;
+   }
+
+  .contact__thumb--chat{
+    margin-right: -21rem;
+    margin-bottom:-0.8rem ;
+    width: 70%;
+   }
+
+   .contact__img{
+      width: 100%;
+   }
+
+   .contact__thumb--laptop{
+      bottom: 0;
+      left: 6rem;
+   }
+
+ .contact__thumb--mobile{
+    bottom: 0;
+    right: -4rem;
+   }
+
+   .contact__img{
+      width: 65%;
+   }
+
+   .social__img{
+      font-size: 2rem;
+   }
+
+   .footer__main{
+      flex-direction: column;
+   }
+
+   .footer__fleft,
+   .footer__right{
+      width: 100%;
+   }
+
+   .fleft__container{
+      border: none;
+   }
+
+   .footer__bottom{
+      flex-direction: column;
+   }
+
+   .footer__copyright{
+      flex-basis: auto;
+      text-align: center;
+      display: block;
+      margin-bottom: 1rem;
+   }
+
+   .footer__links{
+      flex-basis: auto;
+      text-align: center;
+   }
+
+   .footer__flinks{
+      justify-content: center;
+   }
+
+
+}
+
+@media (max-width:770px){
+   .layout__banner{
+      padding: 8rem 3rem;
+   }
+
+   .banner__title{
+      font-size: 4rem;
+   }
+
+   .layout__services{
+      margin:7rem 7rem;
+   }
+
+       /*.services__grid,
+   .projects__grid,
+   .stats__container,
+   .contact__container, */
+   .reviews__grid,
+   .clients__container,
+   .news__container,
+   .footer__container{
+      max-width: 54rem;
+   }
+
+   .services__subtitle,
+   .projects__subtitle,
+   .stats__subtitle,
+   .reviews__subtitle,
+   .clients__subtitle,
+   .news__subtitle,
+   .contact__subtitle{
+    font-size: 1.6rem;
+}
+
+   .services__title,
+   .projects__title,
+   .stats__title,
+   .reviews__title,
+   .news__title,
+   .contact__title{
+      font-size: 5rem;
+   }
+
+   .layout__projects{
+      padding: 6rem 5rem;
+   }
+
+   .projects__all{
+      flex-direction: column;
+   }
+
+   .projects__project{
+      width: 100%;
+   }
+
+   .layout__stats,
+   .layout__clients{
+      padding: 5rem 3rem;
+   }
+
+   .stat__count{
+      font-size: 4.4rem;
+   }
+
+   .layout__reviews{
+      padding-top: 6rem;
+      padding-bottom: 3rem;
+   }
+
+   .reviews__review{
+      padding-top: 2rem;
+      padding-bottom: 3rem;
+   }
+
+   .layout__news{
+      padding: 6rem 0;
+   }
+
+   .news__new{
+      flex-direction: column;
+   }
+
+   .new__container-img{
+      width: 100%;
+   }
+
+   .new__img{
+      width: 100%;
+   }
+
+   .new__title{
+      font-size: 2rem;
+   }
+
+   .layout__contact{
+      padding-top: 6rem;
+      padding-bottom: 4rem;
+   }
+
+   .layout__contact::before{
+     height: 42rem;
+   }
+
+   .contact__thumb--chat{
+    margin-right: -18rem;
+    margin-bottom:-0.8rem;
+    width: 70%;
+   }
+
+
+   .contact__thumb--laptop{
+      bottom: 0;
+      left: 6rem;
+      width: 35%;
+   }
+
+ .contact__thumb--mobile{
+    bottom: 0;
+    right: 3rem;
+    width: 35%;
+   }
+
+   .contact__img{
+      width: 65%;
+   }
+
+   .fleft__container{
+      padding-right: 0;
+      margin-right: 0;
+      margin-bottom: 8rem;
+   }
+}
+
+@media (max-width:640px){
+
+   .layout{
+      width: auto;
+      overflow: hidden;
+   }
+
+   .layout__banner{
+      padding: 5rem 1rem;
+   }
+   .layout__projects,
+   .stats__container,
+   .contact__container,
+   .reviews__grid,
+   .clients__container,
+   .news__container{
+      padding-left: 3rem;
+      padding-right: 3rem;
+   }
+
+   .layout__services{
+    margin-left:3rem;
+    margin-right:1rem;
+   }
+
+   .projects__categories{
+    flex-wrap: wrap;
+    margin-bottom: 5.5rem;
+   }
+
+   .categories__item{
+       width: calc(50% - 7rem);
+   }
+
+
+   .layout__contact{
+      padding-top: 6rem;
+      padding-bottom: 4rem;
+   }
+
+   .layout__contact::before{
+     height: 53rem;
+   }
+
+   .contact__thumb--chat{
+    margin-right: -18rem;
+    margin-bottom:-0.8rem;
+    width: 70%;
+   }
+
+
+   .contact__thumb--laptop{
+      bottom: 0;
+      left: 8rem;
+      width: 35%;
+   }
+
+ .contact__thumb--mobile{
+    bottom: 0;
+    right: -2.5rem;
+    width: 35%;
+   }
+
+   .contact__img{
+      width: 65%;
+   }
+
+   .footer__widget--50{
+      flex-basis: auto;
+   }
+
+   .footer__right{
+      flex-wrap: wrap;
+      gap: 2rem;
+      width: 100%;
+   }
+
+   .footer__container{
+      padding-left: 1rem;
+      padding-right: 1rem;
+   }
+
+   .layout__footer{
+     width: auto;
+   }
+
+   .footer__main{
+      flex-wrap: column;
+   }
+
+   .footer__fleft{
+      width: 100%;
+   }
+
+   .footer__widget{
+      width: calc(50% - 2rem);
+   }
+
+   .fleft__group{      flex-wrap: nowrap;
+      align-items: center;
+      width: 100%;
+      gap: 0.5rem;          
+      overflow: hidden;  
+   }
+ 
+   .fleft__form-control{
+      flex:1 1 auto;
+      min-width: 0; 
+      padding: 0.75rem 1rem;
+
+   }
+
+   .fleft__btn{
+      flex: 0 0 auto;
+       padding: 0.75rem 1rem;
+      white-space: nowrap;  
+   }
+
+
+
+}
+
+@media (max-width:360px){
+   .layout__banner{
+      height: 20rem;
+      padding-bottom: 2rem;
+   }
+
+   .banner__content{
+      padding: 0 0.2rem;
+      padding-left: 2.4rem;
+   }
+   .banner__title{
+      font-size: 2rem;
+   }
+   .banner__bnt{
+      padding: 1.8rem 3.5rem;
+      font-size: 1.4rem;
+   }
+
+   .layout__contact::before{
+     height: 53rem;
+   }
+
+   .contact__thumb--chat{
+    margin-right: -6rem;
+    margin-bottom:-0.8rem;
+    width: 70%;
+   }
+
+
+   .contact__thumb--laptop{
+      bottom: 0;
+      left: 1rem;
+      width: 35%;
+   }
+
+ .contact__thumb--mobile{
+    bottom: 0;
+    right: -2.5rem;
+    width: 35%;
+   }
+
+   .contact__img{
+      width: 100%;
+   }
+
+   .fleft__title{
+      font-size: 3.5rem;
+   }
+
+   .footer__container{
+      padding-left: 5rem;
+      padding-right: 4rem;
+   }
+  .fleft__group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+
+  .fleft__form-control,
+  .fleft__btn {
+    width: 100%;
+    font-size: 1.4rem;
+  }
+
+  .fleft__btn {
+    height: auto;
+    padding: 1.2rem;
+  }
+}
+
