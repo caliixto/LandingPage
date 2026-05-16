@@ -1,0 +1,190 @@
+/*ESTILOS ULTIMAS NOTICIAS*/
+
+.layout__news{
+    position: relative;
+    z-index: 1;
+    padding: 14rem 0;
+}
+
+.news__container{
+    max-width: var(--mx-width);
+    margin: 0 auto;
+}
+
+.news__header{
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.news__title{
+    margin-bottom:3rem;
+}
+
+.news__description{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.news__list{
+    display: flex;
+}
+
+.news__new{
+    display: flex;
+    align-items: center;
+    gap:2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-right: 2rem;
+    padding-left: 0;
+    border-top: 1px solid var(--color-borders);
+    border-bottom:1px solid var(--color-borders) ;
+    transition: all 300ms ease-in-out;
+}
+
+.news__new:last-child{
+   border-left:1px solid var(--color-borders);
+    padding-left: 2.5rem;
+}
+
+.news__new:hover{
+    border-top-color: (var(--color--primary));
+}
+
+.new__container-img{
+    overflow: hidden;
+    border-radius: 3rem;
+}
+
+.new__img{
+    border-radius: 3rem;
+    transition: all 300ms ease-in-out;
+}
+
+.news__new:hover .new__img{
+    transform: scale(1.1);
+}
+
+.new__content{
+    flex: 1;
+}
+
+.new__title{
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-title);
+    margin-bottom: 2rem;
+    transition: all 300ms ease-in-out;
+}
+
+:host-context(.dark)
+.new__more:hover{
+    color: var(--color--primary);
+}
+
+:host-context(.dark)
+.new__more:hover{
+    color: var(--color--primary);
+}
+
+:host-context(.dark)
+.new__more{
+    color: var(--color-title);
+}
+
+
+.new__title:hover, 
+.new__more:hover{
+    color: var(--color--primary);
+}
+
+.new__description{
+    font-size: 1.7rem;
+    font-weight: normal;
+    color: var(--color-text-description);
+    margin-bottom: 3rem;
+}
+
+.new__more{
+    display: inline-block;
+    font-weight: 700;
+    color: var(--color-hover-dark);
+    font-size: 1.7rem;
+     transition: all 300ms ease-in-out;
+}
+
+.new__icon{
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.new-shapes__item{
+position: absolute;
+    z-index: -1;
+}
+
+.new-shapes--shape1{
+    top: 17%;
+    left: 21%;
+}
+
+.new-shapes--shape2{
+    top: 11.5%;
+    right:8.5%;
+}
+
+.new-shapes--shape3{
+    bottom: 8%;
+    left:9%;
+}
+
+.new-shapes--shape4{
+    bottom: 5%;
+    right:20%;
+}
+
+
+@media (max-width: 1000px) {
+    /* 1. Bajamos el padding exagerado */
+    .layout__news {
+        padding: 5rem 0 !important; 
+    }
+
+    /* 2. REPETIMOS el truco de la variable para esta sección */
+    .news__container {
+        max-width: 100% !important;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .news__list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .news__new {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        width: 100%;
+    }
+
+    .news__new:last-child {
+        border-left: none !important;
+        border-top: 1px solid var(--color-borders);
+    }
+    
+    /* 6. Imagen de la noticia al 100% */
+    .new__container-img {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .new__img {
+        width: 100%;
+        height: auto;
+    }
+}
