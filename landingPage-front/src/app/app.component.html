@@ -1,0 +1,20 @@
+
+
+<div [class.dark]="isDarkMode">
+    <app-mobile-menu [isActive]="menuAbierto" (cerrarMenu)="toggleMenu()"></app-mobile-menu>
+    <app-menu [isDarkMode]="isDarkMode" (isPulse)="toggleMenu()"></app-menu>
+    <app-banner ></app-banner>
+    <app-services></app-services>
+    <app-projects></app-projects>
+    <app-estadisticas></app-estadisticas>
+    <app-reviews></app-reviews>
+    <app-clientes></app-clientes>
+    <app-noticias></app-noticias>
+    <app-contacto></app-contacto>
+    <app-footer></app-footer>
+    <app-switcher (DarkModeToggle)="toggleDarkMode()" [activo]="isDarkMode"></app-switcher>
+</div>
+
+
+
+   

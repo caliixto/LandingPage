@@ -1,0 +1,71 @@
+
+<div class="formulario_contacto">
+    <h2 >Formularios De Contacto</h2>
+    <form action="" [formGroup]="formulario" (ngSubmit)="onSubmit()" method="post">
+        <div class="field">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" formControlName="nombre">
+
+            <div *ngIf="formulario.get('nombre')?.invalid && formulario.get('nombre')?.touched">
+                <span *ngIf="formulario.get('nombre')?.errors?.['required']">
+                    El nombre es obligatorio
+                </span>
+
+                <span *ngIf="formulario.get('nombre')?.errors?.['minlength']">
+                    El nombre es muy corto
+                </span>
+
+                <span *ngIf="formulario.get('nombre')?.errors?.['maxlength']">
+                    El nombre es muy largo
+                </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label for="email">email:</label><br>
+            <input type="email" id="email" formControlName="email">
+
+            <div *ngIf="formulario.get('email')?.invalid && formulario.get('email')?.touched">
+                <span *ngIf="formulario.get('email')?.errors?.['required']">
+                    El email es obligatorio
+                </span>
+
+                <span *ngIf="formulario.get('emial')?.errors?.['email']">
+                    El emial no es valido
+                </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label for="edad">edad:</label><br>
+            <input type="number" id="edad" formControlName="edad">
+
+            <div *ngIf="formulario.get('edad')?.invalid && formulario.get('edad')?.touched">
+                <span *ngIf="formulario.get('edad')?.errors?.['required']">
+                    El edad es obligatoria
+                </span>
+
+                <span *ngIf="formulario.get('edad')?.errors?.['min']">
+                    La edad minima es 18
+                </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label for="password">password:</label><br>
+            <input type="password" id="password" formControlName="password">
+
+            <div *ngIf="formulario.get('password')?.invalid && formulario.get('password')?.touched">
+                <span *ngIf="formulario.get('password')?.errors?.['required']">
+                    La contraseña es obligatorio
+                </span>
+
+                <span *ngIf="formulario.get('password')?.errors?.['minlength']">
+                    El contraseña es muy corta
+                </span>
+            </div>
+        </div>
+        <button type="submit" [disabled]="formulario.invalid">Enviar</button>
+    </form>
+</div>
+
