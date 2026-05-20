@@ -11,17 +11,22 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class FormularioComponent {
   formulario = new FormGroup({
-      nombre: new FormControl('', [Validators.required,Validators.minLength(3), Validators.maxLength(50)]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      edad: new FormControl('', [Validators.required, Validators.min(18)]),
-      password : new FormControl('', [Validators.required, Validators.min(6)])
-    });
-  
-    onSubmit(){
+    nombre: new FormControl('', [Validators.required,Validators.minLength(3), Validators.maxLength(50)]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    edad: new FormControl('', [Validators.required, Validators.min(18)]),
+    password : new FormControl('', [Validators.required, Validators.min(6)]),
+  });
+
+  onSubmit(){
       if(this.formulario.valid){
-        console.info("El forulario esta enviado" , this.formulario.value)
+        console.info("El formulario esta enviado" , this.formulario.value)
       }else{
         console.warn(" El formulario no es valido");
       }
-    }
+      this.clear();
+  }
+
+  clear(){
+    this.formulario.reset();
+  }
 }

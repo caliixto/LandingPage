@@ -3,7 +3,7 @@
     <h2 >Formularios De Contacto</h2>
     <form action="" [formGroup]="formulario" (ngSubmit)="onSubmit()" method="post">
         <div class="field">
-            <label for="nombre">Nombre:</label><br>
+            <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" formControlName="nombre">
 
             <div *ngIf="formulario.get('nombre')?.invalid && formulario.get('nombre')?.touched">
@@ -22,7 +22,7 @@
         </div>
 
         <div class="field">
-            <label for="email">email:</label><br>
+            <label for="email">email:</label>
             <input type="email" id="email" formControlName="email">
 
             <div *ngIf="formulario.get('email')?.invalid && formulario.get('email')?.touched">
@@ -37,7 +37,7 @@
         </div>
 
         <div class="field">
-            <label for="edad">edad:</label><br>
+            <label for="edad">edad:</label>
             <input type="number" id="edad" formControlName="edad">
 
             <div *ngIf="formulario.get('edad')?.invalid && formulario.get('edad')?.touched">
@@ -52,7 +52,7 @@
         </div>
 
         <div class="field">
-            <label for="password">password:</label><br>
+            <label for="password">password:</label>
             <input type="password" id="password" formControlName="password">
 
             <div *ngIf="formulario.get('password')?.invalid && formulario.get('password')?.touched">
