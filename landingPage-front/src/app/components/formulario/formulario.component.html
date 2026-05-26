@@ -1,4 +1,18 @@
 
+<div class="contact-container">
+  
+  <div class="contact-info">
+    <div class="info-content">
+      <div class="user-icon"><img src="/img/img_perfil.png" alt="" class="icon__img"></div> 
+      <h2>INFORMACIÓN DE CONTACTO</h2>
+      
+      <div class="info-details">
+        <p><i class="fa-solid fa-mail-bulk"></i> info.contact&#64;correo.com</p>
+        <p><i class="fa-solid fa-phone"></i> +34 912345678</p>
+      </div>
+    </div>
+  </div>
+
 <div class="formulario_contacto">
     <h2 >Formularios De Contacto</h2>
     <form action="" [formGroup]="formulario" (ngSubmit)="onSubmit()" method="post">
@@ -30,8 +44,8 @@
                     El email es obligatorio
                 </span>
 
-                <span *ngIf="formulario.get('emial')?.errors?.['email']">
-                    El emial no es valido
+                <span *ngIf="formulario.get('email')?.errors?.['email']">
+                    El email no es valido
                 </span>
             </div>
         </div>
@@ -52,16 +66,16 @@
         </div>
 
         <div class="field">
-            <label for="password">password:</label>
-            <input type="password" id="password" formControlName="password">
+            <label for="mensaje">Mensaje:</label>
+            <textarea type="text" id="mensaje" formControlName="mensaje"></textarea>
 
-            <div *ngIf="formulario.get('password')?.invalid && formulario.get('password')?.touched">
-                <span *ngIf="formulario.get('password')?.errors?.['required']">
-                    La contraseña es obligatorio
+            <div *ngIf="formulario.get('mensaje')?.invalid && formulario.get('mensaje')?.touched">
+                <span *ngIf="formulario.get('mensaje')?.errors?.['required']">
+                    El campo mensaje es obligatorio
                 </span>
 
-                <span *ngIf="formulario.get('password')?.errors?.['minlength']">
-                    El contraseña es muy corta
+                <span *ngIf="formulario.get('mensaje')?.errors?.['minlength']">
+                    El mensaje es muy corto
                 </span>
             </div>
         </div>

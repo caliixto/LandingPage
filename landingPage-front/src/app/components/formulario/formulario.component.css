@@ -1,10 +1,205 @@
-.formulario_contacto{
-    display: grid;
-    justify-content:center;
-    align-items: center;
+/* 1. El contenedor que junta ambos bloques en una sola línea */
+.contact-container {
+  display: flex;
+  width: 100%;
+  max-width: 950px; /* Ajusta este ancho a tu gusto */
+  margin: 20px auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Sombra suave para que flote */
+  border-radius: 12px;
+  overflow: hidden; /* Para que las esquinas del fondo azul no se salgan del borde redondeado */
+}
+
+/* 2. Bloque Izquierdo (Tarjeta Azul de Información) */
+.contact-info {
+  flex: 0 0 40%; /* Esto hace que ocupe el 50% exacto */
+  background: linear-gradient(rgba(59, 130, 246, 0.85), rgba(29, 78, 216, 0.9)), 
+              url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* El contenedor del avatar */
+.user-icon {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centra la imagen horizontalmente */
+  margin-bottom: 20px;     /* Separa el avatar del título */
+}
+
+.user-icon img {
+  width: 140px;          /* Un tamaño fijo para que no dependa del ancho de la pantalla */
+  height: 140px;         /* Alto igual al ancho para mantener proporción 1:1 */
+  object-fit: cover;     /* Evita que la imagen se mude o se deforme */
+  border-radius: 50%;    /* <-- Esto garantiza un círculo perfecto sea cual sea el tamaño */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Una sombrita sutil para que despegue del fondo */
+}
+
+.contact-info h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+.info-details p {
+  font-size: 1.4rem;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 3. Bloque Derecho (Tu formulario de Angular) */
+
+:host-context(.dark) .contact-container .formulario_contacto {
+  background-color: var(--color-bg-services);
+}
+
+.formulario_contacto {
+  flex: 0 0 60%; /* Ocupa el otro 50% */
+  padding: 40px;
+  background-color: #ffffff;
+}
+
+:host-context(.dark)
+.formulario_contacto h2 {
+  color: var(--color-text-btn);
+}
+
+.formulario_contacto h2 {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Estilos de tus campos (Inputs con línea inferior como en tu diseño) */
+.field {
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+:host-context(.dark)
+.field label {
+   color: var(--color-text-btn);
+}
+
+.field label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 5px;
+  text-transform: capitalize; /* Pone la primera letra en mayúscula automáticamente */
+}
+
+:host-context(.dark)
+.field input, 
+.field textarea {
+ color: var(--color-text-btn);
+ background-color: var(--color-bg-services);
 
 }
 
-div span{
-    color: red;
+.field input, 
+.field textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc; /* Solo la línea de abajo */
+  padding: 8px 0;
+  font-size: 1.3rem;
+  outline: none;
+  background: none;
+  transition: border-color 0.3s ease;
+  color: black;
+}
+
+/* Efecto cuando el usuario hace clic para escribir */
+.field input:focus, 
+.field textarea:focus {
+  border-bottom: 2px solid #3b82f6;
+}
+
+/* Estilo para los mensajes de error de Angular */
+.field span {
+  color: #ef4444; /* Rojo de alerta */
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+/* Botón de Enviar (Estilo pastilla abajo a la derecha) */
+button[type="submit"] {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  float: right; /* Lo lleva a la esquina inferior derecha */
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+button[type="submit"]:hover:not([disabled]) {
+  background-color: #2563eb;
+}
+
+/* Estilo por si el botón está deshabilitado por el FormGroup invalid */
+button[disabled] {
+  background-color: #cbd5e1;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* 4. Responsive: Para que en móviles se vea uno debajo del otro */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    margin: 10px;
+  }
+  
+  button[type="submit"] {
+    width: 100%; /* Botón ancho completo en móviles */
+    float: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+ 
+.contact-container{
+    width: 90%;
+    margin-left: 1.5rem;
+}
+
+}
+
+
+/* Hacemos que el contenedor del campo sea el punto de referencia */
+.field {
+  margin-bottom: 28px; /* Subimos un pelín el margen para dejar hueco al error */
+  display: flex;
+  flex-direction: column;
+  position: relative; /* <-- Importante */
+}
+
+/* Posicionamos el error de forma absoluta para que NO empuje el resto del HTML */
+.field div:has(span) { 
+  position: absolute;
+  bottom: -18px; /* Lo coloca justo debajo de la línea del input */
+  left: 0;
+}
+
+.field span {
+  color: #ef4444;
+  font-size: 1.1rem;
+  display: block;
 }

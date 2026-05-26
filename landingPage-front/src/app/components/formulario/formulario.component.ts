@@ -14,14 +14,14 @@ export class FormularioComponent {
     nombre: new FormControl('', [Validators.required,Validators.minLength(3), Validators.maxLength(50)]),
     email: new FormControl('', [Validators.required, Validators.email]),
     edad: new FormControl('', [Validators.required, Validators.min(18)]),
-    password : new FormControl('', [Validators.required, Validators.min(6)]),
+    mensaje : new FormControl('', [Validators.required, Validators.min(6)]),
   });
 
   onSubmit(){
       if(this.formulario.valid){
-        console.info("El formulario esta enviado" , this.formulario.value)
+        alert("El formulario se ha enviado correctamente");
       }else{
-        console.warn(" El formulario no es valido");
+        alert(" El formulario no es valido");
       }
       this.clear();
   }

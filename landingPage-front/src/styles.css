@@ -26,7 +26,7 @@ body {
   font-family: "DM Sans", sans-serif; /* Tu fuente */
 }
 
-/* 3. IMPORTANTE: Haz que los componentes de Angular se comporten como bloques */
+/* 3. IMPORTANTE: Hacemos que los componentes de Angular se comporten como bloques */
 app-root, app-banner, app-services, app-projects, 
 app-stats, app-reviews, app-clients, app-noticias, 
 app-contacto, app-footer, .layout {
