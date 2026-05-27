@@ -17,7 +17,7 @@
     <h2 >Formularios De Contacto</h2>
     <form action="" [formGroup]="formulario" (ngSubmit)="onSubmit()" method="post">
         <div class="field">
-            <label for="nombre">Nombre:</label>
+            <label for="nombre">Nombre Completo:</label>
             <input type="text" id="nombre" formControlName="nombre">
 
             <div *ngIf="formulario.get('nombre')?.invalid && formulario.get('nombre')?.touched">

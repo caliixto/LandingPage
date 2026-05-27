@@ -7,27 +7,28 @@ const { trim } = require("validator");
 //Crear un esquema (la estrucutra de cada docuemnto de tipo proyecto);
 
 const projectSchema = new Schema({
-    name:{
-        type:String,
-        required: true,
-        trim:true
-    },
-    description: {
-        type:String,
-        required:true
-    },
-    state: {
-        type:String,
-        required:true
-    },
-    image: {
-        type:String,
-        default: "default.png",
-    },
-    created_at:{
-        type:Date,
-        default:Date.now
-    }
+  titulo: {
+    type: String,
+    required: [true, 'El título es obligatorio'],
+    trim: true
+  },
+  tags: {
+    type: String, // Aquí guardaremos "Marca, Web, movil"
+    required: [true, 'Los tags son obligatorios'],
+    trim: true
+  },
+  imagen: {
+    type: String, // Aquí guardaremos la ruta: "/img/project-2.jpg"
+    required: [true, 'La ruta de la imagen es obligatoria']
+  },
+  linkEnVivo: {
+    type: String, // Para el enlace <a href="#"> del título y la foto
+    default: '#'
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
 
 })
 
@@ -35,4 +36,4 @@ const projectSchema = new Schema({
 
 //Expotar modelos
 
-module.exports = model("Project", projectSchema, "projects");
+module.exports = mongoose.model('Proyecto', ProyectoSchema);
