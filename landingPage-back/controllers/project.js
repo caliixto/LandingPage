@@ -10,7 +10,7 @@ const save = (req, res) =>{
 
     //Validar datos
 
-    if(!body.name || !body.description || !body.state){
+    if(!body.titulo || !body.tags || !body.imagen){
         return res.status(400).send({
             status:"error",
             message:"Faltan datos por enviar"
@@ -48,8 +48,8 @@ const save = (req, res) =>{
 
 const list = (req, res) =>{
     project.find()
-        .then(project =>{
-            if (!project){
+        .then(projects =>{
+            if (projects.length===0){
                 return res.status(404).send({
                 status:"error",
                 message:"No hay proyectos para mostrar"
@@ -58,7 +58,7 @@ const list = (req, res) =>{
 
             return res.status(200).send({
                 status:"success",
-                project
+                projects
             });
 
         }).catch(error =>{
