@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const connection = async()=>{
     try {
 
-        await mongoose.connect("mongodb://127.0.0.1:27017/landingPage");
+        await mongoose.connect("mongodb+srv://calixto:tqjg7Bb01wzm8YVn@cluster0.dgehy2a.mongodb.net/landingPage");
 
         console.log("Conectado a la base de datos: LandingPage");
         

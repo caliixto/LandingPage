@@ -23,10 +23,21 @@ import { MobileMenuComponent } from "./components/mobile-menu/mobile-menu.compon
 })
 export class AppComponent {
   title = 'landingPage';
-  @Input() isDarkMode = false
+  isDarkMode = false
   toggleDarkMode() {
     this.isDarkMode = !this.isDarkMode;
+    localStorage.setItem("dark", JSON.stringify(this.isDarkMode));
   }
+
+
+  ngOnInit(){
+    this.getDark();
+  }
+
+  getDark(){
+   this.isDarkMode = JSON.parse(localStorage.getItem("dark") || 'false');
+ }
+
 
   menuAbierto = false;
 
