@@ -30,6 +30,10 @@ const Projectrouter = require("./routers/project");
 
 app.use('/api/project', Projectrouter);
 
+app.get('/', (req, res) => {
+    res.send('¡API de la Landing Page funcionando en la nube, fiera! 🚀');
+});
+
 //Poner el servidor a escuchar
 
 app.listen(port, ()=>{
