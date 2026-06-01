@@ -6,15 +6,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProjectService {
 
-
-  constructor(private http: HttpClient) { 
-  }
+  private url = 'https://landingpage-ezzw.onrender.com/api/project/';
+  
+  constructor(private http: HttpClient) { }
 
   getProject(){
-    return this.http.get("http://localhost:3977/api/project/list"); 
+    //  variable dinámica:
+    return this.http.get(this.url + 'list'); 
   }
-  
-
-  }
-
+}
 
