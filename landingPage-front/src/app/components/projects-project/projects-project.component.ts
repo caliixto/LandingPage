@@ -10,6 +10,7 @@ import { ProjectService } from '../services-Project/project.service';
 export class ProjectsProjectComponent {
 
   public listaproyectos:any;
+  public cargando: boolean = true;
 
   constructor(private _ProjectService:ProjectService){
 
@@ -21,7 +22,7 @@ ngOnInit(): void {
       next: (data:any) => {
         // CORRECCIÓN: Apuntamos directamente a la propiedad que tiene el array en tu JSON
         this.listaproyectos = data.projects; 
-
+        this.cargando = false;
         console.log("Ahora sí, array de proyectos:", this.listaproyectos);
       },
       error: (error) => {

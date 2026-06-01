@@ -20,7 +20,10 @@
             <li class="categories__item">Diseño web</li>
           </ul>
 
-          <div class="projects__all">
+          @if (cargando) {
+              <p>Despertando al servidor, un segundo por favor... ☕</p>
+          }@else {
+            <div class="projects__all">
             @for (proyecto of listaproyectos; track proyecto._id) {
               <article class="projects__project">
               <div class="project__container-img">
@@ -45,6 +48,8 @@
             }
 
           </div>
+          }
+
         </div>
 
         <ul class="projects__project-shapes">
