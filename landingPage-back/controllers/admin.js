@@ -1,5 +1,5 @@
+const Usuario = require("../models/admin");
 const bcrypt = require("bcryptjs");
-const admin = require("../models/admin");
 
 
 const registrarUsuario = async(req, res)=>{
@@ -7,8 +7,15 @@ const registrarUsuario = async(req, res)=>{
     try{
         const {usuario, password} = req.body;
 
+        const params = req.body;
+        console.log("Datos recibidos en el controlador:", params); // <--- MIRA ESTO EN LA TERMINAL
+
+        if (!params.password) {
+            return res.status(400).send({ status: "error", message: "La contraseña es obligatoria" });
+        }
+
         const salt = await bcrypt.genSalt(10);
-        const passwordHash = await bcrypt.hash(password, salt);
+        const passwordHash = await bcrypt.hash(params.password, salt); // Asegúrate de usar params.password
 
 
         const nuevoUsuario = new Usuario({
@@ -19,13 +26,14 @@ const registrarUsuario = async(req, res)=>{
         await nuevoUsuario.save();
 
         return res.status(201).send({
-                status:"success",
-                message:"todo correcto"
+            status:"success",
+            message:"todo correcto"
         });
     }catch(error){
+        console.log(error);
         return res.status(500).send({
                 status:"error",
-                message:"erroe al guardar usuario"
+                message:"error al guardar usuario"
         });
     }
 

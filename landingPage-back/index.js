@@ -29,8 +29,8 @@ app.use('/uploads', express.static('uploads'));
 const Projectrouter = require("./routers/project");
 const Adminrouter = require("./routers/admin");
 
-app.use('/api/project', Projectrouter);
 app.use("/api/admin",Adminrouter);
+app.use('/api/project', Projectrouter);
 
 app.get('/', (req, res) => {
     res.send('¡API de la Landing Page funcionando en la nube, fiera! 🚀');
