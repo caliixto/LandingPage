@@ -27,8 +27,10 @@ app.use('/uploads', express.static('uploads'));
 //Cargar rutas
 
 const Projectrouter = require("./routers/project");
+const Adminrouter = require("./routers/admin");
 
 app.use('/api/project', Projectrouter);
+app.use("/api/admin",Adminrouter);
 
 app.get('/', (req, res) => {
     res.send('¡API de la Landing Page funcionando en la nube, fiera! 🚀');
