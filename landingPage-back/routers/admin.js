@@ -6,5 +6,6 @@ const admin = require("../controllers/admin");
 
 // La ruta es '/register' y el controlador es 'admin.registrarUsuario'
 router.post("/register", admin.registrarUsuario);
+router.post("/login",admin.login);
 
 module.exports = router;

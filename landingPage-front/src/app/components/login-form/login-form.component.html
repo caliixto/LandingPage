@@ -1,0 +1,35 @@
+<div class="login">
+    <h2 >Formularios De Contacto</h2>
+    <form action="" [formGroup]="formulario" (ngSubmit)="Onsubmit()" method="post">
+        <div class="field">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" formControlName="usuario">
+
+            <div *ngIf="formulario.get('usuario')?.invalid && formulario.get('usuario')?.touched">
+                <span *ngIf="formulario.get('usuario')?.errors?.['required']">
+                    El usuario es obligatorio
+                </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label for="password">Password:</label>
+            <input type="password" id="password" formControlName="password">
+
+            <div *ngIf="formulario.get('password')?.invalid && formulario.get('password')?.touched">
+                <span *ngIf="formulario.get('password')?.errors?.['required']">
+                    La contraseña es obligatorio
+                </span>
+
+                <span *ngIf="formulario.get('password')?.errors?.['minlength']">
+                    La contraseña es muy corta
+                </span>
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="formulario.invalid">Entrar</button>
+    </form>
+</div>
+
+<p>{{mensaje}}</p>
+
