@@ -12,7 +12,9 @@ export interface Usuario{
 })
 export class LoginFormServicesService {
 
-  private url = 'https://landingpage-ezzw.onrender.com/api/admin/login';
+  private url = window.location.hostname === 'localhost' 
+    ? 'http://localhost:3977/api/admin/login' 
+    : 'https://landingpage-ezzw.onrender.com/api/admin/login';
 
   constructor(private http: HttpClient) { }
 
