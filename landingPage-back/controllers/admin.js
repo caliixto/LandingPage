@@ -53,7 +53,9 @@ const login = async (req,res) =>{
         console.log("Password guardada en BD:", usuarioEncontrado.password);
 
         const passwordCorrecta = await bcrypt.compare(password, usuarioEncontrado.password);
-        console.log("¿La comparación de bcrypt dio true?:", passwordCorrecta);
+        console.log("¿Contraseña correcta?:", passwordCorrecta);
+        console.log("Contraseña recibida del form:", req.body.password);
+        console.log("Hash en la base de datos:", usuarioEncontrado.password);
 
         if (!passwordCorrecta) {
             return res.status(401).json({ status: "error", mensaje: "Contraseña incorrecta" });
