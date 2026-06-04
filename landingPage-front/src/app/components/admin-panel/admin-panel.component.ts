@@ -32,7 +32,7 @@ cerrarSesion() {
     this.fotoPerfil = urlGuardada;
   } else {
     // Opcional: Pon una imagen por defecto si no hay nada guardado
-    this.fotoPerfil = 'assets/imagen-por-defecto.png';
+    this.fotoPerfil = './img/perfil.jpg';
   }
 }
   

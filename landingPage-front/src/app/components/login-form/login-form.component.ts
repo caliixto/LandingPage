@@ -41,7 +41,7 @@ export class LoginFormComponent {
               ? 'http://localhost:3977' 
               : 'https://landingpage-ezzw.onrender.com';
             
-            const urlCompleta = apiBaseUrl + res.usuario.imagenUr;
+            const urlCompleta = apiBaseUrl + res.usuario.imagenUrl;
             localStorage.setItem('fotoPerfil', urlCompleta);
           }
 
