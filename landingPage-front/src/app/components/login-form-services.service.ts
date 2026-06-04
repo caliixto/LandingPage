@@ -31,4 +31,16 @@ export class LoginFormServicesService {
   eviarDatos(usuario:Usuario){
     return this.http.post(this.url, usuario);
   }
+
+  iniciarSesion(token:string){
+    localStorage.setItem("adminToken", token)
+  }
+
+  estarLogueado():boolean{
+    return !!localStorage.getItem("adminToken");
+  }
+
+  cerrarSesion(){
+    localStorage.removeItem("adminToken");
+  }
 }
