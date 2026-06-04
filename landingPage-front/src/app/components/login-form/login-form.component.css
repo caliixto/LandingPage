@@ -15,7 +15,7 @@
   color: white;                        /* Texto claro */
   
   /* Puedes añadir una animación de entrada suave */
-  animation: fadeIn 0.3s ease-out;
+  animation: fadeIn 0.2s ease-out;
 }
 
 .modal-content input{
@@ -58,4 +58,18 @@ button[disabled] {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* 4. Responsive: Para que en móviles se vea uno debajo del otro */
+@media (max-width: 768px) {
+ .modal-content{
+    width: 100%;
+ }
+}
+
+
+@media (max-width: 768px) {
+ 
+
+
 }
