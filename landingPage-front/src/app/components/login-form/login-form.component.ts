@@ -4,6 +4,7 @@ import { ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms';
 import {LoginFormServicesService, Usuario } from '../login-form-services.service';
 import { Router } from '@angular/router';
+import { authGuard } from '../../auth.guard';
 
 @Component({
   selector: 'app-login-form',
@@ -18,30 +19,43 @@ export class LoginFormComponent {
   password: new FormControl('', [Validators.required, Validators.minLength(3)]),
   });
 
-    constructor(private __formService: LoginFormServicesService, private router: Router, private modalservices:LoginFormServicesService) {
+    constructor(private loginService: LoginFormServicesService, 
+    private router: Router) {
   }
 
 
-  Onsubmit(){
-    if(this.formulario.valid){
-    console.log("Lo que estoy enviando:", this.formulario.value);
-    }
-    this.__formService.eviarDatos(this.formulario.value as Usuario).subscribe({
-    next: (res:any) => {
-    this.mensaje = res.mensaje;
-    //Limpiamos los input
-    this.clear();
-    this.modalservices.cerrar();
-    // 3. Redireccionar
-    if (res.status === 'success') {
-        this.router.navigate(['/adminPanel']);
-    }
-  },
-    error: (err) => {
-      // 3. Si hay error (401 o 404), el servidor entra aquí
-      this.mensaje = 'Error: ' + (err.error.mensaje || 'Credenciales incorrectas');
-    }
-  })
+  Onsubmit() {
+  if (this.formulario.valid) {
+    // Aquí enviamos el formulario (que ya es el objeto {usuario, password})
+    this.loginService.eviarDatos(this.formulario.value as Usuario).subscribe({
+      next: (res: any) => {
+        // Suponiendo que 'res' contiene el token y el objeto usuario
+        if (res.status === 'success') {
+          
+          // 1. Guardar token
+          this.loginService.iniciarSesion(res.token); 
+
+          // 2. Guardar foto (aquí usamos el campo que viene del servidor)
+          if (res.usuario && res.usuario.imagenUr) { // Ajustado a tu nombre en DB
+            const apiBaseUrl = window.location.hostname === 'localhost' 
+              ? 'http://localhost:3977' 
+              : 'https://landingpage-ezzw.onrender.com';
+            
+            const urlCompleta = apiBaseUrl + res.usuario.imagenUr;
+            localStorage.setItem('fotoPerfil', urlCompleta);
+          }
+
+          // 3. Limpiar y redirigir
+          this.clear();
+          this.loginService.cerrar();
+          this.router.navigate(['/adminPanel']); // Asegúrate de que esta ruta existe
+        }
+      },
+      error: (err) => {
+        this.mensaje = 'Error: ' + (err.error.mensaje || 'Credenciales incorrectas');
+      }
+    });
+  }
 }
 
 clear(){

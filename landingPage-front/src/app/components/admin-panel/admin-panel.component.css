@@ -1,4 +1,25 @@
 .adminpanel{
-    font-size: 3rem;
-    color: blue;
+    font-size: 2rem;
+    color: black;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgray;
+    height: 100px;
+}
+
+.admin-info {
+  display: flex;       /* Alinea imagen y texto horizontalmente */
+  align-items: center; /* Centra verticalmente ambos elementos */
+  gap: 15px;           /* Espacio entre la foto y el texto */
+}
+
+.admin-avatar {
+  width: 50px;         /* Ajusta el tamaño de la foto */
+  height: 50px;
+  border-radius: 50%;  /* Esto hace que la foto sea redonda */
+  object-fit: cover;   /* Asegura que la imagen no se deforme */
+  border: 2px solid white; /* Un borde fino queda muy elegante */
 }

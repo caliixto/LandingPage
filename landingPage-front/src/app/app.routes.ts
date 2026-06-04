@@ -6,7 +6,7 @@ import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
     {path: '', component:HomeComponent},
-    {path: 'adminPanel', component: AdminPanelComponent },
+    {path: 'adminPanel', component: AdminPanelComponent},
     {path: 'login', component:LoginFormComponent},
     {path: 'panel-admin', component: AdminPanelComponent, canActivate: [authGuard] // <--- Aquí conectas el "portero"
   },

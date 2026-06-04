@@ -7,6 +7,7 @@ export interface Usuario{
   password:string
 }
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +16,7 @@ export class LoginFormServicesService {
   private url = window.location.hostname === 'localhost' 
   ? 'http://localhost:3977/api/admin/login' 
   : 'https://landingpage-ezzw.onrender.com/api/admin/login';
+  
 
   abierto: boolean = false; // La variable maestra
 
