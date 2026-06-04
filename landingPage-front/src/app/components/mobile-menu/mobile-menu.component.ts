@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { LoginFormServicesService } from '../login-form-services.service';
 
 @Component({
   selector: 'app-mobile-menu',
@@ -10,6 +11,9 @@ export class MobileMenuComponent {
   @Input() isActive = false;
   @Output() cerrarMenu = new EventEmitter();
 
+  constructor(public loginService:LoginFormServicesService){
+
+  }
   cerrar(){
     this.cerrarMenu.emit()
   }
