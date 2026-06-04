@@ -4,7 +4,6 @@ import { ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms';
 import {LoginFormServicesService, Usuario } from '../login-form-services.service';
 import { Router } from '@angular/router';
-import { authGuard } from '../../auth.guard';
 
 @Component({
   selector: 'app-login-form',
@@ -36,7 +35,7 @@ export class LoginFormComponent {
           this.loginService.iniciarSesion(res.token); 
 
           // 2. Guardar foto (aquí usamos el campo que viene del servidor)
-          if (res.usuario && res.usuario.imagenUr) { // Ajustado a tu nombre en DB
+          if (res.usuario && res.usuario.imagenUrl) { // Ajustado a tu nombre en DB
             const apiBaseUrl = window.location.hostname === 'localhost' 
               ? 'http://localhost:3977' 
               : 'https://landingpage-ezzw.onrender.com';
