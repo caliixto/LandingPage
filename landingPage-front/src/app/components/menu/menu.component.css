@@ -218,3 +218,7 @@ width: 100%;
     display: block;
     }
 }
+
+.adminLogin{
+    cursor: pointer;
+}

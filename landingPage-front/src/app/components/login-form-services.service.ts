@@ -13,8 +13,18 @@ export interface Usuario{
 export class LoginFormServicesService {
 
   private url = window.location.hostname === 'localhost' 
-    ? 'http://localhost:3977/api/admin/login' 
-    : 'https://landingpage-ezzw.onrender.com/api/admin/login';
+  ? 'http://localhost:3977/api/admin/login' 
+  : 'https://landingpage-ezzw.onrender.com/api/admin/login';
+
+  abierto: boolean = false; // La variable maestra
+
+  abrir() { 
+    this.abierto = true; 
+  }
+
+  cerrar(){ 
+    this.abierto = false; 
+  }
 
   constructor(private http: HttpClient) { }
 

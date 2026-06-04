@@ -1,0 +1,13 @@
+/* Este es el div contenedor que tiene el *ngIf */
+.modal {
+  position: fixed;
+  bottom: 30%;
+  left: 30%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro translúcido */
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;    /* Centra verticalmente */
+  z-index: 1000;          /* Asegura que esté por encima de todo */
+}

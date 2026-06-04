@@ -1,5 +1,6 @@
 import { NgClass, NgIf } from '@angular/common';
 import { Component, HostListener, Input, Output, EventEmitter } from '@angular/core';
+import { LoginFormServicesService } from '../login-form-services.service';
 
 @Component({
   selector: 'app-menu',
@@ -10,6 +11,8 @@ import { Component, HostListener, Input, Output, EventEmitter } from '@angular/c
 export class MenuComponent {
 
   isNavbarFixed= window.scrollY > 120;
+
+  constructor(public loginService: LoginFormServicesService) {}
 
   ngOnInit(){
     this.metodoQueEscuchaScroll();
@@ -28,6 +31,10 @@ export class MenuComponent {
     this.isPulse.emit();
   }
 
-  
 
+
+// En tu función de clic:
+abrirLogin() {
+  this.loginService.abrir();
+}
 }

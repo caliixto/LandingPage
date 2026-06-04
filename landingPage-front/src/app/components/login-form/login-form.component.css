@@ -3,3 +3,54 @@
   font-size: 1.3rem;
   display: block;
 }
+
+/* Estilos para el contenedor dentro de app-login-form */
+.modal-content {
+  background: rgba(255, 255, 255, 0.1); /* Efecto cristal */
+  backdrop-filter: blur(10px);         /* Desenfoca el fondo (guay) */
+  border-radius: 15px;                 /* Bordes redondeados */
+  padding: 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
+  color: white;                        /* Texto claro */
+  
+  /* Puedes añadir una animación de entrada suave */
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content input{
+  color: black;
+  border-radius:10px ;
+  padding-left: 0.6rem;
+}
+/* Botón de Enviar (Estilo pastilla abajo a la derecha) */
+button[type="submit"] {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  margin-top: 1rem;
+  margin-left: 5rem;
+  border-radius: 10px;
+}
+
+
+button[type="submit"]:hover:not([disabled]) {
+  background-color: #2563eb;
+}
+
+/* Estilo por si el botón está deshabilitado por el FormGroup invalid */
+button[disabled] {
+  background-color: #cbd5e1;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

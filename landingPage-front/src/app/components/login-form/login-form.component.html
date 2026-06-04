@@ -1,5 +1,7 @@
-<div class="login">
-    <h2 >Formularios De Contacto</h2>
+
+<div class="modal-content">
+
+    <h2 >Login</h2>
     <form action="" [formGroup]="formulario" (ngSubmit)="Onsubmit()" method="post">
         <div class="field">
             <label for="usuario">Usuario:</label>
@@ -27,7 +29,7 @@
             </div>
         </div>
 
-        <button type="submit" [disabled]="formulario.invalid">Entrar</button>
+        <button type="submit" [disabled]="formulario.invalid" class="entrar">Entrar</button>
     </form>
 </div>
 
