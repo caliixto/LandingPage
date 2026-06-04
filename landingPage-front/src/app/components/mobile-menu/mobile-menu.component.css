@@ -154,3 +154,10 @@
         display: none;
     }
 }
+
+
+.adminLogin:hover{
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+}
