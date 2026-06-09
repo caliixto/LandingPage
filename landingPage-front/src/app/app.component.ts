@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { LoginFormServicesService } from './components/login-form-services.service';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { NgIf } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -19,8 +20,11 @@ export class AppComponent {
     localStorage.setItem("dark", JSON.stringify(this.isDarkMode));
   }
 
-  constructor(public loginService:LoginFormServicesService){
+  constructor(public loginService:LoginFormServicesService,private translate: TranslateService){
 
+    this.translate.addLangs(['es', 'en', 'fr']);
+    this.translate.setDefaultLang('es');
+    this.translate.use('es');
   }
 
 

@@ -240,3 +240,45 @@ width: 100%;
     opacity: 0;
     transition: 500ms;
 }   
+
+/*Apartado de Traduccion*/
+
+.translate-container {
+  display: flex;
+  gap: 5px; /* Pequeña separación */
+  align-items: center;
+}
+
+
+/* Contenedor que agrupa los botones */
+.language-switcher {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden; /* Esto hace que los botones queden "encerrados" */
+  padding: 2px;
+}
+
+.translate {
+  background: transparent;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.3s;
+}
+
+/* Efecto al pasar el mouse */
+.translate:hover {
+  background-color: #e5e7eb;
+  color: #000;
+}
+
+/* El botón seleccionado tendrá este color */
+.translate.active {
+  background-color: #3b82f6; /* Azul de tu diseño */
+  color: white;
+  border-radius: 6px;
+}
+

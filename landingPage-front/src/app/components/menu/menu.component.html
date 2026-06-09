@@ -22,94 +22,100 @@
           <nav class="navbar__nav">
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="" class="nav__title">Inicio</a>
+                <a href="" class="nav__title">{{ 'MENU.HOME' | translate }}</a>
               </li>
 
               <li class="nav__item">
                 <a href="" class="nav__title"
-                  >Servicios
+                  >{{ 'MENU.SERVICES' | translate }}
                   <i class="fa-solid fa-chevron-down nav__icon"></i>
                 </a>
 
                 <ul class="nav__submenu">
                   <li class="submenu__item">
-                    <a href="" class="submenu__title">Diseño web</a>
+                    <a href="" class="submenu__title">{{ 'MENU.WEB_DESIGN' | translate}}</a>
                   </li>
                   <li class="submenu__item">
-                    <a href="" class="submenu__title">Desarrollo Web</a>
+                    <a href="" class="submenu__title">{{ 'MENU.WEB_DEVELOPMENT' | translate}}</a>
                   </li>
                   <li class="submenu__item">
-                    <a href="" class="submenu__title">Desarrollo Apps</a>
+                    <a href="" class="submenu__title">{{ 'MENU.APP_DEVELOPMENT' | translate}}</a>
                   </li>
                   <li class="submenu__item">
-                    <a href="" class="submenu__title">Programacion</a>
+                    <a href="" class="submenu__title">{{ 'MENU.PROGRAMMING' | translate }}</a>
                   </li>
                   <li class="submenu__item">
-                    <a href="" class="submenu__title">Consultoria</a>
+                    <a href="" class="submenu__title">{{ 'MENU.CONSULTING' | translate }}</a>
                   </li>
                 </ul>
               </li>
 
               <li class="nav__item">
                 <a href="" class="nav__title"
-                  >Portafolio
+                  >{{ 'MENU.PORTFOLIO' | translate }}
                   <i class="fa-solid fa-chevron-down nav__icon"></i>
                 </a>
 
                 <ul class="nav__submenu">
                   <li class="submenu__item">
-                    <a href="" class="submenu__title">Diseño web</a>
+                    <a href="" class="submenu__title">{{ 'MENU.WEB_DESIGN' | translate }}</a>
                   </li>
                   <li class="submenu__item">
-                    <a href="" class="submenu__title">Desarrollo Web</a>
+                    <a href="" class="submenu__title">{{ 'MENU.WEB_DEVELOPMENT' | translate }}</a>
                   </li>
                   <li class="submenu__item">
-                    <a href="" class="submenu__title">Desarrollo Apps</a>
+                    <a href="" class="submenu__title">{{ 'MENU.APP_DEVELOPMENT' | translate }}</a>
                   </li>
                   <li class="submenu__item">
-                    <a href="" class="submenu__title">Programacion</a>
+                    <a href="" class="submenu__title">{{ 'MENU.PROGRAMMING' | translate }}</a>
                   </li>
                   <li class="submenu__item">
-                    <a href="" class="submenu__title">Consultoria</a>
+                    <a href="" class="submenu__title">{{ 'MENU.CONSULTING' | translate }}</a>
                   </li>
                 </ul>
               </li>
 
               <li class="nav__item">
                 <a href="" class="nav__title"
-                  >Blog
+                  >{{ 'MENU.BLOG' | translate }}
                   <i class="fa-solid fa-chevron-down nav__icon"></i>
                 </a>
 
                 <ul class="nav__submenu">
                   <li class="submenu__item">
-                    <a href="" class="submenu__title">Diseño web</a>
+                    <a href="" class="submenu__title">{{ 'MENU.WEB_DESIGN' | translate }}</a>
                   </li>
                   <li class="submenu__item">
-                    <a href="" class="submenu__title">Desarrollo Web</a>
+                    <a href="" class="submenu__title">{{ 'MENU.WEB_DEVELOPMENT' | translate }}</a>
                   </li>
                   <li class="submenu__item">
-                    <a href="" class="submenu__title">Desarrollo Apps</a>
+                    <a href="" class="submenu__title">{{ 'MENU.APP_DEVELOPMENT' | translate }}</a>
                   </li>
                   <li class="submenu__item">
-                    <a href="" class="submenu__title">Programacion</a>
+                    <a href="" class="submenu__title">{{ 'MENU.PROGRAMMING' | translate }}</a>
                   </li>
                   <li class="submenu__item">
-                    <a href="" class="submenu__title">Consultoria</a>
+                    <a href="" class="submenu__title">{{ 'MENU.CONSULTING' | translate }}</a>
                   </li>
                 </ul>
               </li>
 
               <li class="nav__item">
-                <a href="" class="nav__title">Equipo</a>
+                <a href="" class="nav__title">{{ 'MENU.TEAM' | translate }}</a>
               </li>
 
               <li class="nav__item">
-                <a href="" class="nav__title">Contacto</a>
+                <a href="" class="nav__title">{{ 'MENU.CONTACT' | translate }}</a>
               </li>
 
               <li (click)="loginService.abrir()" class="adminLogin nav__item nav__title">Admin</li>
             </ul>
           </nav>
+
+          <div class="translate-container">
+            <button (click)="changeLanguage('es')" class="translate">ES</button>
+            <button (click)="changeLanguage('en')" class="translate">EN</button>
+            <button (click)="changeLanguage('fr')" class="translate">FR</button>
+          </div>
         </header>
       </section>

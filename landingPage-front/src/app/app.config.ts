@@ -1,14 +1,15 @@
 import { ApplicationConfig, provideZoneChangeDetection, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { HttpClient, provideHttpClient } from '@angular/common/http';
+import {provideHttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
 
 import { routes } from './app.routes';
 
 // Esta función es necesaria para que el traductor sepa dónde están tus archivos JSON
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  return new TranslateHttpLoader(http, './i18n/', '.json');
 }
 
 export const appConfig: ApplicationConfig = {

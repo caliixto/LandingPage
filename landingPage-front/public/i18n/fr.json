@@ -1,0 +1,21 @@
+{
+  "MENU": {
+    "HOME": "Accueil",
+    "SERVICES": "Services",
+    "PORTFOLIO": "Portfolio",
+    "BLOG": "Blog",
+    "TEAM": "Équipe",
+    "CONTACT": "Contact",
+
+    "WEB_DESIGN": "Conception Web",
+    "WEB_DEVELOPMENT": "Développement Web",
+    "APP_DEVELOPMENT": "Développement d’applications",
+    "PROGRAMMING": "Programmation",
+    "CONSULTING": "Conseil"
+  },
+
+  "BANNER":{
+    "WEB DESIGN & DEVELOPMENT": "Conception et développement de sites Web",
+    "SEE JOBS": "Voir les emplois"
+  }
+}
