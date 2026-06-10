@@ -285,16 +285,22 @@ width: 100%;
 }
 
 /* Estilo Móvil */
-@media (max-width: 370px) {
+@media (max-width: 400px) {
     .translate-container {
         width: 100%; 
         justify-content: center;
         gap: 2px;
-        margin-left: 1rem;
+        margin-left: 0.7rem;
     }
     
     .translate {
         padding: 4px 8px; /* Reducimos el padding para que quepan mejor */
         font-size: 15px;  /* Reducimos un poco la fuente */
+    }
+}
+
+@media (min-width:400px) and (max-width:480px){
+    .menu__navbar--fixed .translate-container{
+         margin-left: 1.4rem;
     }
 }
