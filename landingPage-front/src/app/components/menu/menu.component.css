@@ -29,7 +29,9 @@ width: 100%;
 }
 
 .navbar__logo{
-    width: 187px;
+    width: 100px;
+    min-width: 100px;
+    flex-shrink: 0;
 }
 
 .nav__list{
@@ -282,3 +284,17 @@ width: 100%;
   border-radius: 6px;
 }
 
+/* Estilo Móvil */
+@media (max-width: 370px) {
+    .translate-container {
+        width: 100%; 
+        justify-content: center;
+        gap: 2px;
+        margin-left: 1rem;
+    }
+    
+    .translate {
+        padding: 4px 8px; /* Reducimos el padding para que quepan mejor */
+        font-size: 15px;  /* Reducimos un poco la fuente */
+    }
+}

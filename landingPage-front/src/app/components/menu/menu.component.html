@@ -113,9 +113,11 @@
           </nav>
 
           <div class="translate-container">
-            <button (click)="changeLanguage('es')" class="translate">ES</button>
-            <button (click)="changeLanguage('en')" class="translate">EN</button>
-            <button (click)="changeLanguage('fr')" class="translate">FR</button>
+            <div class="language-switcher">
+                <button (click)="changeLanguage('es')" class="translate">ES</button>
+                <button (click)="changeLanguage('en')" class="translate">EN</button>
+                <button (click)="changeLanguage('fr')" class="translate">FR</button>
+            </div>
           </div>
         </header>
       </section>
