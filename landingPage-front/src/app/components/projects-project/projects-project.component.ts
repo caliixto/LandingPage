@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../services-Project/project.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects-project',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './projects-project.component.html',
   styleUrl: './projects-project.component.css'
 })

@@ -3,25 +3,24 @@
       <section class="layout__projects container-responsive">
         <div class="projects__grid">
           <header class="projects__header">
-            <p class="projects__subtitle">Nuestros Proyectos</p>
+            <p class="projects__subtitle">{{'PROJECTS.SUBTITLE' | translate}}</p>
             <h2 class="projects__title">
-              Algunos de nuestros <br />
-              mejores trabajos
+              {{'PROJECTS.TITLE' | translate}}
             </h2>
           </header>
 
           <ul class="projects__categories">
-            <li class="categories__item categories__item--active">Todos los trabajos</li>
+            <li class="categories__item categories__item--active">{{'PROJECTS.MAIN_ITEM' | translate}}</li>
 
-            <li class="categories__item">Desarrollo web</li>
+            <li class="categories__item">{{'PROJECTS.ITEM_1' | translate}}</li>
 
-            <li class="categories__item">Desarrollo movil</li>
+            <li class="categories__item">{{'PROJECTS.ITEM_2' | translate}}</li>
 
-            <li class="categories__item">Diseño web</li>
+            <li class="categories__item">{{'PROJECTS.ITEM_3' | translate}}</li>
           </ul>
 
           @if (cargando) {
-              <p class="cargando">Despertando al servidor, un segundo por favor☕</p>
+              <p class="cargando">{{'PROJECTS.SERVER_TEXT' | translate}}☕</p>
           }@else {
             <div class="projects__all">
             @for (proyecto of listaproyectos; track proyecto._id) {

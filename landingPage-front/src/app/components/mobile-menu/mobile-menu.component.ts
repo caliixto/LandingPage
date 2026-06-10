@@ -1,9 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { LoginFormServicesService } from '../login-form-services.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-mobile-menu',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './mobile-menu.component.html',
   styleUrl: './mobile-menu.component.css'
 })

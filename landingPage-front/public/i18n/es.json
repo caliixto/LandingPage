@@ -17,5 +17,95 @@
   "BANNER":{
     "WEB DESIGN & DEVELOPMENT": "Diseño & Desarrollo Web",
     "SEE JOBS": "Ver Trabajos"
-  }
+  },
+  
+  "SERVICES": {
+    "WHAT_CAN_WE_DO_FOR_YOU": "¿Qué podemos hacer por ti?",
+    "SERVICES_THAT_CAN_HELP_YOU": "Servicios que te pueden ayudar",
+
+    "DESIGN": "Diseño",
+    "DESIGN_DESCRIPTION": "Desde una web, pasando por una app, hasta un logotipo...",
+    "READ_MORE": "Leer más",
+
+    "DEVELOPMENT": "Desarrollo",
+    "DEVELOPMENT_DESCRIPTION": "Las aplicaciones web y móviles que imaginas a medida...",
+
+    "MARKETING": "Marketing",
+    "MARKETING_DESCRIPTION": "Le damos visibilidad a tu proyecto digital..."
+  },
+
+    "PROJECTS": {
+      "SUBTITLE": "Nuestros Proyectos",
+      "TITLE": "Algunos de nuestros mejores trabajos",
+      "MAIN_ITEM": "Todos los trabajos",
+      "ITEM_1": "Desarrollo web",
+      "ITEM_2": "Desarrollo móvil",
+      "ITEM_3": "Diseño web",
+      "SERVER_TEXT": "Despertando al servidor, un segundo por favor"
+    },
+
+    "STATS": {
+      "SUBTITLE": "Agencia de diseño y desarrollo",
+      "TITLE": "Estadísticas de trabajo realizado",
+      "DESCRIPTION": "Aquí puedes ver un resumen de nuestras estadísticas en estos años de trabajo.",
+      "YEARS": "Años activos",
+      "COMPLETED_PROJECTS": "Proyectos realizados",
+      "PROFESSIONALS": "Profesionales",
+      "CLIENTS": "Clientes contentos"
+    },
+
+    "REVIEW": {
+      "SUBTITLE": "Reseñas",
+      "TITLE": "¿Qué dicen nuestros clientes?",
+      "DESCRIPTION": "Nuestros clientes siempre salen satisfechos con sus webs y apps.",
+      "GOOGLE": "En Google podrás buscar todo lo que necesites. Es importante saber manejarlo con soltura; será muy útil a la hora de buscar errores.",
+      "AUTHOR_NAME": "Calixto Bocamba",
+      "AUTHOR_DESCRIPTION": "Desarrollador web",
+      "DESCRIPTION_2": "Aquí hay muchos cursos de programación y desarrollo web para empezar desde cero hasta convertirse en un profesional.",
+      "YOUTUBE": "En YouTube tienes todo tipo de vídeos que te serán de ayuda, desde los conceptos básicos y problemas del día a día hasta cosas más avanzadas."
+    },
+
+    "CLIENTS": {
+      "SUBTITLE": "Mejores clientes",
+      "TITLE": "Hemos creado soluciones para...",
+      "DESCRIPTION": "Desarrollamos a medida cualquier proyecto con las mejores tecnologías."
+    },
+
+    "NEWS": {
+      "SUBTITLE": "¿Qué está pasando?",
+      "TITLE": "Últimas noticias",
+      "DESCRIPTION": "Novedades sobre desarrollo web, desarrollo móvil y diseño digital.",
+      "LINK": "Cómo maquetar una web con HTML5 y CSS3",
+      "NEWS_DESCRIPTION": "¿Quieres dar tus primeros pasos en el desarrollo web y aprender a crear webs espectaculares?",
+      "READ_MORE": "Leer más",
+      "LINK_2": "Cómo aprender a programar con JavaScript",
+      "DESCRIPTION_2": "¿Quieres dar tus primeros pasos en la programación del lado del cliente?"
+    },
+
+    "CONTACT": {
+      "SUBTITLE": "Trabajemos juntos",
+      "TITLE": "¿Creamos tu nuevo proyecto?",
+      "BUTTON": "Pedir presupuesto"
+    },
+
+    "FOOTER": {
+      "SERVICES": "Servicios",
+      "DESIGN": "Diseño",
+      "DEVELOPMENT": "Desarrollo",
+      "PROGRAMMING": "Programación",
+      "MARKETING": "Marketing",
+      "CONSULTING": "Consultoría",
+      "RESOURCES": "Recursos",
+      "BLOG": "Blog",
+      "TRAINING": "Formación",
+      "PORTFOLIO": "Portafolio",
+      "SUPPORT": "Soporte",
+      "CONTACT": "Contacto",
+      "PRIVACY_POLICY": "Política de privacidad",
+      "TERMS_OF_USE": "Términos de uso",
+      "RIGHTS": "2025. Todos los derechos reservados a",
+      "AUTHOR": "Calixto Bocamba"
+    }
+
+  
 }
