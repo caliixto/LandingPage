@@ -141,3 +141,13 @@
     0 0 12px hotpink;
      transform: translateY(-5px);
 }
+
+
+@media (max-width:370px){
+  .navbar{
+    height: 60px;
+  }
+  .projects-grid{
+    flex-direction: column;
+  }
+}
