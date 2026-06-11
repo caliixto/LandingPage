@@ -21,7 +21,7 @@ export class ProjectsProjectComponent {
 ngOnInit(): void { 
     this._ProjectService.getProject().subscribe({
       next: (data:any) => {
-        // CORRECCIÓN: Apuntamos directamente a la propiedad que tiene el array en tu JSON
+        // Apuntamos directamente a la propiedad que tiene el array en el JSON
         this.listaproyectos = data.projects; 
         this.cargando = false;
         console.log("Ahora sí, array de proyectos:", this.listaproyectos);

@@ -9,19 +9,34 @@
 <div class="admin-container">
   <h2>Gestión de Proyectos</h2>
 
-  <div class="projects-grid">
-    <div class="project-card" *ngFor="let p of proyectos">
-      <div class="project-image-placeholder">
-        </div>
-      <div class="project-info">
-        <h3>{{ p.titulo }}</h3>
-        <p>{{ p.descripcion }}</p>
-        <div class="card-actions">
-          <button class="btn-edit">Editar</button>
-          <button class="btn-delete">Borrar</button>
-        </div>
-      </div>
+<div class="projects-grid">
+  <div class="project-card" *ngFor="let p of proyectos">
+  
+    <div class="project-image-placeholder">
+      <img [src]="'https://landingpage-ezzw.onrender.com' + p.imagen" [alt]="p.titulo">
+    </div> 
+    <div class="project-info">
+
+  <div class="project-header">
+    <div class="project-text">
+      <h3>{{ p.titulo }}</h3>
+      <p>{{ p.tags }}</p>
     </div>
+
+    <div class="card-actions">
+      <button class="btn-edit" title="Editar proyecto">
+        <i class="fa-solid fa-pen"></i>
+      </button>
+
+      <button class="btn-delete" title="Eliminar proyecto">
+        <i class="fa-solid fa-trash"></i>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+</div>
 
     <div class="project-card add-card">
       <div class="add-icon">
