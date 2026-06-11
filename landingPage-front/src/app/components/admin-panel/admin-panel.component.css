@@ -1,3 +1,4 @@
+/*NAVBAR ADMIN*/
 .adminpanel{
     font-size: 2rem;
     color: black;
@@ -22,4 +23,46 @@
   border-radius: 50%;  /* Esto hace que la foto sea redonda */
   object-fit: cover;   /* Asegura que la imagen no se deforme */
   border: 2px solid white; /* Un borde fino queda muy elegante */
+}
+
+/*PROYECTOS*/
+
+.projects-grid {
+  display: grid;
+  /* Esto crea tarjetas de mínimo 300px, pero que crecen para rellenar */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.project-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* La tarjeta del "+" */
+.add-card {
+  border: 3px dashed #cbd5e0; /* Borde discontinuo */
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  min-height: 100px;
+  color: #718096;
+}
+
+.add-card:hover {
+  border-color: #3182ce; /* Azul cuando pasas el ratón */
+  color: #3182ce;
 }

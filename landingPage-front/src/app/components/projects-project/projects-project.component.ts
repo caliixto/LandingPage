@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectService } from '../services-Project/project.service';
+import { ProjectService } from '../services/project.service';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({

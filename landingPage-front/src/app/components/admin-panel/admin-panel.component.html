@@ -6,3 +6,29 @@
   <button class="cerrarSession" (click)="cerrarSesion()">Cerrar Sesión</button>
 </div>
 
+<div class="admin-container">
+  <h2>Gestión de Proyectos</h2>
+
+  <div class="projects-grid">
+    <div class="project-card" *ngFor="let p of proyectos">
+      <div class="project-image-placeholder">
+        </div>
+      <div class="project-info">
+        <h3>{{ p.titulo }}</h3>
+        <p>{{ p.descripcion }}</p>
+        <div class="card-actions">
+          <button class="btn-edit">Editar</button>
+          <button class="btn-delete">Borrar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card add-card">
+      <div class="add-icon">
+        <i class="fa-solid fa-plus"></i>
+      </div>
+      <span>Nuevo Proyecto</span>
+    </div>
+  </div>
+</div>
+

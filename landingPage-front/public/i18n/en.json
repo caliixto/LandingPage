@@ -21,12 +21,14 @@
     "BLOG": "Blog",
     "TEAM": "Team",
     "CONTACT": "Contact",
-
-    "WEB_DESIGN": "Web Design",
-    "WEB_DEVELOPMENT": "Web Development",
-    "APP_DEVELOPMENT": "App Development",
-    "PROGRAMMING": "Programming",
-    "CONSULTING": "Consulting"
+    "ADMIN": "Admin",
+    "SUBMENU": {
+      "WEB_DESIGN": "Web Design",
+      "WEB_DEVELOPMENT": "Web Development",
+      "APP_DEVELOPMENT": "App Development",
+      "PROGRAMMING": "Programming",
+      "CONSULTING": "Consulting"
+    }
   },
 
   "BANNER":{

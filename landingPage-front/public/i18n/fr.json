@@ -14,6 +14,23 @@
     "CONSULTING": "Conseil"
   },
 
+  "MENU_MOBILE": {
+    "HOME": "Accueil",
+    "SERVICES": "Services",
+    "PORTFOLIO": "Portfolio",
+    "BLOG": "Blog",
+    "TEAM": "Équipe",
+    "CONTACT": "Contact",
+    "ADMIN": "Admin",
+    "SUBMENU": {
+      "WEB_DESIGN": "Design Web",
+      "WEB_DEVELOPMENT": "Développement Web",
+      "APP_DEVELOPMENT": "Développement Apps",
+      "PROGRAMMING": "Programmation",
+      "CONSULTING": "Consultation"
+    }
+  },
+
   "BANNER":{
     "WEB DESIGN & DEVELOPMENT": "Conception et développement de sites Web",
     "SEE JOBS": "Voir les emplois"
