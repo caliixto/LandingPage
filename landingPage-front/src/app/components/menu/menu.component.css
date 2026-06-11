@@ -29,7 +29,7 @@ width: 100%;
 }
 
 .navbar__logo{
-    width: 100px;
+    width: 187px;
     min-width: 100px;
     flex-shrink: 0;
 }
@@ -297,10 +297,20 @@ width: 100%;
         padding: 4px 8px; /* Reducimos el padding para que quepan mejor */
         font-size: 15px;  /* Reducimos un poco la fuente */
     }
+
+    .navbar__logo{
+        width: 100px;
+        margin-right: 1rem;
+    }
 }
 
 @media (min-width:400px) and (max-width:480px){
     .menu__navbar--fixed .translate-container{
          margin-left: 1.4rem;
+    }
+
+    .navbar__logo{
+        width: 100px;
+        margin-right: 1rem;
     }
 }

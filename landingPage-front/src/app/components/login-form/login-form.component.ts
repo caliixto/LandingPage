@@ -4,10 +4,11 @@ import { ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms';
 import {LoginFormServicesService, Usuario } from '../login-form-services.service';
 import { Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login-form',
-  imports: [ReactiveFormsModule, NgIf],
+  imports: [ReactiveFormsModule, NgIf, TranslateModule],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.css'
 })
@@ -25,6 +26,7 @@ export class LoginFormComponent {
 
   Onsubmit() {
   if (this.formulario.valid) {
+    this.mensaje = '';
     // Aquí enviamos el formulario (que ya es el objeto {usuario, password})
     this.loginService.eviarDatos(this.formulario.value as Usuario).subscribe({
       next: (res: any) => {
@@ -50,8 +52,8 @@ export class LoginFormComponent {
           this.router.navigate(['/adminPanel']); // Asegúrate de que esta ruta existe
         }
       },
-      error: (err) => {
-        this.mensaje = 'Error: ' + (err.error.mensaje || 'Credenciales incorrectas');
+      error: () => {
+        this.mensaje = 'LOGIN.ERROR_INVALID_CREDENTIALS';
       }
     });
   }

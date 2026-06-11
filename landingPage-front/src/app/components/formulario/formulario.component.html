@@ -4,7 +4,7 @@
   <div class="contact-info">
     <div class="info-content">
       <div class="user-icon"><img src="/img/img_perfil.png" alt="" class="icon__img"></div> 
-      <h2>INFORMACIÓN DE CONTACTO</h2>
+      <h2>{{'FORM.CONTACT_INFORMATION' |translate}}</h2>
       
       <div class="info-details">
         <p><i class="fa-solid fa-mail-bulk"></i> info.contact&#64;correo.com</p>
@@ -14,71 +14,71 @@
   </div>
 
 <div class="formulario_contacto">
-    <h2 >Formularios De Contacto</h2>
+    <h2 >{{'FORM.CONTACT_FORM' |translate}}</h2>
     <form action="" [formGroup]="formulario" (ngSubmit)="onSubmit()" method="post">
         <div class="field">
-            <label for="nombre">Nombre Completo:</label>
+            <label for="nombre">{{'FORM.NAME' |translate}}:</label>
             <input type="text" id="nombre" formControlName="nombre">
 
             <div *ngIf="formulario.get('nombre')?.invalid && formulario.get('nombre')?.touched">
                 <span *ngIf="formulario.get('nombre')?.errors?.['required']">
-                    El nombre es obligatorio
+                    {{'FORM.NAME_REQUIRED' |translate}}
                 </span>
 
                 <span *ngIf="formulario.get('nombre')?.errors?.['minlength']">
-                    El nombre es muy corto
+                    {{'FORM.NAME_SHORT' |translate}}
                 </span>
 
                 <span *ngIf="formulario.get('nombre')?.errors?.['maxlength']">
-                    El nombre es muy largo
+                    {{'FORM.NAME_LONG' |translate}}
                 </span>
             </div>
         </div>
 
         <div class="field">
-            <label for="email">email:</label>
+            <label for="email">{{'FORM.EMAIL' |translate}}:</label>
             <input type="email" id="email" formControlName="email">
 
             <div *ngIf="formulario.get('email')?.invalid && formulario.get('email')?.touched">
                 <span *ngIf="formulario.get('email')?.errors?.['required']">
-                    El email es obligatorio
+                    {{'FORM.EMAIL_REQUIRED' |translate}}
                 </span>
 
                 <span *ngIf="formulario.get('email')?.errors?.['email']">
-                    El email no es valido
+                    {{'FORM.EMAIL_INVALID' |translate}}
                 </span>
             </div>
         </div>
 
         <div class="field">
-            <label for="edad">edad:</label>
+            <label for="edad">{{'FORM.AGE' |translate}}:</label>
             <input type="number" id="edad" formControlName="edad">
 
             <div *ngIf="formulario.get('edad')?.invalid && formulario.get('edad')?.touched">
                 <span *ngIf="formulario.get('edad')?.errors?.['required']">
-                    El edad es obligatoria
+                    {{'FORM.AGE_REQUIRED' |translate}}
                 </span>
 
                 <span *ngIf="formulario.get('edad')?.errors?.['min']">
-                    La edad minima es 18
+                    {{'FORM.AGE_MIN' |translate}}
                 </span>
             </div>
         </div>
 
         <div class="field">
-            <label for="mensaje">Mensaje:</label>
+            <label for="mensaje">{{'FORM.MESSAGE' |translate}}:</label>
             <textarea type="text" id="mensaje" formControlName="mensaje"></textarea>
 
             <div *ngIf="formulario.get('mensaje')?.invalid && formulario.get('mensaje')?.touched">
                 <span *ngIf="formulario.get('mensaje')?.errors?.['required']">
-                    El campo mensaje es obligatorio
+                    {{'FORM.MESSAGE_REQUIRED' |translate}}
                 </span>
 
                 <span *ngIf="formulario.get('mensaje')?.errors?.['minlength']">
-                    El mensaje es muy corto
+                    {{'FORM.MESSAGE_SHORT' |translate}}
                 </span>
             </div>
         </div>
-        <button type="submit" [disabled]="formulario.invalid">Enviar</button>
+        <button type="submit" [disabled]="formulario.invalid">{{'FORM.SUBMIT' |translate}}</button>
     </form>
 </div>

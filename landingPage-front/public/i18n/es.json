@@ -105,6 +105,35 @@
       "TERMS_OF_USE": "Términos de uso",
       "RIGHTS": "2025. Todos los derechos reservados a",
       "AUTHOR": "Calixto Bocamba"
+    },
+    
+    "FORM": {
+      "CONTACT_INFORMATION": "Información de Contacto",
+      "CONTACT_FORM": "Formulario de Contacto",
+      "NAME": "Nombre Completo",
+      "NAME_REQUIRED": "El nombre es obligatorio",
+      "NAME_SHORT": "El nombre es muy corto",
+      "NAME_LONG": "El nombre es muy largo",
+      "EMAIL": "Email",
+      "EMAIL_REQUIRED": "El email es obligatorio",
+      "EMAIL_INVALID": "El email no es válido",
+      "AGE": "Edad",
+      "AGE_REQUIRED": "La edad es obligatoria",
+      "AGE_MIN": "La edad mínima es 18",
+      "MESSAGE": "Mensaje",
+      "MESSAGE_REQUIRED": "El mensaje es obligatorio",
+      "MESSAGE_SHORT": "El mensaje es muy corto",
+      "SUBMIT": "Enviar"
+    },
+
+    "LOGIN": {
+      "LOGIN_TITLE": "Iniciar Sesión",
+      "USER": "Usuario",
+      "USER_REQUIRED": "El usuario es obligatorio",
+      "PASSWORD": "Contraseña",
+      "PASSWORD_REQUIRED": "La contraseña es obligatoria",
+      "LOGIN_BUTTON": "Entrar",
+      "ERROR_INVALID_CREDENTIALS": "Usuario o contraseña incorrectos"
     }
 
   

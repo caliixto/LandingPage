@@ -2,12 +2,13 @@ import { NgIf } from '@angular/common';
 import { Component, Output, EventEmitter } from '@angular/core';
 import { ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-formulario',
-  imports: [ReactiveFormsModule, NgIf],
+  imports: [ReactiveFormsModule, NgIf, TranslateModule],
   templateUrl: './formulario.component.html',
   styleUrl: './formulario.component.css'
 })
