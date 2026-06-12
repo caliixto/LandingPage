@@ -9,46 +9,43 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './proyecto-form.component.css'
 })
 export class ProyectoFormComponent {
+  // Elimina 'public formData: FormData = new FormData();' de aquí arriba
+  public archivoSeleccionado: File | null = null;
   esModoEdicion: boolean = false;
 
-  proyecto = {
-    titulo: '',
-    tags: '',
-    imagen: ''
-  };
+  proyecto = { titulo: '', tags: '', imagen: '' };
 
-    constructor(private formProyecto:ProyectoService){}
+  constructor(private formProyecto: ProyectoService) {}
 
   guardarOActualizar() {
+    // Creamos un formulario nuevo cada vez que guardamos
     const formData = new FormData();
     
-    // Añadimos los datos al "sobre"
     formData.append('titulo', this.proyecto.titulo);
     formData.append('tags', this.proyecto.tags);
     
-    // Si hay un archivo, lo añadimos también
     if (this.archivoSeleccionado) {
       formData.append('imagen', this.archivoSeleccionado);
+    } else {
+      alert("Por favor, selecciona una imagen.");
+      return;
     }
 
-    // Llamamos al servicio pasando el formData en lugar del objeto proyecto
     this.formProyecto.saveProject(formData).subscribe({
       next: (res) => alert('¡Guardado con éxito!'),
       error: (err) => {
-    console.log("--- DETALLE DEL ERROR ---");
-    console.log("Status:", err.status);
-    console.log("Cuerpo del error (err.error):", err.error); // Aquí está la clave
-    console.log("Mensaje:", err.error.message); // Si tu API envía un campo 'message'
+    console.error("--- DETALLE DEL ERROR ---");
+    console.error("Status:", err.status);
+    console.error("Cuerpo del error (err.error):", err.error); // <--- ESTO ES LO MÁS IMPORTANTE
   }
     });
-}
+  }
 
-// Variable para guardar el archivo seleccionado
-archivoSeleccionado: File | null = null;
-
-// Esta función se ejecuta cuando el usuario elige una imagen
-subirArchivo(event: any) {
-  this.archivoSeleccionado = event.target.files[0];
-  console.log('Archivo seleccionado:', this.archivoSeleccionado);
-}
+  subirArchivo(event: any) {
+    const target = event.target as HTMLInputElement;
+    if (target.files && target.files.length > 0) {
+      this.archivoSeleccionado = target.files[0];
+      console.log('Archivo seleccionado:', this.archivoSeleccionado);
+    }
+  }
 }

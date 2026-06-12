@@ -18,50 +18,48 @@ const deleteProject = (req, res) =>{
         });
 }
 
-const saveProject = (req, res) =>{
+const saveProject = (req, res) => {
+
+    console.log("--- DATOS RECIBIDOS EN EL SERVIDOR ---");
+    console.log("Body:", req.body);
+    console.log("File:", req.file);
     const params = req.body;
-    const file = req.file; // Multer pone el archivo aquí
+    const file = req.file;
 
-    // LOG DE SEGURIDAD: Mira qué llega realmente
-    console.log("PARAMS:", params); 
-    console.log("FILE:", file);
-
-    // Si params.titulo o params.tags llegan como undefined, aquí es donde falla
+    // Validación
     if (!params.titulo || !params.tags || !file) {
         return res.status(400).send({ 
             status: 'error', 
             message: 'Faltan datos por enviar',
-            debug: { titulo: !!params.titulo, tags: !!params.tags, file: !!file } // Esto te dirá qué falta exactamente
+            debug: { titulo: !!params.titulo, tags: !!params.tags, file: !!file }
         });
     }
 
-    // Guardado...
-    let projectoToSave = new project({
-        titulo: body.titulo,
-        tags: body.tags,
-        imagen: imageName
+    // Usamos params (que es req.body) y file.filename
+    let projectoToSave = new Project({ // Asegúrate que el modelo sea 'Project'
+        titulo: params.titulo,
+        tags: params.tags,
+        imagen: file.filename // Aquí está el nombre que generó Multer
     });
 
-    //Guardo el objeto en la bbdd
-
-    projectoToSave.save().then(project =>{
-
-        if (!project){
+    projectoToSave.save().then(projectSaved => {
+        if (!projectSaved) {
             return res.status(404).send({
-            status:"error",
-            message:"El projecto no se ha guardado correctamente"
-        });
+                status: "error",
+                message: "El proyecto no se ha guardado correctamente"
+            });
         }
 
         return res.status(200).send({
-            status:"success",
-            project
+            status: "success",
+            project: projectSaved
         });
 
-    }).catch(error =>{
-         return res.status(500).send({
-            status:"error",
-            message:"Error al guardar el projecto", error
+    }).catch(error => {
+        return res.status(500).send({
+            status: "error",
+            message: "Error al guardar el proyecto", 
+            error
         });
     });
 };
