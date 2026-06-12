@@ -5,10 +5,11 @@ import { AdminProjectServiceService } from '../services/admin-project-service.se
 import { NgFor } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2';
+import { ProyectoFormComponent } from '../proyecto-form/proyecto-form.component';
 
 @Component({
   selector: 'app-admin-panel',
-  imports: [NgFor],
+  imports: [NgFor, ProyectoFormComponent],
   templateUrl: './admin-panel.component.html',
   styleUrl: './admin-panel.component.css'
 })
