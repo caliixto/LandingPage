@@ -16,18 +16,20 @@ connection();
 
 const app = express()
 
-app.use((req, res, next) => {
-    console.log("--- REQUEST RECIBIDA ---");
-    console.log("Método:", req.method);
-    console.log("URL:", req.url);
-    console.log("Content-Type:", req.headers['content-type']);
-    next();
-});
+
 const port= process.env.PORT || 3977;
 
 //Configurar el cors
 app.use(cors());
 
+
+//Creacion carpeta
+
+const fs = require('fs');
+const path = './uploads/images';
+if (!fs.existsSync(path)) {
+    fs.mkdirSync(path, { recursive: true });
+}
 //Cargar rutas
 const Projectrouter = require("./routers/project");
 const Adminrouter = require("./routers/admin");
