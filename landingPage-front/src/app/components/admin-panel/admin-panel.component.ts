@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { LoginFormServicesService } from '../login-form-services.service';
 import { AdminProjectServiceService } from '../services/admin-project-service.service';
 import { NgFor } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-admin-panel',
@@ -15,7 +17,9 @@ export class AdminPanelComponent {
 
   public proyectos:any;
   
-  constructor(private authService: LoginFormServicesService, private router: Router, private _adminProjectService:AdminProjectServiceService){
+  constructor(private authService: LoginFormServicesService, 
+    private router: Router, private _adminProjectService:AdminProjectServiceService,
+    private http: HttpClient){
 
   }
 
@@ -53,6 +57,29 @@ getprojectsAdmin(){
       complete: () => {
         console.log("peticion de lista de proyectos completada");
       }
+  });
+}
+
+borrarProyecto(id:string) {
+  Swal.fire({
+    title: '¿Seguro que desea eliminar el proyecto?',
+    text: "No podrás revertir esta accion.",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sí, borrarlo'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Aquí va tu llamada al servicio
+      this.http.delete(`http://localhost:3977/api/adminProject/deleteProject/${id}`).subscribe(
+        (res: any) => {
+          this.proyectos = this.proyectos.filter((p: any) => p._id !== id);
+          Swal.fire('¡Eliminado!', 'El proyecto ha sido borrado.', 'success');
+        },
+        error => Swal.fire('Error', 'No se pudo eliminar el proyecto.', 'error')
+      );
+    }
   });
 }
   

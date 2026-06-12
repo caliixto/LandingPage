@@ -3,7 +3,7 @@
     <img [src]="fotoPerfil" alt="Admin" class="admin-avatar">
     <p class="adminpanel">Admin</p>
   </div>
-  <button class="cerrarSession" (click)="cerrarSesion()">Cerrar Sesión</button>
+  <button class="cerrarSession" (click)="cerrarSesion()"><i class="fa-solid fa-sign-out icon_cerrar"></i>Cerrar Sesión</button>
 </div>
 
 <div class="admin-container">
@@ -28,7 +28,7 @@
         <i class="fa-solid fa-pen"></i>
       </button>
 
-      <button class="btn-delete" title="Eliminar proyecto">
+      <button class="btn-delete" title="Eliminar proyecto" (click)="borrarProyecto(p._id)">
         <i class="fa-solid fa-trash"></i>
       </button>
     </div>
