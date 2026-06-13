@@ -38,14 +38,27 @@
 
 </div>
 
-    <div class="project-card add-card">
-      <div class="add-icon">
-        <i class="fa-solid fa-plus"></i>
-      </div>
-      <span>Nuevo Proyecto</span>
-    </div>
+ <div class="project-card add-card" (click)="mostrarFormulario = true">
+  <div class="add-icon">
+    <i class="fa-solid fa-plus"></i>
+  </div>
+  <span>Nuevo Proyecto</span>
+</div>
+
+<div class="modal-overlay"[class.active]="mostrarFormulario">
+  <div class="modal-content">
+    <button class="btn-close" (click)="mostrarFormulario = false">X</button>
+    
+    <app-proyecto-form (cerrar)="mostrarFormulario = false"></app-proyecto-form>
   </div>
 </div>
 
-<app-proyecto-form></app-proyecto-form>
+
+<div *ngIf="authService.mostrarAviso" class="session-warning-container">
+    <div class="session-warning-card">
+        <h3>¿Sigues trabajando?</h3>
+        <p>Tu sesión expirará por inactividad en <strong>{{ authService.segundosRestantes }}</strong> segundos.</p>
+        <button class="session-warning-button" (click)="authService.continuarSesion()">Continuar sesión</button>
+    </div>
+</div>
 

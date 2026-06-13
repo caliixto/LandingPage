@@ -2,27 +2,28 @@ import { Component, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginFormServicesService } from '../login-form-services.service';
 import { AdminProjectServiceService } from '../services/admin-project-service.service';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2';
 import { ProyectoFormComponent } from '../proyecto-form/proyecto-form.component';
 
 @Component({
   selector: 'app-admin-panel',
-  imports: [NgFor, ProyectoFormComponent],
+  imports: [NgFor, ProyectoFormComponent, NgIf],
   templateUrl: './admin-panel.component.html',
   styleUrl: './admin-panel.component.css'
 })
 
 export class AdminPanelComponent {
-
+  mostrarFormulario: boolean = false;
   public proyectos:any;
   
-  constructor(private authService: LoginFormServicesService, 
+  constructor(public authService: LoginFormServicesService, 
     private router: Router, private _adminProjectService:AdminProjectServiceService,
     private http: HttpClient){
 
   }
+
 
 cerrarSesion() {
   this.authService.cerrarSesion();
@@ -94,5 +95,15 @@ obtenerUrlImagen(rutaEnBD: string): string {
   // 2. Si solo tiene el nombre del archivo, le añadimos la carpeta
   return 'https://landingpage-ezzw.onrender.com/uploads/images/' + rutaEnBD;
 }
+
+abrirFormulario() {
+    this.mostrarFormulario = true;
+  }
+
+  // Llama a esto cuando el formulario termine de guardar
+  cerrarFormulario() {
+    this.mostrarFormulario = false;
+  }
+
   
 }

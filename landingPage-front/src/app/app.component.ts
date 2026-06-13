@@ -4,6 +4,7 @@ import { LoginFormServicesService } from './components/login-form-services.servi
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { NgIf } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
+import { HostListener } from '@angular/core';
 
 
 @Component({
@@ -20,7 +21,8 @@ export class AppComponent {
     localStorage.setItem("dark", JSON.stringify(this.isDarkMode));
   }
 
-  constructor(public loginService:LoginFormServicesService,private translate: TranslateService){
+  constructor(public loginService:LoginFormServicesService,private translate: TranslateService,
+     public authService: LoginFormServicesService){
 
     this.translate.addLangs(['es', 'en', 'fr']);
     this.translate.setDefaultLang('es');
@@ -36,5 +38,12 @@ export class AppComponent {
    this.isDarkMode = JSON.parse(localStorage.getItem("dark") || 'false');
  }
 
+ @HostListener('document:click')
+  @HostListener('document:keydown')
+  resetTimer() {
+    if (this.authService.estarLogueado()) {
+      this.authService.continuarSesion();
+    }
+  }
  
 }

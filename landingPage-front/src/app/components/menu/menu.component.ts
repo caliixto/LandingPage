@@ -36,7 +36,7 @@ changeLanguage(lang: string) {
   this.translate.use(lang);
 }
 
-// En tu función de clic:
+//función de clic:
 abrirLogin() {
   this.loginService.abrir();
 }

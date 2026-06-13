@@ -1,19 +1,22 @@
 <div class="form-container">
   <h2>{{ esModoEdicion ? 'Editar Proyecto' : 'Crear Nuevo Proyecto' }}</h2>
 
-  <form (ngSubmit)="guardarOActualizar()">
-    
+  <form [formGroup]="formulario" (ngSubmit)="guardarOActualizar()">
     <label>Título:</label>
-    <input [(ngModel)]="proyecto.titulo" name="titulo" #titulo="ngModel" required placeholder="Título" class="form-control">
+    <input formControlName="titulo" placeholder="Título" class="form-control">
 
     <label>Tags:</label>
-    <input [(ngModel)]="proyecto.tags" name="tags" #tags="ngModel" required placeholder="Tags" class="form-control">
+    <input formControlName="tags" placeholder="Tags" class="form-control">
 
     <label>Imagen:</label>
-    <input type="file" (change)="subirArchivo($event)" name="file0">
+    <input type="file" (change)="subirArchivo($event)">
     
-    <button type="submit">
+    <button type="submit" [disabled]="formulario.invalid">
       {{ esModoEdicion ? 'Actualizar Cambios' : 'Guardar Proyecto' }}
     </button>
-  </form>
+
+    <div *ngIf="mensajeExito" class="toast-success">
+      ¡Proyecto guardado correctamente!
+    </div>
+</form>
 </div>

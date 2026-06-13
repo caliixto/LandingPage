@@ -1,14 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { ProyectoService} from '../services/proyecto.service';
+import { ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-proyecto-form',
-  imports: [FormsModule],
+  imports: [FormsModule,ReactiveFormsModule, NgIf],
   templateUrl: './proyecto-form.component.html',
   styleUrl: './proyecto-form.component.css'
 })
 export class ProyectoFormComponent {
+  mensajeExito: boolean = false;
+
+  formulario = new FormGroup({
+    titulo: new FormControl('', [Validators.required,Validators.minLength(3), Validators.maxLength(50)]),
+    tags: new FormControl('', [Validators.required])
+  });
+
+
+
   // Elimina 'public formData: FormData = new FormData();' de aquí arriba
   public archivoSeleccionado: File | null = null;
   esModoEdicion: boolean = false;
@@ -18,28 +30,36 @@ export class ProyectoFormComponent {
   constructor(private formProyecto: ProyectoService) {}
 
   guardarOActualizar() {
-    // Creamos un formulario nuevo cada vez que guardamos
+    // 1. Extraemos los valores con seguridad
+    const titulo = this.formulario.get('titulo')?.value || '';
+    const tags = this.formulario.get('tags')?.value || '';
+
+    // 2. Creamos el FormData
     const formData = new FormData();
     
-    formData.append('titulo', this.proyecto.titulo);
-    formData.append('tags', this.proyecto.tags);
+    // 3. Añadimos los datos (ahora garantizamos que son strings)
+    formData.append('titulo', titulo);
+    formData.append('tags', tags);
     
     if (this.archivoSeleccionado) {
-      formData.append('file0', this.archivoSeleccionado);
+        formData.append('file0', this.archivoSeleccionado);
     } else {
-      alert("Por favor, selecciona una imagen.");
-      return;
+        alert("Por favor, selecciona una imagen.");
+        return;
     }
 
+    // 4. Enviamos al servicio
     this.formProyecto.saveProject(formData).subscribe({
-      next: (res) => alert('¡Guardado con éxito!'),
-      error: (err) => {
-    console.error("--- DETALLE DEL ERROR ---");
-    console.error("Status:", err.status);
-    console.error("Cuerpo del error (err.error):", err.error); // <--- ESTO ES LO MÁS IMPORTANTE
-  }
-    });
-  }
+    next: (res) => {
+      this.mensajeExito = true; // Mostramos el mensaje bonito
+      setTimeout(() => {
+        this.mensajeExito = false;
+        this.clear();
+        this.cerrar.emit(); // Cerramos tras 2 segundos
+      }, 2000);
+    }
+  });
+}
 
   subirArchivo(event: any) {
     const target = event.target as HTMLInputElement;
@@ -48,4 +68,11 @@ export class ProyectoFormComponent {
       console.log('Archivo seleccionado:', this.archivoSeleccionado);
     }
   }
+
+   clear(){
+    this.formulario.reset();
+  }
+
+
+  @Output() cerrar = new EventEmitter();
 }
