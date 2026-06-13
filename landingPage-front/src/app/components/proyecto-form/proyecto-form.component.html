@@ -10,7 +10,7 @@
     <input [(ngModel)]="proyecto.tags" name="tags" #tags="ngModel" required placeholder="Tags" class="form-control">
 
     <label>Imagen:</label>
-    <input type="file" (change)="subirArchivo($event)" accept="image/*">
+    <input type="file" (change)="subirArchivo($event)" name="file0">
     
     <button type="submit">
       {{ esModoEdicion ? 'Actualizar Cambios' : 'Guardar Proyecto' }}
