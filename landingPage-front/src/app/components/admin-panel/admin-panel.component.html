@@ -13,7 +13,7 @@
   <div class="project-card" *ngFor="let p of proyectos">
   
     <div class="project-image-placeholder">
-      <img [src]="'https://landingpage-ezzw.onrender.com/uploads/images/' + p.imagen" [alt]="p.titulo">
+      <img [src]="obtenerUrlImagen(p.imagen)" [alt]="p.titulo">
     </div> 
     <div class="project-info">
 
