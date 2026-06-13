@@ -47,7 +47,7 @@ const save = (req, res) =>{
 
 
 const list = (req, res) =>{
-    project.find()
+    Project.find()
         .then(projects =>{
             if (projects.length===0){
                 return res.status(404).send({
@@ -73,7 +73,7 @@ const list = (req, res) =>{
 const item = (req, res) =>{
     let id = req.params.id;
 
-    project.findById(id)
+    Project.findById(id)
         .then(project =>{
             if (!project){
             return res.status(404).send({
@@ -84,7 +84,7 @@ const item = (req, res) =>{
 
         return res.status(200).send({
             status:"success",
-            project
+            Project
         });
         }).catch(error =>{
          return res.status(500).send({
@@ -98,7 +98,7 @@ const item = (req, res) =>{
 const deleteProject = (req, res) =>{
     let id = req.params.id;
 
-    project.findByIdAndDelete(id)
+    Project.findByIdAndDelete(id)
         .deleteOne()
         .then(project =>{
             if (!project){
@@ -110,7 +110,7 @@ const deleteProject = (req, res) =>{
 
         return res.status(200).send({
             status:"success",
-            project
+            Project
         });
         }).catch(error =>{
          return res.status(500).send({
@@ -132,10 +132,10 @@ const update = (req, res) =>{
         });
         }
 
-        project.findByIdAndUpdate(body.id, body, {new:true})
+        Project.findByIdAndUpdate(body.id, body, {new:true})
         .then(projectUpdate =>{
 
-            if (!project){
+            if (!Project){
                 return res.status(404).send({
                 status:"error",
                 message:"No se ha encontrado el projecto"
@@ -144,7 +144,7 @@ const update = (req, res) =>{
 
             return res.status(200).send({
             status:"success",
-            project: projectUpdate
+            Project: projectUpdate
 
         });
         }).catch(error =>{
@@ -180,10 +180,10 @@ const upload = (req, res) =>{
         }
 
 
-        project.findByIdAndUpdate({_id: id}, {image: req.file.filename}, {new: false})
+        Project.findByIdAndUpdate({_id: id}, {image: req.file.filename}, {new: false})
             .then(projectUpdate =>{
 
-                if (!project){
+                if (!Project){
 
                     fs.unlinkSync(filepath);
 
@@ -203,7 +203,7 @@ const upload = (req, res) =>{
 
                 return res.status(200).send({
                 status:"success",
-                project: projectUpdate,
+                Project: projectUpdate,
                 newFile: req.file.filename
 
                 });
