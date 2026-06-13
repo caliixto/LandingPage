@@ -20,20 +20,19 @@ const deleteProject = (req, res) =>{
 
 const saveProject = (req, res) => {
 
-    console.log("--- DATOS RECIBIDOS EN EL SERVIDOR ---");
-    console.log("Body:", req.body);
-    console.log("File:", req.file);
-    const params = req.body;
+   const params = req.body;
     const file = req.file;
 
-    // Validación
-    if (!params.titulo || !params.tags || !file) {
-        return res.status(400).send({ 
-            status: 'error', 
-            message: 'Faltan datos por enviar',
-            debug: { titulo: !!params.titulo, tags: !!params.tags, file: !!file }
-        });
-    }
+   // Imprimimos todo lo que llega al servidor
+    console.log("--- CONTENIDO DE REQ.BODY ---", req.body);
+    console.log("--- CONTENIDO DE REQ.FILE ---", req.file);
+
+    return res.status(200).send({
+        status: 'debug',
+        receivedBody: req.body,
+        receivedFile: req.file ? 'Archivo detectado' : 'No se detectó archivo',
+        message: 'Revisa la consola de Render para ver los logs detallados'
+    });
 
     // Usamos params (que es req.body) y file.filename
     let projectoToSave = new Project({ // Asegúrate que el modelo sea 'Project'
