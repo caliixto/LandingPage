@@ -78,6 +78,27 @@
 .project-card:hover {
   transform: translateY(-5px);
 }
+/* Nuevo contenedor para la imagen en el Admin Panel */
+.project-img-wrapper {
+  width: 100%;
+  height: 200px; /* Altura fija para todas las tarjetas */
+  overflow: hidden;
+  border-radius: 8px; /* Bordes redondeados para la imagen */
+  margin-bottom: 1rem;
+}
+
+/* La imagen dentro de la tarjeta */
+.project-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ESTO ES LA CLAVE: Recorta y centra sin deformar */
+  transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el ratón por la tarjeta */
+.project-card:hover .project-img-wrapper img {
+  transform: scale(1.05); /* Un pequeño zoom elegante */
+}
 
 /* La tarjeta del "+" */
 .add-card {
