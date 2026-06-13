@@ -24,7 +24,7 @@ const upload = multer({storage})
 
 
 //Definir las Rutas
-router.post("/save",ProjectController.save);
+router.post("/save", upload.single("file0"), ProjectController.save);
 router.get("/list", ProjectController.list);
 router.get("/item/:id",ProjectController.item);
 router.delete("/deleteProject/:id",ProjectController.deleteProject);
