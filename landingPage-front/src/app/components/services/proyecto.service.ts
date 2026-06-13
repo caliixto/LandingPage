@@ -7,7 +7,7 @@ import { tap } from 'rxjs/operators'; // <--- 2. Importa tap
   providedIn: 'root'
 })
 export class ProyectoService {
-  private url = 'https://landingpage-ezzw.onrender.com/api/project/';
+  public url = 'https://landingpage-ezzw.onrender.com/api/project/';
   
   // 3. Crea el canal de comunicación
   private proyectoGuardadoSubject = new Subject<void>();

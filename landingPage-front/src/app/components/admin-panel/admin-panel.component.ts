@@ -80,7 +80,9 @@ borrarProyecto(id:string) {
   }).then((result) => {
     if (result.isConfirmed) {
       // Aquí va tu llamada al servicio
-      this.http.delete(`http://localhost:3977/api/project/deleteProject/${id}`).subscribe(
+
+      const urlBorrado = `${this.proyectoService.url}deleteProject/${id}`;
+      this.http.delete(urlBorrado).subscribe(
         (res:any) => {
           this.proyectos = this.proyectos.filter((p:any) => p._id !== id);
           Swal.fire('¡Eliminado!', 'El proyecto ha sido borrado.', 'success');
