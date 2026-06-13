@@ -35,5 +35,4 @@ const projectSchema = new Schema({
 //Crear el modelo, indicarle la coleccion en donde se van a guardar los docs
 
 //Expotar modelos
-
-module.exports = model('Project', projectSchema);
+module.exports = model('Project', projectSchema, 'proyectos');
