@@ -18,11 +18,9 @@ app.use('/uploads', express.static('uploads'));
 // 4. Cargar rutas
 const Projectrouter = require("./routers/project");
 const Adminrouter = require("./routers/admin");
-const adminProject = require("./routers/adminProject");
 
 app.use("/api/admin", Adminrouter);
 app.use('/api/project', Projectrouter);
-app.use('/api/adminProject', adminProject);
 
 // 5. Ruta base
 app.get('/', (req, res) => {

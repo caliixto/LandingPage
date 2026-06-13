@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProyectoService {
 
-  private url = 'https://landingpage-ezzw.onrender.com/api/adminProject/';
+  private url = 'https://landingpage-ezzw.onrender.com/api/project/';
 
     constructor(private http: HttpClient) { }
 
