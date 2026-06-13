@@ -1,4 +1,16 @@
 //Importar dependencias
+const fs = require('fs');
+const path = require('path');
+
+console.log("--- LISTADO DE ARCHIVOS EN CONTROLLERS ---");
+const rutaControllers = path.join(__dirname, 'controllers');
+if (fs.existsSync(rutaControllers)) {
+    console.log(fs.readdirSync(rutaControllers));
+} else {
+    console.log("LA CARPETA CONTROLLERS NO EXISTE EN:", rutaControllers);
+}
+
+
 
 const connection = require("./database/connection");
 const express = require("express");
@@ -23,13 +35,6 @@ const port= process.env.PORT || 3977;
 app.use(cors());
 
 
-//Creacion carpeta
-
-const fs = require('fs');
-const path = './uploads/images';
-if (!fs.existsSync(path)) {
-    fs.mkdirSync(path, { recursive: true });
-}
 //Cargar rutas
 const Projectrouter = require("./routers/project");
 const Adminrouter = require("./routers/admin");
