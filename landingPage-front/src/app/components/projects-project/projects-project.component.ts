@@ -36,14 +36,11 @@ ngOnInit(): void {
   }
 
   //Para la imagen
-obtenerUrlImagen(rutaEnBD: string): string {
-  // 1. Si la ruta ya tiene '/uploads/', solo le pegamos el dominio
-  if (rutaEnBD.includes('/uploads/')) {
+  obtenerUrlImagen(rutaEnBD: string): string {
+    if (rutaEnBD.startsWith('http')) {
+      return rutaEnBD;
+    }
+    // 2. Si es una ruta antigua local (sin http), añádimos el dominio de Render.
     return 'https://landingpage-ezzw.onrender.com' + rutaEnBD;
   }
-  
-  // 2. Si solo tiene el nombre del archivo, le añadimos la carpeta
-  return 'https://landingpage-ezzw.onrender.com/uploads/images/' + rutaEnBD;
-}
-
 }
