@@ -4,6 +4,7 @@ import { ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import {Subject } from 'rxjs';
 
 @Component({
   selector: 'app-proyecto-form',
@@ -19,7 +20,8 @@ export class ProyectoFormComponent {
     tags: new FormControl('', [Validators.required])
   });
 
-
+  private proyectoGuardadoSubject = new Subject<void>();
+  proyectoGuardado$ = this.proyectoGuardadoSubject.asObservable();
 
   // Elimina 'public formData: FormData = new FormData();' de aquí arriba
   public archivoSeleccionado: File | null = null;
@@ -50,15 +52,16 @@ export class ProyectoFormComponent {
 
     // 4. Enviamos al servicio
     this.formProyecto.saveProject(formData).subscribe({
-    next: (res) => {
-      this.mensajeExito = true; // Mostramos el mensaje bonito
-      setTimeout(() => {
-        this.mensajeExito = false;
-        this.clear();
-        this.cerrar.emit(); // Cerramos tras 2 segundos
-      }, 2000);
-    }
-  });
+        next: (res) => {
+            this.mensajeExito = true;
+            // Al hacer el next() en el servicio, la lista se actualizará sola
+            setTimeout(() => {
+                this.mensajeExito = false;
+                this.clear();
+                this.cerrar.emit(); 
+            }, 2000);
+        }
+    });
 }
 
   subirArchivo(event: any) {

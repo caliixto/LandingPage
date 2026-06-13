@@ -6,6 +6,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2';
 import { ProyectoFormComponent } from '../proyecto-form/proyecto-form.component';
+import { ProyectoService } from '../services/proyecto.service';
 
 @Component({
   selector: 'app-admin-panel',
@@ -20,7 +21,8 @@ export class AdminPanelComponent {
   
   constructor(public authService: LoginFormServicesService, 
     private router: Router, private _adminProjectService:AdminProjectServiceService,
-    private http: HttpClient){
+    private http: HttpClient,
+    private proyectoService: ProyectoService){
 
   }
 
@@ -43,8 +45,11 @@ cerrarSesion() {
   } else {
     // Opcional: Pon una imagen por defecto si no hay nada guardado
     this.fotoPerfil = './img/perfil.jpg';
+
   }
-  this.getprojectsAdmin();
+  this.proyectoService.proyectoGuardado$.subscribe(() => {
+      this.getprojectsAdmin();
+    });
 }
 
 getprojectsAdmin(){
