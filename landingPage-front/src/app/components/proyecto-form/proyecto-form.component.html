@@ -1,0 +1,19 @@
+<div class="form-container">
+  <h2>{{ esModoEdicion ? 'Editar Proyecto' : 'Crear Nuevo Proyecto' }}</h2>
+
+  <form (ngSubmit)="guardarOActualizar()">
+    
+    <label>Título:</label>
+    <input [(ngModel)]="proyecto.titulo" name="titulo" #titulo="ngModel" required placeholder="Título" class="form-control">
+
+    <label>Tags:</label>
+    <input [(ngModel)]="proyecto.tags" name="tags" #tags="ngModel" required placeholder="Tags" class="form-control">
+
+    <label>Imagen:</label>
+    <input type="file" (change)="subirArchivo($event)" accept="image/*">
+    
+    <button type="submit">
+      {{ esModoEdicion ? 'Actualizar Cambios' : 'Guardar Proyecto' }}
+    </button>
+  </form>
+</div>

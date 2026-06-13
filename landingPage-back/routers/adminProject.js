@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 
 //cargar controlador
-const adminProject = require("../controllers/project");
+const adminProject = require("../controllers/adminProject");
 
 
 
@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
         cb(null, "./uploads/images");
     },
     filename: (req, file, cb)=>{
-        cb(null, "project-" + Date.now() + "-" + file.originalname)
+        cb(null, "adminProject-" + Date.now() + "-" + file.originalname)
     }
 });
 
@@ -24,13 +24,12 @@ const upload = multer({storage})
 
 
 //Definir las Rutas
-router.post("/save",adminProject.save);
-router.get("/list",adminProject.list);
-router.get("/item/:id",adminProject.item);
+router.post("/save", upload.single('imagen'), adminProject.saveProject);
+//router.get("/item/:id",adminProject.item);
 router.delete("/deleteProject/:id",adminProject.deleteProject);
-router.put("/update",adminProject.update);
-router.put("/upload/:id",upload.single("file0"), adminProject.upload);
-router.get("/image/:file",adminProject.getImage);
+//router.put("/update",adminProject.update);
+//router.put("/upload/:id",upload.single("file0"), adminProject.upload);
+//router.get("/image/:file",adminProject.getImage);
 
 
 //Exportar Rutas
