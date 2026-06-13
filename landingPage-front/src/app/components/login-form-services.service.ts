@@ -63,7 +63,7 @@ export class LoginFormServicesService {
       this.logoutTimer = setTimeout(() => {
           this.mostrarAviso = true;
           this.iniciarCuentaAtras();
-      }, 20000); 
+      }, 150000); 
     }
 
     iniciarCuentaAtras() {
