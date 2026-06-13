@@ -177,4 +177,14 @@
   .projects-grid{
     flex-direction: column;
   }
+
+  .cerrarSession {
+    background-color: transparent;
+    width: 55%;
+    line-height: 2rem;
+    height: 50px;
+    border: 1px solid #cbd5e0;
+    padding: 5px 10px;
+    border-radius: 10px; /* Bordes redondeados */
+  }
 }

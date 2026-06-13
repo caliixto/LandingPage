@@ -73,8 +73,8 @@ borrarProyecto(id:string) {
     if (result.isConfirmed) {
       // Aquí va tu llamada al servicio
       this.http.delete(`http://localhost:3977/api/adminProject/deleteProject/${id}`).subscribe(
-        (res: any) => {
-          this.proyectos = this.proyectos.filter((p: any) => p._id !== id);
+        (res:any) => {
+          this.proyectos = this.proyectos.filter((p:any) => p._id !== id);
           Swal.fire('¡Eliminado!', 'El proyecto ha sido borrado.', 'success');
         },
         error => Swal.fire('Error', 'No se pudo eliminar el proyecto.', 'error')
