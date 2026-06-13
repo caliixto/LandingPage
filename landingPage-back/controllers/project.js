@@ -5,8 +5,9 @@ const Project = require("../models/project");
 const save = (req, res) => {
     let body = req.body;
     
-    // Aquí es donde Multer coloca el archivo procesado si usaste 'file0'
+    // archivo procesado 
     let nombreArchivo = req.file ? req.file.filename : null;
+    console.log(req.file)
 
     // Si tu esquema pide 'imagen', se la pasamos aquí
     let projectoToSave = new Project({
@@ -17,7 +18,6 @@ const save = (req, res) => {
 
     if (!body.titulo || !body.tags || !nombreArchivo) {
         return res.status(400).send({ status: "error", message: "Faltan datos" });
-        console.log(req.file)
     }
 
     projectoToSave.save().then(projectSaved => {
