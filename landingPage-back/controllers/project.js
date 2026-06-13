@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const project = require("../models/project");
+const Project = require("../models/project");
 
 const save = (req, res) =>{
 
@@ -19,13 +19,13 @@ const save = (req, res) =>{
 
     //Crear objetos
 
-        let projectoToSave = new project(body);
+        let projectoToSave = new Project(body);
 
     //Guardo el objeto en la bbdd
 
-    projectoToSave.save().then(project =>{
+    projectoToSave.save().then(Project =>{
 
-        if (!project){
+        if (!Project){
             return res.status(404).send({
             status:"error",
             message:"El projecto no se ha guardado correctamente"
@@ -34,7 +34,7 @@ const save = (req, res) =>{
 
         return res.status(200).send({
             status:"success",
-            project
+            Project
         });
 
     }).catch(error =>{

@@ -25,10 +25,7 @@ const upload = multer({storage})
 
 //Definir las Rutas
 router.post("/save",ProjectController.save);
-// Añade esto al principio de tu archivo de rutas
-router.get("/prueba", (req, res) => {
-    return res.status(200).send({ message: "¡La ruta funciona correctamente!" });
-});
+router.get("/list", ProjectController.list);
 router.get("/item/:id",ProjectController.item);
 router.delete("/deleteProject/:id",ProjectController.deleteProject);
 router.put("/update",ProjectController.update);
