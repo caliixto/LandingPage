@@ -11,6 +11,7 @@ const storage = new CloudinaryStorage({
   params: {
     folder: 'landing-page-proyectos',
     format: async (req, file) => 'jpg',
+    quality: 'auto:good'
   },
 });
 
