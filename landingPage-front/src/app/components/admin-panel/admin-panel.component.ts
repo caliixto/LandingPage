@@ -96,7 +96,11 @@ borrarProyecto(id:string) {
 //Para la imagen
 // Para la imagen
 obtenerUrlImagen(rutaEnBD: string): string {
-  return rutaEnBD;
+  if (rutaEnBD.startsWith('http')) {
+    return rutaEnBD;
+  }
+  // 2. Si es una ruta antigua local (sin http), añádele el dominio de Render.
+  return 'https://landingpage-ezzw.onrender.com' + rutaEnBD;
 }
 
 abrirFormulario() {
