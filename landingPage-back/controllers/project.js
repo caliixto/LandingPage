@@ -17,6 +17,7 @@ const save = (req, res) => {
 
     if (!body.titulo || !body.tags || !nombreArchivo) {
         return res.status(400).send({ status: "error", message: "Faltan datos" });
+        console.log(req.file)
     }
 
     projectoToSave.save().then(projectSaved => {
