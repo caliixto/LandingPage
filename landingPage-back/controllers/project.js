@@ -5,29 +5,29 @@ const Project = require("../models/project");
 const save = (req, res) => {
     let body = req.body;
     
-    // archivo procesado 
-    let nombreArchivo = req.file ? req.file.filename : null;
-    console.log(req.file)
+    // Cloudinary nos devuelve la URL pública en 'req.file.path'
+    let urlImagen = req.file ? req.file.path : null;
+    console.log("Archivo subido a Cloudinary:", urlImagen);
 
-    // Si tu esquema pide 'imagen', se la pasamos aquí
+    // Validación
+    if (!body.titulo || !body.tags || !urlImagen) {
+        return res.status(400).send({ status: "error", message: "Faltan datos o la imagen no se subió" });
+    }
+
+    // Guardamos la URL directamente en el campo 'imagen'
     let projectoToSave = new Project({
         titulo: body.titulo,
         tags: body.tags,
-        imagen: "/uploads/images/" + nombreArchivo
+        imagen: urlImagen // Aquí va la URL de Cloudinary
     });
-
-    if (!body.titulo || !body.tags || !nombreArchivo) {
-        return res.status(400).send({ status: "error", message: "Faltan datos" });
-    }
 
     projectoToSave.save().then(projectSaved => {
         return res.status(200).send({ status: "success", project: projectSaved });
     }).catch(error => {
         console.error("Error Mongoose:", error);
-        return res.status(500).send({ status: "error", message: "Error al guardar" });
+        return res.status(500).send({ status: "error", message: "Error al guardar en BD" });
     });
 };
-
 const list = (req, res) => {
     Project.find().then(projects => {
         if (!projects || projects.length === 0) {

@@ -1,26 +1,20 @@
-//cargar express que es modulo HTTP
-
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-
-//cargar controlador
+const multer = require('multer');
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const cloudinary = require('cloudinary').v2;
 const ProjectController = require("../controllers/project");
 
-
-
-//Configurar Multer
-const multer = require("multer");
-
-const storage = multer.diskStorage({
-    destination: (req, file, cb)=>{
-        cb(null, "./uploads/images");
-    },
-    filename: (req, file, cb)=>{
-        cb(null, "project-" + Date.now() + "-" + file.originalname)
-    }
+// Definir el almacenamiento
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: 'landing-page-proyectos',
+    format: async (req, file) => 'jpg',
+  },
 });
 
-const upload = multer({storage})
+const upload = multer({ storage: storage });
 
 
 //Definir las Rutas
