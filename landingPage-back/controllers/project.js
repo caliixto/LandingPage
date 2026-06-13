@@ -4,10 +4,21 @@ const Project = require("../models/project");
 
 const save = (req, res) => {
     let body = req.body;
-    if (!body.titulo || !body.tags || !body.imagen) {
+    
+    // Si hay un archivo, usamos su nombre. Si no, usamos lo que venga en el body.imagen
+    let imagenNombre = req.file ? req.file.filename : body.imagen;
+
+    if (!body.titulo || !body.tags || !imagenNombre) {
         return res.status(400).send({ status: "error", message: "Faltan datos" });
     }
-    let projectoToSave = new Project(body);
+
+    // Creamos el objeto con la imagen correcta
+    let projectoToSave = new Project({
+        titulo: body.titulo,
+        tags: body.tags,
+        imagen: imagenNombre
+    });
+
     projectoToSave.save().then(projectSaved => {
         if (!projectSaved) return res.status(404).send({ status: "error", message: "No guardado" });
         return res.status(200).send({ status: "success", project: projectSaved });
