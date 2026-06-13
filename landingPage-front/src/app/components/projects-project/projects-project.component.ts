@@ -35,4 +35,15 @@ ngOnInit(): void {
     });
   }
 
+  //Para la imagen
+obtenerUrlImagen(rutaEnBD: string): string {
+  // 1. Si la ruta ya tiene '/uploads/', solo le pegamos el dominio
+  if (rutaEnBD.includes('/uploads/')) {
+    return 'https://landingpage-ezzw.onrender.com' + rutaEnBD;
+  }
+  
+  // 2. Si solo tiene el nombre del archivo, le añadimos la carpeta
+  return 'https://landingpage-ezzw.onrender.com/uploads/images/' + rutaEnBD;
+}
+
 }

@@ -12,7 +12,7 @@ const save = (req, res) => {
     let projectoToSave = new Project({
         titulo: body.titulo,
         tags: body.tags,
-        imagen: nombreArchivo // Multer guarda el nombre aquí
+        imagen: "/uploads/images/" + nombreArchivo
     });
 
     if (!body.titulo || !body.tags || !nombreArchivo) {
