@@ -95,13 +95,12 @@ borrarProyecto(id:string) {
 
 //Para la imagen
 obtenerUrlImagen(rutaEnBD: string): string {
-  // 1. Si la ruta ya tiene '/uploads/', solo le pegamos el dominio
-  if (rutaEnBD.includes('/uploads/')) {
-    return 'https://landingpage-ezzw.onrender.com' + rutaEnBD;
-  }
+  const urlFinal = rutaEnBD.includes('/uploads/') 
+    ? 'https://landingpage-ezzw.onrender.com' + rutaEnBD
+    : 'https://landingpage-ezzw.onrender.com/uploads/images/' + rutaEnBD;
   
-  // 2. Si solo tiene el nombre del archivo, le añadimos la carpeta
-  return 'https://landingpage-ezzw.onrender.com/uploads/images/' + rutaEnBD;
+  console.log("URL de imagen generada:", urlFinal); // MIRA ESTO EN LA CONSOLA DEL NAVEGADOR
+  return urlFinal;
 }
 
 abrirFormulario() {
