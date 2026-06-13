@@ -23,16 +23,17 @@ const saveProject = (req, res) => {
    const params = req.body;
     const file = req.file;
 
-   // Imprimimos todo lo que llega al servidor
-    console.log("--- CONTENIDO DE REQ.BODY ---", req.body);
-    console.log("--- CONTENIDO DE REQ.FILE ---", req.file);
+   const saveProject = (req, res) => {
+    // 1. Logs para depurar (esto aparecerá en la consola de Render cuando inicies)
+    console.log("Cuerpo recibido:", req.body);
+    console.log("Archivo recibido:", req.file);
 
+    // 2. Respuesta temporal de seguridad
     return res.status(200).send({
-        status: 'debug',
-        receivedBody: req.body,
-        receivedFile: req.file ? 'Archivo detectado' : 'No se detectó archivo',
-        message: 'Revisa la consola de Render para ver los logs detallados'
+        status: 'success',
+        message: 'El controlador responde correctamente'
     });
+};
 
     // Usamos params (que es req.body) y file.filename
     let projectoToSave = new Project({ // Asegúrate que el modelo sea 'Project'
