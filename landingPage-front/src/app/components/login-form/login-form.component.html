@@ -1,0 +1,43 @@
+
+<div class="modal-content">
+
+    <h2>{{ 'LOGIN.LOGIN_TITLE' | translate }}</h2>
+
+    <form [formGroup]="formulario" (ngSubmit)="Onsubmit()">
+        <div class="field">
+            <label for="usuario">{{ 'LOGIN.USER' | translate }}:</label>
+            <input type="text" id="usuario" formControlName="usuario">
+
+            <div *ngIf="formulario.get('usuario')?.invalid && formulario.get('usuario')?.touched">
+                <span *ngIf="formulario.get('usuario')?.errors?.['required']">
+                    {{ 'LOGIN.USER_REQUIRED' | translate }}
+                </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label for="password">{{ 'LOGIN.PASSWORD' | translate }}:</label>
+            <input type="password" id="password" formControlName="password">
+
+            <div *ngIf="formulario.get('password')?.invalid && formulario.get('password')?.touched">
+                <span *ngIf="formulario.get('password')?.errors?.['required']">
+                    {{ 'LOGIN.PASSWORD_REQUIRED' | translate }}
+                </span>
+
+                <span *ngIf="formulario.get('password')?.errors?.['minlength']">
+                    {{ 'LOGIN.PASSWORD_SHORT' | translate }}
+                </span>
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="formulario.invalid" class="entrar">
+            {{ 'LOGIN.LOGIN_BUTTON' | translate }}
+        </button>
+    </form>
+
+    <p class="mensaje" *ngIf="mensaje">
+        {{ mensaje | translate }}
+    </p>
+</div>
+
+

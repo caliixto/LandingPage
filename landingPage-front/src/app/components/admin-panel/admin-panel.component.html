@@ -1,0 +1,51 @@
+<div class="navbar">
+  <div class="admin-info">
+    <img [src]="fotoPerfil" alt="Admin" class="admin-avatar">
+    <p class="adminpanel">Admin</p>
+  </div>
+  <button class="cerrarSession" (click)="cerrarSesion()"><i class="fa-solid fa-sign-out icon_cerrar"></i>Cerrar Sesión</button>
+</div>
+
+<div class="admin-container">
+  <h2>Gestión de Proyectos</h2>
+
+<div class="projects-grid">
+  <div class="project-card" *ngFor="let p of proyectos">
+  
+    <div class="project-image-placeholder">
+      <img [src]="'https://landingpage-ezzw.onrender.com' + p.imagen" [alt]="p.titulo">
+    </div> 
+    <div class="project-info">
+
+  <div class="project-header">
+    <div class="project-text">
+      <h3>{{ p.titulo }}</h3>
+      <p>{{ p.tags }}</p>
+    </div>
+
+    <div class="card-actions">
+      <button class="btn-edit" title="Editar proyecto">
+        <i class="fa-solid fa-pen"></i>
+      </button>
+
+      <button class="btn-delete" title="Eliminar proyecto" (click)="borrarProyecto(p._id)">
+        <i class="fa-solid fa-trash"></i>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+    <div class="project-card add-card">
+      <div class="add-icon">
+        <i class="fa-solid fa-plus"></i>
+      </div>
+      <span>Nuevo Proyecto</span>
+    </div>
+  </div>
+</div>
+
+<app-proyecto-form></app-proyecto-form>
+

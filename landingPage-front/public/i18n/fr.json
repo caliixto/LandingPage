@@ -1,0 +1,156 @@
+{
+  "MENU": {
+    "HOME": "Accueil",
+    "SERVICES": "Services",
+    "PORTFOLIO": "Portfolio",
+    "BLOG": "Blog",
+    "TEAM": "Équipe",
+    "CONTACT": "Contact",
+
+    "WEB_DESIGN": "Conception Web",
+    "WEB_DEVELOPMENT": "Développement Web",
+    "APP_DEVELOPMENT": "Développement d’applications",
+    "PROGRAMMING": "Programmation",
+    "CONSULTING": "Conseil"
+  },
+
+  "MENU_MOBILE": {
+    "HOME": "Accueil",
+    "SERVICES": "Services",
+    "PORTFOLIO": "Portfolio",
+    "BLOG": "Blog",
+    "TEAM": "Équipe",
+    "CONTACT": "Contact",
+    "ADMIN": "Admin",
+    "SUBMENU": {
+      "WEB_DESIGN": "Design Web",
+      "WEB_DEVELOPMENT": "Développement Web",
+      "APP_DEVELOPMENT": "Développement Apps",
+      "PROGRAMMING": "Programmation",
+      "CONSULTING": "Consultation"
+    }
+  },
+
+  "BANNER":{
+    "WEB DESIGN & DEVELOPMENT": "Conception et développement de sites Web",
+    "SEE JOBS": "Voir les emplois"
+  },
+
+  "SERVICES": {
+    "WHAT_CAN_WE_DO_FOR_YOU": "Que pouvons-nous faire pour vous ?",
+    "SERVICES_THAT_CAN_HELP_YOU": "Des services qui peuvent vous aider",
+
+    "DESIGN": "Conception",
+    "DESIGN_DESCRIPTION": "D’un site web à une application, jusqu’à un logo...",
+
+    "READ_MORE": "En savoir plus",
+
+    "DEVELOPMENT": "Développement",
+    "DEVELOPMENT_DESCRIPTION": "Les applications web et mobiles que vous imaginez, conçues sur mesure...",
+
+    "MARKETING": "Marketing",
+    "MARKETING_DESCRIPTION": "Nous donnons de la visibilité à votre projet numérique..."
+  },
+
+  "PROJECTS": {
+    "SUBTITLE": "Nos Projets",
+    "TITLE": "Quelques-uns de nos meilleurs travaux",
+    "MAIN_ITEM": "Tous les projets",
+    "ITEM_1": "Développement Web",
+    "ITEM_2": "Développement Mobile",
+    "ITEM_3": "Conception Web",
+    "SERVER_TEXT": "Réveil du serveur, veuillez patienter un instant"
+  },
+
+  "STATS": {
+      "SUBTITLE": "Agence de Conception et Développement",
+      "TITLE": "Statistiques de Travail",
+      "DESCRIPTION": "Vous pouvez voir ici un résumé de nos statistiques au fil des années.",
+      "YEARS": "Années d'activité",
+      "COMPLETED_PROJECTS": "Projets réalisés",
+      "PROFESSIONALS": "Professionnels",
+      "CLIENTS": "Clients satisfaits"
+  },
+
+  "REVIEW": {
+      "SUBTITLE": "Avis",
+      "TITLE": "Que disent nos clients ?",
+      "DESCRIPTION": "Nos clients sont toujours satisfaits de leurs sites web et applications.",
+      "GOOGLE": "Sur Google, vous pouvez rechercher tout ce dont vous avez besoin. Savoir l'utiliser efficacement est très utile pour résoudre des problèmes.",
+      "AUTHOR_NAME": "Calixto Bocamba",
+      "AUTHOR_DESCRIPTION": "Développeur Web",
+      "DESCRIPTION_2": "Vous trouverez ici de nombreux cours de programmation et de développement web, du niveau débutant au niveau professionnel.",
+      "YOUTUBE": "Sur YouTube, vous trouverez toutes sortes de vidéos, des concepts de base aux sujets avancés."
+  },
+
+  "CLIENTS": {
+      "SUBTITLE": "Meilleurs Clients",
+      "TITLE": "Nous avons créé des solutions pour...",
+      "DESCRIPTION": "Nous développons des projets sur mesure avec les meilleures technologies."
+  },
+
+  "NEWS": {
+      "SUBTITLE": "Que se passe-t-il ?",
+      "TITLE": "Dernières Actualités",
+      "DESCRIPTION": "Actualités sur le développement web, mobile et le design numérique.",
+      "LINK": "Comment créer un site web avec HTML5 et CSS3",
+      "NEWS_DESCRIPTION": "Vous souhaitez faire vos premiers pas dans le développement web et apprendre à créer des sites exceptionnels ?",
+      "READ_MORE": "Lire plus",
+      "LINK_2": "Comment apprendre la programmation avec JavaScript",
+      "DESCRIPTION_2": "Vous souhaitez débuter dans la programmation côté client ?"
+  },
+
+  "CONTACT": {
+      "SUBTITLE": "Travaillons ensemble",
+      "TITLE": "Créons votre nouveau projet ?",
+      "BUTTON": "Demander un devis"
+  },
+
+  "FOOTER": {
+      "SERVICES": "Services",
+      "DESIGN": "Conception",
+      "DEVELOPMENT": "Développement",
+      "PROGRAMMING": "Programmation",
+      "MARKETING": "Marketing",
+      "CONSULTING": "Conseil",
+      "RESOURCES": "Ressources",
+      "BLOG": "Blog",
+      "TRAINING": "Formation",
+      "PORTFOLIO": "Portfolio",
+      "SUPPORT": "Support",
+      "CONTACT": "Contact",
+      "PRIVACY_POLICY": "Politique de confidentialité",
+      "TERMS_OF_USE": "Conditions d'utilisation",
+      "RIGHTS": "2025. Tous droits réservés à",
+      "AUTHOR": "Calixto Bocamba"
+  },
+
+  "FORM": {
+    "CONTACT_INFORMATION": "Informations de contact",
+    "CONTACT_FORM": "Formulaire de contact",
+    "NAME": "Nom complet",
+    "NAME_REQUIRED": "Le nom est obligatoire",
+    "NAME_SHORT": "Le nom est trop court",
+    "NAME_LONG": "Le nom est trop long",
+    "EMAIL": "Email",
+    "EMAIL_REQUIRED": "L'email est obligatoire",
+    "EMAIL_INVALID": "Email invalide",
+    "AGE": "Âge",
+    "AGE_REQUIRED": "L'âge est obligatoire",
+    "AGE_MIN": "L'âge minimum est 18",
+    "MESSAGE": "Message",
+    "MESSAGE_REQUIRED": "Le message est obligatoire",
+    "MESSAGE_SHORT": "Le message est trop court",
+    "SUBMIT": "Envoyer"
+  },
+
+  "LOGIN": {
+    "LOGIN_TITLE": "Connexion",
+    "USER": "Utilisateur",
+    "USER_REQUIRED": "L'utilisateur est obligatoire",
+    "PASSWORD": "Mot de passe",
+    "PASSWORD_REQUIRED": "Le mot de passe est obligatoire",
+    "LOGIN_BUTTON": "Se connecter",
+    "ERROR_INVALID_CREDENTIALS": "Nom d'utilisateur ou mot de passe incorrect"
+  }
+}

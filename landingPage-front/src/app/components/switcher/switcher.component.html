@@ -1,0 +1,11 @@
+<div class="switcher">
+  <button class="switcher__btn" (click)="onButtonClick()">
+    <span class="switcher__icon-light" *ngIf="!activo">
+      <i class="fa-solid fa-moon switcher__icon"></i>
+    </span>
+
+    <span class="switcher__icon-dark" *ngIf="activo">
+      <i class="fa-solid fa-lightbulb switcher__icon"></i>
+    </span>
+  </button>
+</div>

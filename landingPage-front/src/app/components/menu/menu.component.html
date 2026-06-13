@@ -1,0 +1,123 @@
+<section class="layout__menu container-responsive">
+        <header class="menu__navbar" [ngClass]="{'menu__navbar--fixed': isNavbarFixed }">
+          <!--LOGO-->
+          <div class="navbar__logo">
+            <a href="#" class="navbar__link-logo">
+              <img src="/img/logo1.png" class="logo logo-light" alt="logo claro" *ngIf="!isDarkMode"/>
+              <img src="/img/logo2.png" class="logo logo-dark" alt="logo oscuro" *ngIf="isDarkMode"/>
+            </a>
+          </div>
+
+          <!--BOTON DE MENU RESPONSIVE-->
+
+          <div class="navbar__mobile-btn" (click)="metodoPulse()">
+            <button class="mobile-btn__wrap">
+              <span class="mobile-btn__line"></span>
+              <span class="mobile-btn__line"></span>
+              <span class="mobile-btn__line"></span>
+            </button>
+          </div>
+
+          <!--NAVEGACION-->
+          <nav class="navbar__nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="" class="nav__title">{{ 'MENU.HOME' | translate }}</a>
+              </li>
+
+              <li class="nav__item">
+                <a href="" class="nav__title"
+                  >{{ 'MENU.SERVICES' | translate }}
+                  <i class="fa-solid fa-chevron-down nav__icon"></i>
+                </a>
+
+                <ul class="nav__submenu">
+                  <li class="submenu__item">
+                    <a href="" class="submenu__title">{{ 'MENU.WEB_DESIGN' | translate}}</a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="" class="submenu__title">{{ 'MENU.WEB_DEVELOPMENT' | translate}}</a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="" class="submenu__title">{{ 'MENU.APP_DEVELOPMENT' | translate}}</a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="" class="submenu__title">{{ 'MENU.PROGRAMMING' | translate }}</a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="" class="submenu__title">{{ 'MENU.CONSULTING' | translate }}</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav__item">
+                <a href="" class="nav__title"
+                  >{{ 'MENU.PORTFOLIO' | translate }}
+                  <i class="fa-solid fa-chevron-down nav__icon"></i>
+                </a>
+
+                <ul class="nav__submenu">
+                  <li class="submenu__item">
+                    <a href="" class="submenu__title">{{ 'MENU.WEB_DESIGN' | translate }}</a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="" class="submenu__title">{{ 'MENU.WEB_DEVELOPMENT' | translate }}</a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="" class="submenu__title">{{ 'MENU.APP_DEVELOPMENT' | translate }}</a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="" class="submenu__title">{{ 'MENU.PROGRAMMING' | translate }}</a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="" class="submenu__title">{{ 'MENU.CONSULTING' | translate }}</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav__item">
+                <a href="" class="nav__title"
+                  >{{ 'MENU.BLOG' | translate }}
+                  <i class="fa-solid fa-chevron-down nav__icon"></i>
+                </a>
+
+                <ul class="nav__submenu">
+                  <li class="submenu__item">
+                    <a href="" class="submenu__title">{{ 'MENU.WEB_DESIGN' | translate }}</a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="" class="submenu__title">{{ 'MENU.WEB_DEVELOPMENT' | translate }}</a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="" class="submenu__title">{{ 'MENU.APP_DEVELOPMENT' | translate }}</a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="" class="submenu__title">{{ 'MENU.PROGRAMMING' | translate }}</a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="" class="submenu__title">{{ 'MENU.CONSULTING' | translate }}</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav__item">
+                <a href="" class="nav__title">{{ 'MENU.TEAM' | translate }}</a>
+              </li>
+
+              <li class="nav__item">
+                <a href="" class="nav__title">{{ 'MENU.CONTACT' | translate }}</a>
+              </li>
+
+              <li (click)="loginService.abrir()" class="adminLogin nav__item nav__title">Admin</li>
+            </ul>
+          </nav>
+
+          <div class="translate-container">
+            <div class="language-switcher">
+                <button (click)="changeLanguage('es')" class="translate">ES</button>
+                <button (click)="changeLanguage('en')" class="translate">EN</button>
+                <button (click)="changeLanguage('fr')" class="translate">FR</button>
+            </div>
+          </div>
+        </header>
+      </section>

@@ -1,0 +1,158 @@
+{
+  "MENU": {
+    "HOME": "Home",
+    "SERVICES": "Services",
+    "PORTFOLIO": "Portfolio",
+    "BLOG": "Blog",
+    "TEAM": "Team",
+    "CONTACT": "Contact",
+
+    "WEB_DESIGN": "Web Design",
+    "WEB_DEVELOPMENT": "Web Development",
+    "APP_DEVELOPMENT": "App Development",
+    "PROGRAMMING": "Programming",
+    "CONSULTING": "Consulting"
+  },
+
+   "MENU_MOBILE": {
+    "HOME": "Home",
+    "SERVICES": "Services",
+    "PORTFOLIO": "Portfolio",
+    "BLOG": "Blog",
+    "TEAM": "Team",
+    "CONTACT": "Contact",
+    "ADMIN": "Admin",
+    "SUBMENU": {
+      "WEB_DESIGN": "Web Design",
+      "WEB_DEVELOPMENT": "Web Development",
+      "APP_DEVELOPMENT": "App Development",
+      "PROGRAMMING": "Programming",
+      "CONSULTING": "Consulting"
+    }
+  },
+
+  "BANNER":{
+    "WEB DESIGN & DEVELOPMENT": "Web Desing & Development",
+    "SEE JOBS": "see jobs"
+  },
+  
+  "SERVICES": {
+    "WHAT_CAN_WE_DO_FOR_YOU": "What can we do for you?",
+    "SERVICES_THAT_CAN_HELP_YOU": "Services that can help you",
+
+    "DESIGN": "Design",
+    "DESIGN_DESCRIPTION": "From a website, to an app, to a logo...",
+    "READ_MORE": "Read more",
+
+    "DEVELOPMENT": "Development",
+    "DEVELOPMENT_DESCRIPTION": "Custom web and mobile applications tailored to your needs...",
+
+    "MARKETING": "Marketing",
+    "MARKETING_DESCRIPTION": "We give visibility to your digital project..."
+  },
+
+  "PROJECTS": {
+    "SUBTITLE": "Our Projects",
+    "TITLE": "Some of our best work",
+    "MAIN_ITEM": "All Projects",
+    "ITEM_1": "Web Development",
+    "ITEM_2": "Mobile Development",
+    "ITEM_3": "Web Design",
+    "SERVER_TEXT": "Waking up the server, please wait a moment"
+},
+
+"STATS": {
+  "SUBTITLE": "Design and Development Agency",
+  "TITLE": "Work Statistics",
+  "DESCRIPTION": "Here you can see a summary of our statistics over the years.",
+  "YEARS": "Years Active",
+  "COMPLETED_PROJECTS": "Completed Projects",
+  "PROFESSIONALS": "Professionals",
+  "CLIENTS": "Happy Clients"
+},
+
+"REVIEW": {
+  "SUBTITLE": "Reviews",
+  "TITLE": "What do our clients say?",
+  "DESCRIPTION": "Our clients are always satisfied with their websites and apps.",
+  "GOOGLE": "On Google you can search for everything you need. Knowing how to use it effectively is very useful when troubleshooting.",
+  "AUTHOR_NAME": "Calixto Bocamba",
+  "AUTHOR_DESCRIPTION": "Web Developer",
+  "DESCRIPTION_2": "There are many programming and web development courses here, from beginner to professional level.",
+  "YOUTUBE": "On YouTube you can find all kinds of videos, from basic concepts and daily issues to advanced topics."
+},
+
+"CLIENTS": {
+  "SUBTITLE": "Top Clients",
+  "TITLE": "We have created solutions for...",
+  "DESCRIPTION": "We develop custom projects using the best technologies."
+},
+
+"NEWS": {
+  "SUBTITLE": "What's happening?",
+  "TITLE": "Latest News",
+  "DESCRIPTION": "Updates on web development, mobile development and digital design.",
+  "LINK": "How to build a website with HTML5 and CSS3",
+  "NEWS_DESCRIPTION": "Do you want to take your first steps in web development and learn how to create amazing websites?",
+  "READ_MORE": "Read More",
+  "LINK_2": "How to learn programming with JavaScript",
+  "DESCRIPTION_2": "Do you want to take your first steps in client-side programming?"
+},
+
+"CONTACT": {
+  "SUBTITLE": "Let's work together",
+  "TITLE": "Shall we create your new project?",
+  "BUTTON": "Request a Quote"
+},
+
+"FOOTER": {
+  "SERVICES": "Services",
+  "DESIGN": "Design",
+  "DEVELOPMENT": "Development",
+  "PROGRAMMING": "Programming",
+  "MARKETING": "Marketing",
+  "CONSULTING": "Consulting",
+  "RESOURCES": "Resources",
+  "BLOG": "Blog",
+  "TRAINING": "Training",
+  "PORTFOLIO": "Portfolio",
+  "SUPPORT": "Support",
+  "CONTACT": "Contact",
+  "PRIVACY_POLICY": "Privacy Policy",
+  "TERMS_OF_USE": "Terms of Use",
+  "RIGHTS": "2025. All rights reserved to",
+  "AUTHOR": "Calixto Bocamba"
+},
+
+"FORM": {
+  "CONTACT_INFORMATION": "Contact Information",
+  "CONTACT_FORM": "Contact Form",
+  "NAME": "Full Name",
+  "NAME_REQUIRED": "Name is required",
+  "NAME_SHORT": "Name is too short",
+  "NAME_LONG": "Name is too long",
+  "EMAIL": "Email",
+  "EMAIL_REQUIRED": "Email is required",
+  "EMAIL_INVALID": "Invalid email",
+  "AGE": "Age",
+  "AGE_REQUIRED": "Age is required",
+  "AGE_MIN": "Minimum age is 18",
+  "MESSAGE": "Message",
+  "MESSAGE_REQUIRED": "Message is required",
+  "MESSAGE_SHORT": "Message is too short",
+  "SUBMIT": "Send"
+},
+
+"LOGIN": {
+  "LOGIN_TITLE": "Login",
+  "USER": "Username",
+  "USER_REQUIRED": "Username is required",
+  "PASSWORD": "Password",
+  "PASSWORD_REQUIRED": "Password is required",
+  "LOGIN_BUTTON": "Sign in",
+  "ERROR_INVALID_CREDENTIALS": "Incorrect username or password"
+}
+
+
+
+}

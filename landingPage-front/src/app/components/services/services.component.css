@@ -1,0 +1,212 @@
+@import '../projects-project/projects-project.component.css';       
+
+/*ESTILOS SECCION SERVICIOS*/
+
+.layout__services{
+    position: relative;
+    margin: 14rem 10rem;
+    margin-bottom: 8rem;
+    z-index:1;
+}
+
+.services__grid{
+    max-width: var(--mx-width);
+    margin: 0 auto;
+}
+
+.services__header{
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.services__subtitle,
+.projects__subtitle,
+.stats__subtitle,
+.reviews__subtitle,
+.clients__subtitle,
+.news__subtitle{
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-subtitle);
+    margin-bottom: 1.5rem;
+}
+
+.services__title,
+.projects__title,
+.stats__title,
+.reviews__title,
+.news__title{
+    font-size: 6.7rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--color-title);
+
+}
+
+.services__list{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    margin-right: 7rem;
+}
+
+.services__service{
+    width: 33%;
+    height: 100%;
+    padding: 5rem 4rem;
+    margin-bottom: 4rem;
+    border-radius: 3rem;
+    background: linear-gradient(180deg, var(--color-bg-services), rgba(255,255,255,0));
+    background-color: var(--color-secondary);
+    border: 1px solid;
+    border-image-source: linear-gradient(180deg, var(--color-bg-services), rgba(255,255,255,0));
+    transition: all 300ms ease-in-out;
+    display: flex;
+    flex-direction: row;
+}
+
+.services__service:hover{
+    background-color:var(--color-bg-services) ;
+}
+
+.service__container-img{
+    margin-right: 2.5rem;
+    max-width: 8.5rem;
+    flex:1;
+}
+.service__content{
+    flex:1;
+}
+
+.service__title{
+    color: var(--color-title);
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 3rem;
+}
+
+.service__description{
+    font-size: 1.7rem;
+    overflow: hidden;
+    margin-bottom: 4rem;
+}
+
+.service__more{
+    position: relative;
+    display: inline-block;
+    font-weight: 500;
+    padding-left:5rem;
+    transition: all 300ms ease-in-out;
+
+
+}
+
+.service__more::before{
+    content: "";
+    width: 3.4rem;
+    height: 1.5px;
+    background-color: var(--color-text-body);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transition: all 300ms ease-in-out;
+}
+
+.service__more:hover,
+.service__title:hover{
+    color: var(--color--primary);
+}
+
+.service__more:hover::before{
+    background-color:var(--color--primary) ;
+}
+
+/*ESCALONADO TARJETA DE SERVICIOS*/
+
+.services__service--bottom{
+    margin-top: 20rem;
+}
+
+.services__service--middle{
+    margin-top: 10rem;
+}
+
+/*FORMAS DETRAS SERVICIOS*/
+.service-shapes__item{
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.service-shapes--shape1{
+    top: -7%;
+    right: 17%;
+}
+
+.service-shapes--shape2{
+    top: 10%;
+    left: 52%;
+}
+
+.service-shapes--shape3{
+    top: 34%;
+    left: 15%;
+}
+
+
+/* Esto ya lo tendrás, asegúrate de que use flex */
+.services__list {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+
+/* LA MAGIA: Cuando la pantalla mida menos de 1000px */
+@media (max-width: 1000px) {
+ /* 1. Quitamos cualquier límite de la sección */
+  .layout__services {
+    width: 100% !important;
+    padding: 2rem !important; /* Un padding pequeño y uniforme */
+    margin: 0 !important;
+    overflow: hidden; /* Cortamos cualquier cosa que intente salirse */
+  }
+
+  /* 2. El Header (Título y subtítulo) */
+  .services__header {
+    text-align: left !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin-bottom: -15rem !important;
+  }
+
+  .services__subtitle, .services__title {
+    margin-left: 0 !important; /* Aseguramos que no tengan margen izquierdo */
+    width: 100%;
+  }
+
+  /* 3. La lista de tarjetas */
+  .services__list {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important; /* Alineamos las tarjetas al inicio (izquierda) */
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* 4. LA TARJETA (Donde está la campana) */
+  .services__service {
+    width: 100% !important; /* Que ocupe el ancho del móvil menos el padding del padre */
+    max-width: 100% !important;
+    margin-left: 0 !important; /* ¡IMPORTANTE! Aquí es donde antes tenías el -190px */
+    margin-right: 0 !important;
+    padding: 2rem !important; 
+    box-sizing: border-box !important; /* Para que el padding no estire la tarjeta */
+    position: static !important; /* Por si tenías algún left o relative */
+  }
+
+  .service-shapes--shape2{
+      display: none;
+   }
+}
