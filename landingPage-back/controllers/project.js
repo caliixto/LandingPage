@@ -5,24 +5,26 @@ const Project = require("../models/project");
 const save = (req, res) => {
     let body = req.body;
     
-    // Si hay un archivo, usamos su nombre. Si no, usamos lo que venga en el body.imagen
-    let imagenNombre = req.file ? req.file.filename : body.imagen;
+    // Aquí es donde Multer coloca el archivo procesado si usaste 'file0'
+    let nombreArchivo = req.file ? req.file.filename : null;
 
-    if (!body.titulo || !body.tags || !imagenNombre) {
-        return res.status(400).send({ status: "error", message: "Faltan datos" });
-    }
-
-    // Creamos el objeto con la imagen correcta
+    // Si tu esquema pide 'imagen', se la pasamos aquí
     let projectoToSave = new Project({
         titulo: body.titulo,
         tags: body.tags,
-        imagen: imagenNombre
+        imagen: nombreArchivo // Multer guarda el nombre aquí
     });
 
+    if (!body.titulo || !body.tags || !nombreArchivo) {
+        return res.status(400).send({ status: "error", message: "Faltan datos" });
+    }
+
     projectoToSave.save().then(projectSaved => {
-        if (!projectSaved) return res.status(404).send({ status: "error", message: "No guardado" });
         return res.status(200).send({ status: "success", project: projectSaved });
-    }).catch(error => res.status(500).send({ status: "error", message: "Error al guardar", error }));
+    }).catch(error => {
+        console.error("Error Mongoose:", error);
+        return res.status(500).send({ status: "error", message: "Error al guardar" });
+    });
 };
 
 const list = (req, res) => {

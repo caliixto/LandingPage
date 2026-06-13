@@ -25,7 +25,7 @@ export class ProyectoFormComponent {
     formData.append('tags', this.proyecto.tags);
     
     if (this.archivoSeleccionado) {
-      formData.append('imagen', this.archivoSeleccionado);
+      formData.append('file0', this.archivoSeleccionado);
     } else {
       alert("Por favor, selecciona una imagen.");
       return;
