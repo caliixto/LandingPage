@@ -47,6 +47,7 @@ cerrarSesion() {
     this.fotoPerfil = './img/perfil.jpg';
 
   }
+  this.getprojectsAdmin();
   this.proyectoService.proyectoGuardado$.subscribe(() => {
       this.getprojectsAdmin();
     });
