@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const project = require("../models/project");
+const Project = require("../models/project");
 
 const deleteProject = (req, res) =>{
     let id = req.params.id;
