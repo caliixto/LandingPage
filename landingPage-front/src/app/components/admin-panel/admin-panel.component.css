@@ -310,28 +310,33 @@
 
 /*Boton de restaurar*/
 
-.btn-restore {
-    background-color: #f39c12; /* Color ámbar profesional */
+.btn-floating-restore {
+    position: fixed; /* Esto lo fija en la pantalla */
+    bottom: 30px;    /* 30px desde abajo */
+    right: 30px;     /* 30px desde la derecha */
+    
+    /* Tamaño pequeño y elegante */
+    padding: 12px 20px;
+    font-size: 13px;
+    
+    /* Estética */
+    background-color: #f39c12;
     color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 6px;
+    border-radius: 50px; /* Forma de píldora redondeada */
     cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px; /* Espacio entre el icono y el texto */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000; /* Asegura que esté por encima de todo */
 }
 
-.btn-restore:hover {
-    background-color: #e67e22; /* Se vuelve más oscuro al pasar el ratón */
-    transform: translateY(-2px); /* Un pequeño efecto de elevación */
-    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+.btn-floating-restore:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
 
-.btn-restore:active {
-    transform: translateY(0); /* Se hunde al hacer clic */
+.btn-floating-restore:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
