@@ -95,36 +95,33 @@ borrarProyecto(id:string) {
   });
 }
 
-//Restaurar proyectos
 
+//Restaurar proyectos
 cargando: boolean = false;
 
 restaurar() {
-  this.cargando = true;
-
-  this._projectService.restoreProjects().subscribe({
-    next: (response) => {
-      this.cargando = false;
-      this.getprojectsAdmin();
-
-      // Alerta de éxito elegante
-      Swal.fire({
-        icon: 'success',
-        title: '¡Restauración exitosa!',
-        text: 'Los proyectos base han sido cargados correctamente.',
-        confirmButtonColor: '#f39c12',
-        confirmButtonText: 'Aceptar'
-      });
-    },
-    error: (error) => {
-      this.cargando = false;
-      
-      // Alerta de error profesional
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Hubo un problema al restaurar los proyectos. Inténtalo de nuevo.',
-        confirmButtonColor: '#d33'
+  Swal.fire({
+    title: '¿Estás seguro?',
+    text: "Esto cargará los proyectos iniciales en la base de datos.",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#f39c12',
+    cancelButtonColor: '#7f8c8d',
+    confirmButtonText: 'Sí, restaurar',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      this.cargando = true;
+      this._projectService.restoreProjects().subscribe({
+        next: () => {
+          this.cargando = false;
+          this.getprojectsAdmin();
+          Swal.fire('¡Hecho!', 'Base de datos restaurada.', 'success');
+        },
+        error: () => {
+          this.cargando = false;
+          Swal.fire('Error', 'No se pudo completar la restauración.', 'error');
+        }
       });
     }
   });
