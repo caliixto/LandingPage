@@ -97,17 +97,19 @@ borrarProyecto(id:string) {
 
 //Restaurar proyectos
 
+cargando: boolean = false;
+
 restaurar() {
+  this.cargando = true; // Mostramos que está trabajando
   this._projectService.restoreProjects().subscribe(
-    (response:any) => {
-      console.log("Proyectos restaurados:", response);
-      // Aquí es donde "muestras" el resultado:
-      // Simplemente vuelves a llamar a tu función de listar para refrescar la tabla
-      this.getprojectsAdmin(); 
-      alert("Proyectos restaurados con éxito");
+    response => {
+      this.cargando = false;
+      this.getprojectsAdmin();
+      alert("¡Restauración exitosa!");
     },
-    (error:any) => {
-      console.error(error);
+    error => {
+      this.cargando = false;
+      alert("Error al restaurar");
     }
   );
 }

@@ -62,7 +62,7 @@
     </div>
 </div>
 
-<button (click)="restaurar()" class="btn-restore">
-  Restaurar Proyectos Base
+<button class="btn-restore" [disabled]="cargando" (click)="restaurar()">
+    <i class="fas fa-sync-alt"></i>{{ cargando ? 'Restaurando...' : 'Restaurar Base de Datos' }}
 </button>
 
