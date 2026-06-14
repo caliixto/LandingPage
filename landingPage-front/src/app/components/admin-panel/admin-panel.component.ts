@@ -100,18 +100,34 @@ borrarProyecto(id:string) {
 cargando: boolean = false;
 
 restaurar() {
-  this.cargando = true; // Mostramos que está trabajando
-  this._projectService.restoreProjects().subscribe(
-    response => {
+  this.cargando = true;
+
+  this._projectService.restoreProjects().subscribe({
+    next: (response) => {
       this.cargando = false;
       this.getprojectsAdmin();
-      alert("¡Restauración exitosa!");
+
+      // Alerta de éxito elegante
+      Swal.fire({
+        icon: 'success',
+        title: '¡Restauración exitosa!',
+        text: 'Los proyectos base han sido cargados correctamente.',
+        confirmButtonColor: '#f39c12',
+        confirmButtonText: 'Aceptar'
+      });
     },
-    error => {
+    error: (error) => {
       this.cargando = false;
-      alert("Error al restaurar");
+      
+      // Alerta de error profesional
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Hubo un problema al restaurar los proyectos. Inténtalo de nuevo.',
+        confirmButtonColor: '#d33'
+      });
     }
-  );
+  });
 }
 
 //Para la imagen
