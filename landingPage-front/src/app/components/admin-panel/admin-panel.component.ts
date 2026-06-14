@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2';
 import { ProyectoFormComponent } from '../proyecto-form/proyecto-form.component';
 import { ProyectoService } from '../services/proyecto.service';
+import { ProjectService } from '../services/project.service';
 
 @Component({
   selector: 'app-admin-panel',
@@ -22,7 +23,8 @@ export class AdminPanelComponent {
   constructor(public authService: LoginFormServicesService, 
     private router: Router, private _adminProjectService:AdminProjectServiceService,
     private http: HttpClient,
-    private proyectoService: ProyectoService){
+    private proyectoService: ProyectoService,
+  private _projectService:ProjectService){
 
   }
 
@@ -91,6 +93,23 @@ borrarProyecto(id:string) {
       );
     }
   });
+}
+
+//Restaurar proyectos
+
+restaurar() {
+  this._projectService.restoreProjects().subscribe(
+    (response:any) => {
+      console.log("Proyectos restaurados:", response);
+      // Aquí es donde "muestras" el resultado:
+      // Simplemente vuelves a llamar a tu función de listar para refrescar la tabla
+      this.getprojectsAdmin(); 
+      alert("Proyectos restaurados con éxito");
+    },
+    (error:any) => {
+      console.error(error);
+    }
+  );
 }
 
 //Para la imagen

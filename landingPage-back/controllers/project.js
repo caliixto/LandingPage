@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const Project = require("../models/project");
 
+//GUARDAR PROYECTOS
 const save = (req, res) => {
     let body = req.body;
     
@@ -28,6 +29,53 @@ const save = (req, res) => {
         return res.status(500).send({ status: "error", message: "Error al guardar en BD" });
     });
 };
+
+//RESTAURAR PROYECTOS
+const restoreProjects= async (req, res) => {
+    const defaultProjects = [
+        {
+            titulo: "Agencia Creativa",
+            tags: "Marca, Web, Aplicacion",
+            imagen: "https://res.cloudinary.com/dejf1siaf/image/upload/v1781429610/landing-page-proyectos/cdqpnkjh6bnohdjun350.jpg" // URL real de Cloudinary
+        },
+        {
+            titulo: "Gestion de Tareas",
+            tags: "Marca, Web, Aplicacion",
+            imagen: "https://res.cloudinary.com/dejf1siaf/image/upload/v1781429635/landing-page-proyectos/uyvzehxlxnu1fccn4rxg.jpg"
+        },
+         {
+            titulo: "Agencial Digital",
+            tags: "Web, UI/UX",
+            imagen: "https://res.cloudinary.com/dejf1siaf/image/upload/v1781429662/landing-page-proyectos/ialzz1ncq4ehgs4jvydd.jpg" // URL real de Cloudinary
+        },
+        {
+            titulo: "Potafolio Personal",
+            tags: "Logo, Web, Movil",
+            imagen: "https://res.cloudinary.com/dejf1siaf/image/upload/v1781429687/landing-page-proyectos/dkvvh3vy1qtlhxrdgokr.jpg"
+        },
+         {
+            titulo: "Red Social",
+            tags: "Diseño, Desarrollo",
+            imagen: "https://res.cloudinary.com/dejf1siaf/image/upload/v1781429715/landing-page-proyectos/ijuff3t5kmfep0lz2pqb.jpg" // URL real de Cloudinary
+        },
+        {
+            titulo: "Aplicacion Web",
+            tags: "Logo, Web, Aplicacion",
+            imagen: "https://res.cloudinary.com/dejf1siaf/image/upload/v1781429741/landing-page-proyectos/nliasionbjycmwnfkokd.jpg"
+        }
+    ];
+
+    try {
+        // Insertamos los proyectos por defecto
+        const projects = await Project.insertMany(defaultProjects);
+        return res.status(200).send({ status: "success", projects });
+    } catch (error) {
+        return res.status(500).send({ status: "error", message: "No se pudieron restaurar" });
+    }
+}
+
+
+//LISTAR PROYECTOS
 const list = (req, res) => {
     Project.find().then(projects => {
         if (!projects || projects.length === 0) {
@@ -35,14 +83,6 @@ const list = (req, res) => {
         }
         return res.status(200).send({ status: "success", projects });
     }).catch(error => res.status(500).send({ status: "error", message: "Error al listar", error }));
-};
-
-const item = (req, res) => {
-    let id = req.params.id;
-    Project.findById(id).then(project => {
-        if (!project) return res.status(404).send({ status: "error", message: "No encontrado" });
-        return res.status(200).send({ status: "success", project });
-    }).catch(error => res.status(500).send({ status: "error", message: "Error al buscar", error }));
 };
 
 const deleteProject = (req, res) => {
@@ -61,36 +101,5 @@ const update = (req, res) => {
     }).catch(error => res.status(500).send({ status: "error", message: "Error al actualizar", error }));
 };
 
-const upload = (req, res) => {
-    let id = req.params.id;
-    if (!req.file) return res.status(404).send({ status: "error", message: "No se subió archivo" });
 
-    const filepath = req.file.path;
-    const extension = path.extname(req.file.originalname).toLowerCase().replace(".", "");
-    if (!["png", "jpg", "jpeg", "gif"].includes(extension)) {
-        fs.unlinkSync(filepath);
-        return res.status(400).send({ status: "error", message: "Extensión inválida" });
-    }
-
-    Project.findByIdAndUpdate({ _id: id }, { imagen: req.file.filename }, { new: true }).then(projectUpdated => {
-        if (!projectUpdated) {
-            fs.unlinkSync(filepath);
-            return res.status(404).send({ status: "error", message: "No encontrado" });
-        }
-        return res.status(200).send({ status: "success", project: projectUpdated });
-    }).catch(error => {
-        fs.unlinkSync(filepath);
-        return res.status(500).send({ status: "error", message: "Error al subir", error });
-    });
-};
-
-const getImage = (req, res) => {
-    let file = req.params.file;
-    let filePath = "./uploads/images/" + file;
-    fs.stat(filePath, (error, exists) => {
-        if (!error && exists) return res.sendFile(path.resolve(filePath));
-        return res.status(404).send({ status: "error", message: "Imagen no existe" });
-    });
-};
-
-module.exports = { save, list, item, deleteProject, update, upload, getImage };
+module.exports = { save, list, deleteProject, update, restoreProjects };
