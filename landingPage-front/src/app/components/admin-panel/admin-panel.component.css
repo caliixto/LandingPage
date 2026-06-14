@@ -327,6 +327,11 @@
     transition: all 0.3s ease;
 }
 
+.btn-floating-restore i {
+  margin-right: 2rem;
+}
+
+
 .btn-floating-restore:hover {
     background-color: #e67e22;
     transform: scale(1.05);
