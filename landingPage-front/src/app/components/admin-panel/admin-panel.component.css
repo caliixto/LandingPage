@@ -311,23 +311,20 @@
 /*Boton de restaurar*/
 
 .btn-floating-restore {
-    position: fixed; /* Esto lo fija en la pantalla */
-    bottom: 30px;    /* 30px desde abajo */
-    right: 30px;     /* 30px desde la derecha */
+    position: fixed !important; /* 'important' fuerza que ignore otros estilos */
+    bottom: 30px !important;
+    right: 30px !important;
+    z-index: 9999 !important; /* Asegura que esté encima de todo */
     
-    /* Tamaño pequeño y elegante */
     padding: 12px 20px;
     font-size: 13px;
-    
-    /* Estética */
     background-color: #f39c12;
     color: white;
     border: none;
-    border-radius: 50px; /* Forma de píldora redondeada */
+    border-radius: 50px;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
-    z-index: 1000; /* Asegura que esté por encima de todo */
 }
 
 .btn-floating-restore:hover {
