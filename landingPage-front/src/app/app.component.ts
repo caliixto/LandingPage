@@ -32,6 +32,7 @@ export class AppComponent {
 
   ngOnInit(){
     this.getDark();
+    this.cargarVoiceflowChat();
   }
 
   getDark(){
@@ -43,6 +44,35 @@ export class AppComponent {
   resetTimer() {
     if (this.authService.estarLogueado()) {
       this.authService.continuarSesion();
+    }
+  }
+
+   cargarVoiceflowChat(): void {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs';
+    script.async = true;
+    
+    script.onload = () => {
+      // Usamos (window as any) para saltarnos el tipado estricto de TypeScript
+      const globalWindow = window as any;
+      if (globalWindow.voiceflow && globalWindow.voiceflow.chat) {
+        globalWindow.voiceflow.chat.load({
+          verify: { projectID: '6a2e87ce143a2331ddf6151f' },
+          url: 'https://general-runtime.voiceflow.com',
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
+          }
+        });
+      }
+    };
+
+    // Buscamos el primer script de la página para inyectarlo justo al lado (igual que hacía el código original)
+    const primerScript = document.getElementsByTagName('script')[0];
+    if (primerScript && primerScript.parentNode) {
+      primerScript.parentNode.insertBefore(script, primerScript);
+    } else {
+      document.body.appendChild(script);
     }
   }
  
