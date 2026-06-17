@@ -14,6 +14,7 @@ export class ProyectoFormComponent implements OnInit {
   proyectoAEditar: any = null;
   esModoEdicion: boolean = false;
   public archivoSeleccionado: File | null = null;
+  idProyectoActual: string | null = null;
 
   formulario = new FormGroup({
     titulo: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]),
@@ -30,6 +31,7 @@ export class ProyectoFormComponent implements OnInit {
   @Input() set proyecto(data: any) {
     if (data) {
       this.proyectoAEditar = data;
+      this.idProyectoActual = data._id;
       this.esModoEdicion = true;
       this.formulario.patchValue({
         titulo: data.titulo,
@@ -60,7 +62,7 @@ export class ProyectoFormComponent implements OnInit {
 
     // Llamamos al servicio
     const call = this.esModoEdicion 
-      ? this.formProyecto.updateProject(this.proyectoAEditar.id, formData)
+      ? this.formProyecto.updateProject(this.idProyectoActual!, formData)
       : this.formProyecto.saveProject(formData);
 
     call.subscribe({
