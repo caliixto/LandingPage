@@ -24,7 +24,6 @@ export class LoginFormServicesService {
     ? 'http://localhost:3977/api/admin/login' 
     : 'https://landingpage-ezzw.onrender.com/api/admin/login';
     
-
     abierto: boolean = false; // La variable maestra
 
     abrir() { 

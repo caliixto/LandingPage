@@ -6,12 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AdminProjectServiceService {
 
-  private urlBase = window.location.hostname === 'localhost' 
-    ? 'http://localhost:3977/api/' 
-    : 'https://landingpage-ezzw.onrender.com/api/';
-
-  // Ahora puedes construir tus rutas basándote en esta URL
-  public url = this.urlBase;
+  private url = 'https://landingpage-ezzw.onrender.com/api/project/';
 
   constructor(private http:HttpClient) { }
 
