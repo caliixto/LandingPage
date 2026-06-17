@@ -94,13 +94,30 @@ const deleteProject = (req, res) => {
     }).catch(error => res.status(500).send({ status: "error", message: "Error al eliminar", error }));
 };
 
-//Actualizar Poyecto
+//Actualizar Proyecto
 const updateProject = (req, res) => {
-    let body = req.body;
-    Project.findByIdAndUpdate(body.id, body, { new: true }).then(projectUpdated => {
-        if (!projectUpdated) return res.status(404).send({ status: "error", message: "No encontrado" });
-        return res.status(200).send({ status: "success", project: projectUpdated });
-    }).catch(error => res.status(500).send({ status: "error", message: "Error al actualizar", error }));
+    const id = req.body.id; 
+    
+    const updateData = { ...req.body };
+
+    if (req.file) {
+        updateData.imagen = req.file.path;
+    }
+
+    // 3. Eliminamos el ID del objeto de actualización para evitar conflictos con Mongoose
+    delete updateData.id;
+
+    Project.findByIdAndUpdate(id, updateData, { new: true })
+        .then(projectUpdated => {
+            if (!projectUpdated) {
+                return res.status(404).send({ status: "error", message: "Proyecto no encontrado" });
+            }
+            return res.status(200).send({ status: "success", project: projectUpdated });
+        })
+        .catch(error => {
+            console.error("Error en updateProject:", error);
+            return res.status(500).send({ status: "error", message: "Error al actualizar", error });
+        });
 };
 
 

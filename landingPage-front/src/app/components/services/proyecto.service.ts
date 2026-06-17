@@ -24,8 +24,12 @@ export class ProyectoService {
     );
   }
 
-  updateProject(id: string, data: FormData): Observable<any> {
-    data.append('id', id);
-    return this.http.put(`${this.url}updateProject`, data);
-  }
+ updateProject(id: string, data: FormData): Observable<any> {
+  data.append('id', id);
+  return this.http.put(`${this.url}updateProject`, data).pipe(
+    tap(() => {
+      this.proyectoGuardadoSubject.next();
+    })
+  );
+}
 }

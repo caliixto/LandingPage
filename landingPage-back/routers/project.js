@@ -21,9 +21,9 @@ const upload = multer({ storage: storage });
 //Definir las Rutas
 router.post("/save", upload.single("file0"), ProjectController.save); //guardar proyectos
 router.post("/restoreProjects", ProjectController.restoreProjects); //Restaurar proyectos
-router.get("/list", ProjectController.list);
-router.delete("/deleteProject/:id",ProjectController.deleteProject);
-router.put("/updateProject",ProjectController.updateProject);
+router.get("/list", ProjectController.list);//Listar
+router.delete("/deleteProject/:id",ProjectController.deleteProject);//eliminar
+router.put("/updateProject", upload.single("file0"), ProjectController.updateProject);//Actualizar
 
 
 //Exportar Rutas
