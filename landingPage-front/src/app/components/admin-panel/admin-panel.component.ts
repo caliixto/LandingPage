@@ -128,7 +128,6 @@ restaurar() {
   });
 }
 
-//Para la imagen
 // Para la imagen
 obtenerUrlImagen(rutaEnBD: string): string {
   if (rutaEnBD.startsWith('http')) {
@@ -139,7 +138,7 @@ obtenerUrlImagen(rutaEnBD: string): string {
 }
 
 
-  abrirFormulario(p:any) {
+abrirFormulario(p:any) {
   console.log("¡Lápiz pulsado! Proyecto:", p);
   this.proyectoAEditar = p;
   this.mostrarFormulario = true;
@@ -147,7 +146,7 @@ obtenerUrlImagen(rutaEnBD: string): string {
   }
 
   // Llama a esto cuando el formulario termine de guardar
-  cerrarFormulario() {
+cerrarFormulario() {
     this.mostrarFormulario = false;
     this.proyectoAEditar = null;
   }
