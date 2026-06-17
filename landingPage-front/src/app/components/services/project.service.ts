@@ -20,9 +20,5 @@ export class ProjectService {
     // Para Restuarar los proyectos
     return this.http.post(this.url + 'restoreProjects', {});
   }
-
-  updateProject(id: string, data: FormData): Observable<any> {
-  return this.http.put(this.url + 'updateProject/' + id, data);
-  }
 }
 

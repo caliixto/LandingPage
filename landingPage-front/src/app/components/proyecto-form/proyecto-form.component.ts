@@ -80,6 +80,7 @@ export class ProyectoFormComponent {
             }, 2000);
         }
     });
+  }
 }
 
   subirArchivo(event: any) {
@@ -90,7 +91,7 @@ export class ProyectoFormComponent {
     }
   }
 
-   clear(){
+  clear(){
     this.formulario.reset();
   }
 

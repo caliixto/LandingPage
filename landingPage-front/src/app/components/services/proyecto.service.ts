@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';       // <--- 1. Importa Subject
-import { tap } from 'rxjs/operators'; // <--- 2. Importa tap
+import { Subject, Observable } from 'rxjs'
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +22,9 @@ export class ProyectoService {
         this.proyectoGuardadoSubject.next();
       })
     );
+  }
+
+  updateProject(id: string, data: FormData): Observable<any> {
+  return this.http.put(this.url + 'updateProject' + id, data);
   }
 }
