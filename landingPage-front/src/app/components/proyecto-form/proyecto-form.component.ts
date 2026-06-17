@@ -35,6 +35,10 @@ export class ProyectoFormComponent implements OnInit {
         titulo: data.titulo,
         tags: data.tags
       });
+      } else {
+      this.proyectoAEditar = null;
+      this.esModoEdicion = false;
+      this.formulario.reset();
     }
   }
 
@@ -78,7 +82,6 @@ export class ProyectoFormComponent implements OnInit {
   if (rutaEnBD.startsWith('http')) {
     return rutaEnBD;
   }
-  // 2. Si es una ruta antigua local (sin http), añádele el dominio de Render.
   return 'https://landingpage-ezzw.onrender.com' + rutaEnBD;
 }
 

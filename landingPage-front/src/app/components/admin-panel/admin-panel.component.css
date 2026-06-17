@@ -228,9 +228,13 @@
 }
 
 /* Esta clase se añade cuando mostrarFormulario sea true */
+/* Prueba esto temporalmente */
 .modal-overlay.active {
-  opacity: 1;
-  visibility: visible;
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    z-index: 99999 !important; /* Lo ponemos por encima de TODO */
 }
 
 .modal-content {
