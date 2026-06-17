@@ -53,7 +53,7 @@ export class ProyectoFormComponent implements OnInit {
 
     // Llamamos al servicio
     const call = this.esModoEdicion 
-      ? this.formProyecto.updateProject(this.proyectoAEditar._id, formData)
+      ? this.formProyecto.updateProject(this.proyectoAEditar.id, formData)
       : this.formProyecto.saveProject(formData);
 
     call.subscribe({

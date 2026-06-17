@@ -54,7 +54,6 @@ export class AppComponent {
     script.async = true;
     
     script.onload = () => {
-      // Usamos (window as any) para saltarnos el tipado estricto de TypeScript
       const globalWindow = window as any;
       if (globalWindow.voiceflow && globalWindow.voiceflow.chat) {
         globalWindow.voiceflow.chat.load({

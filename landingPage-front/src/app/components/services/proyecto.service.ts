@@ -25,6 +25,6 @@ export class ProyectoService {
   }
 
   updateProject(id: string, data: FormData): Observable<any> {
-  return this.http.put(this.url + 'updateProject' + id, data);
+    return this.http.put(this.url + 'updateProject' + id, data);
   }
 }
