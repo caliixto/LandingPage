@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { ProyectoService} from '../services/proyecto.service';
 import { ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -14,6 +14,7 @@ import {Subject } from 'rxjs';
 })
 export class ProyectoFormComponent {
   mensajeExito: boolean = false;
+  @Input() proyectoAEditar: any = null;
 
   formulario = new FormGroup({
     titulo: new FormControl('', [Validators.required,Validators.minLength(3), Validators.maxLength(50)]),
@@ -26,6 +27,16 @@ export class ProyectoFormComponent {
   // Elimina 'public formData: FormData = new FormData();' de aquí arriba
   public archivoSeleccionado: File | null = null;
   esModoEdicion: boolean = false;
+
+  ngOnInit() {
+  if (this.proyectoAEditar) {
+    // Si recibimos un proyecto, rellenamos el formulario
+    this.formulario.patchValue({
+      titulo: this.proyectoAEditar.titulo,
+      tags: this.proyectoAEditar.tags
+    });
+  }
+}
 
   proyecto = { titulo: '', tags: '', imagen: '' };
 
@@ -44,11 +55,18 @@ export class ProyectoFormComponent {
     formData.append('tags', tags);
     
     if (this.archivoSeleccionado) {
-        formData.append('file0', this.archivoSeleccionado);
-    } else {
-        alert("Por favor, selecciona una imagen.");
-        return;
-    }
+    formData.append('file0', this.archivoSeleccionado);
+  }
+
+  if (this.proyectoAEditar) {
+    // CASO ACTUALIZAR: Llamamos al servicio de actualizar
+    this.formProyecto.updateProject(this.proyectoAEditar._id, formData).subscribe({
+      next: (res) => {
+        this.mensajeExito = true;
+        // ... (tu lógica de timeout y cerrar)
+      }
+    });
+  } else {
 
     // 4. Enviamos al servicio
     this.formProyecto.saveProject(formData).subscribe({

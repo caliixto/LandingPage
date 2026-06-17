@@ -23,7 +23,7 @@ router.post("/save", upload.single("file0"), ProjectController.save); //guardar 
 router.post("/restoreProjects", ProjectController.restoreProjects); //Restaurar proyectos
 router.get("/list", ProjectController.list);
 router.delete("/deleteProject/:id",ProjectController.deleteProject);
-router.put("/update",ProjectController.update);
+router.put("/updateProject",ProjectController.updateProject);
 
 
 //Exportar Rutas

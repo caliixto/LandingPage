@@ -85,6 +85,7 @@ const list = (req, res) => {
     }).catch(error => res.status(500).send({ status: "error", message: "Error al listar", error }));
 };
 
+//Eliminar Projecto
 const deleteProject = (req, res) => {
     let id = req.params.id;
     Project.findByIdAndDelete(id).then(projectRemoved => {
@@ -93,7 +94,8 @@ const deleteProject = (req, res) => {
     }).catch(error => res.status(500).send({ status: "error", message: "Error al eliminar", error }));
 };
 
-const update = (req, res) => {
+//Actualizar Poyecto
+const updateProject = (req, res) => {
     let body = req.body;
     Project.findByIdAndUpdate(body.id, body, { new: true }).then(projectUpdated => {
         if (!projectUpdated) return res.status(404).send({ status: "error", message: "No encontrado" });
@@ -102,4 +104,4 @@ const update = (req, res) => {
 };
 
 
-module.exports = { save, list, deleteProject, update, restoreProjects };
+module.exports = { save, list, deleteProject, updateProject, restoreProjects };

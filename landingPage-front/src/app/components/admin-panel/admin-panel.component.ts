@@ -19,6 +19,7 @@ import { ProjectService } from '../services/project.service';
 export class AdminPanelComponent {
   mostrarFormulario: boolean = false;
   public proyectos:any;
+  proyectoAEditar: any = null;
   
   constructor(public authService: LoginFormServicesService, 
     private router: Router, private _adminProjectService:AdminProjectServiceService,
@@ -137,13 +138,16 @@ obtenerUrlImagen(rutaEnBD: string): string {
   return 'https://landingpage-ezzw.onrender.com' + rutaEnBD;
 }
 
-abrirFormulario() {
+
+  abrirFormulario(p:any) {
+    this.proyectoAEditar = p;
     this.mostrarFormulario = true;
   }
 
   // Llama a esto cuando el formulario termine de guardar
   cerrarFormulario() {
     this.mostrarFormulario = false;
+    this.proyectoAEditar = null;
   }
 
   
