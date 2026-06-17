@@ -99,7 +99,6 @@ const updateProject = (req, res) => {
     const id = req.body.id; 
     
     const updateData = { ...req.body };
-
     if (req.file) {
         updateData.imagen = req.file.path;
     }
