@@ -39,6 +39,7 @@ cerrarSesion() {
   fotoPerfil: string = ''; 
 
  ngOnInit() {
+  console.log("--- El AdminPanel ha iniciado ---");
   // 1. Recuperamos la URL que guardamos en el login
   const urlGuardada = localStorage.getItem('fotoPerfil');
 
