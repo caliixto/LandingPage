@@ -51,6 +51,13 @@ export class ProyectoFormComponent implements OnInit {
       formData.append('file0', this.archivoSeleccionado);
     }
 
+    console.log("ID del proyecto:", this.proyectoAEditar?._id); 
+
+    if (this.esModoEdicion && !this.proyectoAEditar?._id) {
+      console.error("¡ERROR! No hay ID para editar.");
+      return;
+    }
+
     // Llamamos al servicio
     const call = this.esModoEdicion 
       ? this.formProyecto.updateProject(this.proyectoAEditar.id, formData)
