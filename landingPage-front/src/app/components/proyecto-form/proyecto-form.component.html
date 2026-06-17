@@ -9,14 +9,19 @@
     <input formControlName="tags" placeholder="Tags" class="form-control">
 
     <label>Imagen:</label>
+    <div *ngIf="esModoEdicion && proyectoAEditar?.imagen" class="image-preview">
+      <p>Imagen actual:</p>
+      <img [src]="obtenerUrlImagen(proyectoAEditar.imagen)" alt="Actual" width="100">
+    </div>
+
     <input type="file" (change)="subirArchivo($event)">
     
-    <button type="submit" [disabled]="formulario.invalid">
+    <button type="submit" [disabled]="formulario.invalid && !esModoEdicion">
       {{ esModoEdicion ? 'Actualizar Cambios' : 'Guardar Proyecto' }}
     </button>
 
     <div *ngIf="mensajeExito" class="toast-success">
-      ¡Proyecto guardado correctamente!
+      ¡{{ esModoEdicion ? 'Actualizado' : 'Guardado' }} correctamente!
     </div>
-</form>
+  </form>
 </div>

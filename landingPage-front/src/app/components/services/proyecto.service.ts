@@ -7,7 +7,12 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProyectoService {
-  public url = 'https://landingpage-ezzw.onrender.com/api/project/';
+  private urlBase = window.location.hostname === 'localhost' 
+    ? 'http://localhost:3977/api/' 
+    : 'https://landingpage-ezzw.onrender.com/api/';
+
+  // Ahora puedes construir tus rutas basándote en esta URL
+  public url = this.urlBase;
   
   // 3. Crea el canal de comunicación
   private proyectoGuardadoSubject = new Subject<void>();
