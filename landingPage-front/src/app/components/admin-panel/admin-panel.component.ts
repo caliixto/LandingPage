@@ -140,8 +140,10 @@ obtenerUrlImagen(rutaEnBD: string): string {
 
 
   abrirFormulario(p:any) {
-    this.proyectoAEditar = p;
-    this.mostrarFormulario = true;
+  console.log("¡Lápiz pulsado! Proyecto:", p);
+  this.proyectoAEditar = p;
+  this.mostrarFormulario = true;
+  console.log("Estado de mostrarFormulario:", this.mostrarFormulario);
   }
 
   // Llama a esto cuando el formulario termine de guardar
