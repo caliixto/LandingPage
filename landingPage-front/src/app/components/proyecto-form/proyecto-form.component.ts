@@ -74,6 +74,14 @@ export class ProyectoFormComponent implements OnInit {
     }
   }
 
+  obtenerUrlImagen(rutaEnBD: string): string {
+  if (rutaEnBD.startsWith('http')) {
+    return rutaEnBD;
+  }
+  // 2. Si es una ruta antigua local (sin http), añádele el dominio de Render.
+  return 'https://landingpage-ezzw.onrender.com' + rutaEnBD;
+}
+
   clear() {
     this.formulario.reset();
     this.archivoSeleccionado = null;
