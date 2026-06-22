@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginFormServicesService } from '../login-form-services.service';
 import { AdminProjectServiceService } from '../services/admin-project-service.service';
@@ -39,7 +39,6 @@ cerrarSesion() {
   fotoPerfil: string = ''; 
 
  ngOnInit() {
-  console.log("--- El AdminPanel ha iniciado ---");
   // 1. Recuperamos la URL que guardamos en el login
   const urlGuardada = localStorage.getItem('fotoPerfil');
 
@@ -151,6 +150,13 @@ cerrarFormulario() {
     this.mostrarFormulario = false;
     this.proyectoAEditar = null;
   }
+
+  @HostListener('document:click', ['$event'])
+  @HostListener('document:keydown', ['$event'])
+onUserActivity() {
+  // cuando el usuario toca cualquier parte de la la pantalla el contador, se vuelve a reiniciar
+  this.authService.continuarSesion(); 
+}
 
   
 }

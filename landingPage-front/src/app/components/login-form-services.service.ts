@@ -24,23 +24,10 @@ export class LoginFormServicesService {
   private url = window.location.hostname === 'localhost' 
   ? 'http://localhost:3977/api/admin/login' 
   : 'https://landingpage-ezzw.onrender.com/api/admin/login';
-    
+ 
   abierto: boolean = false; // La variable maestra
 
-  ngOnInit() {
-      // Listener que detecta cuando el usuario vuelve a poner la pestaña en primer plano
-      document.addEventListener("visibilitychange", () => {
-        if (document.visibilityState === "visible") {
-          const tiempoRealPasado = Date.now() - this.ultimaActividad;
-          
-          // Si al volver ya pasaron los 2.5 min, forzamos el aviso inmediatamente
-          if (tiempoRealPasado >= 150000 && !this.mostrarAviso) {
-            this.mostrarAviso = true;
-            this.iniciarCuentaAtras();
-          }
-        }
-      });
-  }
+
 
   abrir() { 
     this.abierto = true; 
@@ -51,7 +38,19 @@ export class LoginFormServicesService {
     }
 
     constructor(private http: HttpClient) {
-      this.iniciarTemporizadorInactividad()
+      this.iniciarTemporizadorInactividad();
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") {
+          const tiempoRealPasado = Date.now() - this.ultimaActividad;
+          
+          // Si al volver ya pasaron los 2.5 min, forzamos el aviso inmediatamente
+          if (tiempoRealPasado >= 150000 && !this.mostrarAviso) {
+            this.mostrarAviso = true;
+            this.verificarAlDespertar();
+          }
+        }
+      });
     }
 
     eviarDatos(usuario:Usuario){
@@ -88,6 +87,16 @@ export class LoginFormServicesService {
         }
     }, 150000); 
   }
+
+  verificarAlDespertar() {
+  const tiempoRealPasado = Date.now() - this.ultimaActividad;
+
+  // Si han pasado más de 2.5 minutos (150,000ms), salta el aviso YA
+  if (tiempoRealPasado >= 150000 && !this.mostrarAviso) {
+    this.mostrarAviso = true;
+    this.iniciarCuentaAtras();
+  }
+}
 
     iniciarCuentaAtras() {
     // 1. Limpiamos por seguridad antes de crear uno nuevo
