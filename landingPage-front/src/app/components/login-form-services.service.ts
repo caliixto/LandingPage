@@ -15,20 +15,36 @@ export interface Usuario{
 })
 export class LoginFormServicesService {
   private router = inject(Router);
-    private logoutTimer: any;
-    mostrarAviso: boolean = false; 
-    segundosRestantes: number = 30;
-    private intervaloCuentaAtras: any;
+  private logoutTimer: any;
+  mostrarAviso: boolean = false; 
+  segundosRestantes: number = 30;
+  private intervaloCuentaAtras: any;
+  private ultimaActividad: number = Date.now();
 
-    private url = window.location.hostname === 'localhost' 
-    ? 'http://localhost:3977/api/admin/login' 
-    : 'https://landingpage-ezzw.onrender.com/api/admin/login';
+  private url = window.location.hostname === 'localhost' 
+  ? 'http://localhost:3977/api/admin/login' 
+  : 'https://landingpage-ezzw.onrender.com/api/admin/login';
     
-    abierto: boolean = false; // La variable maestra
+  abierto: boolean = false; // La variable maestra
 
-    abrir() { 
-      this.abierto = true; 
-    }
+  ngOnInit() {
+      // Listener que detecta cuando el usuario vuelve a poner la pestaña en primer plano
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") {
+          const tiempoRealPasado = Date.now() - this.ultimaActividad;
+          
+          // Si al volver ya pasaron los 2.5 min, forzamos el aviso inmediatamente
+          if (tiempoRealPasado >= 150000 && !this.mostrarAviso) {
+            this.mostrarAviso = true;
+            this.iniciarCuentaAtras();
+          }
+        }
+      });
+  }
+
+  abrir() { 
+    this.abierto = true; 
+  }
 
     cerrar(){ 
       this.abierto = false; 
@@ -55,15 +71,23 @@ export class LoginFormServicesService {
     this.router.navigate(['/']).then(() => {});
   }
 
-    iniciarTemporizadorInactividad() {
-      clearTimeout(this.logoutTimer);
-      
-      // El aviso salta a los 2 minutos y medio (150,000ms)
-      this.logoutTimer = setTimeout(() => {
+  iniciarTemporizadorInactividad() {
+    clearTimeout(this.logoutTimer);
+    this.ultimaActividad = Date.now(); // Guardamos el momento de inicio (Fecha Acual)
+
+    this.logoutTimer = setTimeout(() => {
+        // Cuando el timer "despierta", verificamos si realmente pasaron 2.5 min
+        const tiempoRealPasado = Date.now() - this.ultimaActividad;
+        
+        if (tiempoRealPasado >= 150000) {
           this.mostrarAviso = true;
           this.iniciarCuentaAtras();
-      }, 150000); 
-    }
+        } else {
+          const tiempoRestante = 150000 - tiempoRealPasado;
+          this.logoutTimer = setTimeout(() => this.iniciarTemporizadorInactividad(), tiempoRestante);
+        }
+    }, 150000); 
+  }
 
     iniciarCuentaAtras() {
     // 1. Limpiamos por seguridad antes de crear uno nuevo
@@ -79,9 +103,9 @@ export class LoginFormServicesService {
             this.cerrarSesion();
         }
     }, 1000);
-}
+  }
 
-    continuarSesion() {
+  continuarSesion() {
       // 1. Ocultar el modal
       this.mostrarAviso = false;
       // 2. Limpiar RELOJ DEL AVISO (El que resta los segundos en pantalla)
@@ -97,4 +121,4 @@ export class LoginFormServicesService {
       // 5. ¡VOLVER A EMPEZAR DE CERO!
       this.iniciarTemporizadorInactividad();
     }
-  }
+}
