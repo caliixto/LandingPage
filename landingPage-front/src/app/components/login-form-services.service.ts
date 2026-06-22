@@ -48,19 +48,25 @@ export class LoginFormServicesService {
       });
     }
 
-    eviarDatos(usuario:Usuario){
-      return this.http.post(this.url, usuario);
-    }
+  eviarDatos(usuario:Usuario){
+    return this.http.post(this.url, usuario);
+  }
 
-    iniciarSesion(token:string){
-      localStorage.setItem("adminToken", token)
-    }
+  iniciarSesion(token:string){
+    localStorage.setItem("adminToken", token)
+  }
 
     estarLogueado():boolean{
       return !!localStorage.getItem("adminToken");
     }
 
-    cerrarSesion() {
+  cerrarSesion() {
+    this.mostrarAviso = false;
+    this.segundosRestantes = 30;
+    
+    if (this.intervaloCuentaAtras) clearInterval(this.intervaloCuentaAtras);
+    if (this.logoutTimer) clearTimeout(this.logoutTimer);
+    
     localStorage.removeItem('adminToken');
     this.router.navigate(['/']).then(() => {});
   }
