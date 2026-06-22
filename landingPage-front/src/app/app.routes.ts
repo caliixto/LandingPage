@@ -9,7 +9,7 @@ export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'login', component: LoginFormComponent },
     { 
-      path: 'adminPanel', // <--- Ponlo idéntico a lo que escribes en el navegador
+      path: 'adminPanel',
       component: AdminPanelComponent, 
       canActivate: [authGuard] 
     },

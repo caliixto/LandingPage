@@ -51,7 +51,7 @@ export class LoginFormServicesService {
     }
 
     cerrarSesion() {
-    localStorage.removeItem('token');
+    localStorage.removeItem('adminToken');
     this.router.navigate(['/']).then(() => {});
   }
 
