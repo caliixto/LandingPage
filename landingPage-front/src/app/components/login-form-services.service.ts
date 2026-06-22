@@ -40,15 +40,10 @@ export class LoginFormServicesService {
     constructor(private http: HttpClient) {
       this.iniciarTemporizadorInactividad();
 
+
       document.addEventListener("visibilitychange", () => {
         if (document.visibilityState === "visible") {
-          const tiempoRealPasado = Date.now() - this.ultimaActividad;
-          
-          // Si al volver ya pasaron los 2.5 min, forzamos el aviso inmediatamente
-          if (tiempoRealPasado >= 150000 && !this.mostrarAviso) {
-            this.mostrarAviso = true;
-            this.verificarAlDespertar();
-          }
+          this.verificarAlDespertar();
         }
       });
     }
@@ -88,15 +83,17 @@ export class LoginFormServicesService {
     }, 150000); 
   }
 
+  // En tu LoginFormServicesService
   verificarAlDespertar() {
-  const tiempoRealPasado = Date.now() - this.ultimaActividad;
+    const tiempoRealPasado = Date.now() - this.ultimaActividad;
 
-  // Si han pasado más de 2.5 minutos (150,000ms), salta el aviso YA
-  if (tiempoRealPasado >= 150000 && !this.mostrarAviso) {
-    this.mostrarAviso = true;
-    this.iniciarCuentaAtras();
+    if (tiempoRealPasado >= 150000) {
+      this.cerrarSesion();
+    } else if (tiempoRealPasado >= 120000 && !this.mostrarAviso) {
+      this.mostrarAviso = true;
+      this.iniciarCuentaAtras();
+    }
   }
-}
 
     iniciarCuentaAtras() {
     // 1. Limpiamos por seguridad antes de crear uno nuevo
