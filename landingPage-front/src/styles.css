@@ -18,12 +18,14 @@
 html {
   font-size: 62.5%; /* 10px = 1rem */
   overflow-x: hidden; /* Evita que la web baile a los lados */
+  overflow-y: scroll;
 }
 
 body {
   width: 100%;
   overflow-x: hidden;
   font-family: "DM Sans", sans-serif; /* Tu fuente */
+  align-items: center;
 }
 
 /* 3. IMPORTANTE: Hacemos que los componentes de Angular se comporten como bloques */

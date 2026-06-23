@@ -3,6 +3,7 @@ import { AdminPanelComponent } from './components/admin-panel/admin-panel.compon
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { HomeComponent } from './components/home/home.component';
 import { authGuard } from './auth.guard';
+import { ServicesComponent } from './components/services/services.component';
 
 // app.routes.ts
 export const routes: Routes = [

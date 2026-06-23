@@ -4,7 +4,7 @@
 
 .layout__services{
     position: relative;
-    margin: 14rem 10rem;
+    margin: 14rem auto;
     margin-bottom: 8rem;
     z-index:1;
 }

@@ -3,15 +3,10 @@
     "HOME": "Inicio",
     "SERVICES": "Servicios",
     "PORTFOLIO": "Portafolio",
+    "TECHNICAL_STACK":"Stack Tecnico",
     "BLOG": "Blog",
     "TEAM": "Equipo",
-    "CONTACT": "Contacto",
-
-    "WEB_DESIGN": "Diseño web",
-    "WEB_DEVELOPMENT": "Desarrollo Web",
-    "APP_DEVELOPMENT": "Desarrollo Apps",
-    "PROGRAMMING": "Programación",
-    "CONSULTING": "Consultoría"
+    "CONTACT": "Contacto"
   },
 
   "MENU_MOBILE": {
