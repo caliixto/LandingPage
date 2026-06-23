@@ -63,6 +63,10 @@ clear(){
   this.formulario.reset();
 }
 
+cerrarModal(){
+  this.loginService.cerrar();
+}
+
 @Output() cerrar = new EventEmitter();
 
   //Formulario login

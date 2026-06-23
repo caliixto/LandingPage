@@ -13,9 +13,8 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
   border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
   color: white;                        /* Texto claro */
-  
-  /* Puedes añadir una animación de entrada suave */
   animation: fadeIn 0.2s ease-out;
+  position: relative;
 }
 
 .modal-content input{
@@ -53,6 +52,24 @@ button[disabled] {
 .mensaje{
   color: #ef4444;
   font-size: 1.3rem;
+}
+
+/*Cerrar form*/
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 3.5rem;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: var(--color-primary);
 }
 
 @keyframes fadeIn {
