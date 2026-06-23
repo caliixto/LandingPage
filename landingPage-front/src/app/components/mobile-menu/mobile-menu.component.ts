@@ -19,17 +19,4 @@ export class MobileMenuComponent {
     this.cerrarMenu.emit()
   }
 
-  submenuActivo:string = "";
-
-  subMenu(nombre:string, event:Event){
-
-    event.preventDefault();
-
-    if(this.submenuActivo==nombre){
-      this.submenuActivo = ""
-    }else{
-      this.submenuActivo = nombre
-    }
-  }
-
 }

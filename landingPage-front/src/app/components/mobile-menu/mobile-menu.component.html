@@ -14,61 +14,32 @@
   <div class="menu-mobile__body">
     <nav class="menu-mobile__nav">
       <ul class="menu-mobile__list">
+        
+        <!-- Inicio -->
         <li class="menu-mobile__item">
-          <a href="" class="menu-mobile__link">{{ 'MENU_MOBILE.HOME' | translate }}</a>
+          <a href="#inicio" class="menu-mobile__link" (click)="cerrar()">{{ 'MENU_MOBILE.HOME' | translate }}</a>
         </li>
 
-        <li class="menu-mobile__item" (click)="subMenu('servicios', $event)">
-          <a href="" class="menu-mobile__link">
-            {{ 'MENU_MOBILE.SERVICES' | translate }}
-            <i class="fa-solid fa-chevron-down menu-mobile__icon"></i>
-          </a>
-          <ul class="menu-mobile__submenu-mobile" [class.submenu--open]="submenuActivo==='servicios'">
-            <li class="submenu-mobile__item"><a href="" class="submenu-mobile__link">{{ 'MENU_MOBILE.SUBMENU.WEB_DESIGN' | translate }}</a></li>
-            <li class="submenu-mobile__item"><a href="" class="submenu-mobile__link">{{ 'MENU_MOBILE.SUBMENU.WEB_DEVELOPMENT' | translate }}</a></li>
-            <li class="submenu-mobile__item"><a href="" class="submenu-mobile__link">{{ 'MENU_MOBILE.SUBMENU.APP_DEVELOPMENT' | translate }}</a></li>
-            <li class="submenu-mobile__item"><a href="" class="submenu-mobile__link">{{ 'MENU_MOBILE.SUBMENU.PROGRAMMING' | translate }}</a></li>
-            <li class="submenu-mobile__item"><a href="" class="submenu-mobile__link">{{ 'MENU_MOBILE.SUBMENU.CONSULTING' | translate }}</a></li>
-          </ul>
-        </li>
-
-        <li class="menu-mobile__item" (click)="subMenu('portafolio', $event)">
-          <a href="" class="menu-mobile__link">
-            {{ 'MENU_MOBILE.PORTFOLIO' | translate }}
-            <i class="fa-solid fa-chevron-down menu-mobile__icon"></i>
-          </a>
-          <ul class="menu-mobile__submenu-mobile" [class.submenu--open]="submenuActivo==='portafolio'">
-             <li class="submenu-mobile__item"><a href="" class="submenu-mobile__link">{{ 'MENU_MOBILE.SUBMENU.WEB_DESIGN' | translate }}</a></li>
-             <li class="submenu-mobile__item"><a href="" class="submenu-mobile__link">{{ 'MENU_MOBILE.SUBMENU.WEB_DEVELOPMENT' | translate }}</a></li>
-             <li class="submenu-mobile__item"><a href="" class="submenu-mobile__link">{{ 'MENU_MOBILE.SUBMENU.APP_DEVELOPMENT' | translate }}</a></li>
-             <li class="submenu-mobile__item"><a href="" class="submenu-mobile__link">{{ 'MENU_MOBILE.SUBMENU.PROGRAMMING' | translate }}</a></li>
-             <li class="submenu-mobile__item"><a href="" class="submenu-mobile__link">{{ 'MENU_MOBILE.SUBMENU.CONSULTING' | translate }}</a></li>
-          </ul>
-        </li>
-
-        <li class="menu-mobile__item" (click)="subMenu('blog', $event)">
-          <a href="" class="menu-mobile__link">
-            {{ 'MENU_MOBILE.BLOG' | translate }}
-            <i class="fa-solid fa-chevron-down menu-mobile__icon"></i>
-          </a>
-          <ul class="menu-mobile__submenu-mobile" [class.submenu--open]="submenuActivo==='blog'">
-             <li class="submenu-mobile__item"><a href="" class="submenu-mobile__link">{{ 'MENU_MOBILE.SUBMENU.WEB_DESIGN' | translate }}</a></li>
-             <li class="submenu-mobile__item"><a href="" class="submenu-mobile__link">{{ 'MENU_MOBILE.SUBMENU.WEB_DEVELOPMENT' | translate }}</a></li>
-             <li class="submenu-mobile__item"><a href="" class="submenu-mobile__link">{{ 'MENU_MOBILE.SUBMENU.APP_DEVELOPMENT' | translate }}</a></li>
-             <li class="submenu-mobile__item"><a href="" class="submenu-mobile__link">{{ 'MENU_MOBILE.SUBMENU.PROGRAMMING' | translate }}</a></li>
-             <li class="submenu-mobile__item"><a href="" class="submenu-mobile__link">{{ 'MENU_MOBILE.SUBMENU.CONSULTING' | translate }}</a></li>
-          </ul>
-        </li>
-
+        <!-- Servicios -->
         <li class="menu-mobile__item">
-          <a href="" class="menu-mobile__link">{{ 'MENU_MOBILE.TEAM' | translate }}</a>
+          <a href="#servicios" class="menu-mobile__link" (click)="cerrar()">{{ 'MENU_MOBILE.SERVICES' | translate }}</a>
         </li>
+
+        <!-- Portafolio -->
         <li class="menu-mobile__item">
-          <a href="" class="menu-mobile__link">{{ 'MENU_MOBILE.CONTACT' | translate }}</a>
+          <a href="https://mi-porfolio-tawny.vercel.app/" class="menu-mobile__link" (click)="cerrar()">{{ 'MENU_MOBILE.PORTFOLIO' | translate }}</a>
         </li>
+
+        <!-- Contacto -->
+        <li class="menu-mobile__item">
+          <a href="#contacto" class="menu-mobile__link" (click)="cerrar()">{{ 'MENU_MOBILE.CONTACT' | translate }}</a>
+        </li>
+
+        <!-- Admin -->
         <li (click)="loginService.abrir()" class="adminLogin menu-mobile__item menu-mobile__link">
           {{ 'MENU_MOBILE.ADMIN' | translate }}
         </li>
+
       </ul>
     </nav>
   </div>

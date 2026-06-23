@@ -13,17 +13,9 @@
     "HOME": "Inicio",
     "SERVICES": "Servicios",
     "PORTFOLIO": "Portafolio",
-    "BLOG": "Blog",
     "TEAM": "Equipo",
     "CONTACT": "Contacto",
-    "ADMIN": "Admin",
-    "SUBMENU": {
-      "WEB_DESIGN": "Diseño web",
-      "WEB_DEVELOPMENT": "Desarrollo Web",
-      "APP_DEVELOPMENT": "Desarrollo Apps",
-      "PROGRAMMING": "Programación",
-      "CONSULTING": "Consultoría"
-    }
+    "ADMIN": "Admin"
   },
 
   "BANNER":{
