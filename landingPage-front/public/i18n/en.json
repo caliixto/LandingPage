@@ -28,14 +28,13 @@
     "SERVICES_THAT_CAN_HELP_YOU": "Services that can help you",
 
     "DESIGN": "Design",
-    "DESIGN_DESCRIPTION": "From a website, to an app, to a logo...",
-    "READ_MORE": "Read more",
+    "DESIGN_DESCRIPTION": "I enjoy creating clean, user-friendly interfaces. I focus on making sure users can find what they're looking for without any hassle, while always ensuring that the website looks good on any device....",
 
     "DEVELOPMENT": "Development",
-    "DEVELOPMENT_DESCRIPTION": "Custom web and mobile applications tailored to your needs...",
+    "DEVELOPMENT_DESCRIPTION": "I develop dynamic web applications using Angular. I like to write clean, well-structured code so that the project is easy to improve in the future...",
 
     "MARKETING": "Marketing",
-    "MARKETING_DESCRIPTION": "We give visibility to your digital project..."
+    "MARKETING_DESCRIPTION": "I make sure that websites load quickly and function properly. I pay special attention to the technical details to ensure that the site is efficient and a pleasure to browse...."
   },
 
   "PROJECTS": {
@@ -49,24 +48,20 @@
 },
 
 "STATS": {
-  "SUBTITLE": "Design and Development Agency",
-  "TITLE": "Work Statistics",
-  "DESCRIPTION": "Here you can see a summary of our statistics over the years.",
+  "SUBTITLE": "Statistics that reflect my dedication and technical growth.",
+  "TITLE": "My professional background",
   "YEARS": "Years Active",
   "COMPLETED_PROJECTS": "Completed Projects",
-  "PROFESSIONALS": "Professionals",
-  "CLIENTS": "Happy Clients"
+  "TECHNOLOGIES": "Mastered Technologies",
+  "CHALLENGES_OVERCOME": "Challenges Overcome"
 },
 
 "REVIEW": {
-  "SUBTITLE": "Reviews",
-  "TITLE": "What do our clients say?",
-  "DESCRIPTION": "Our clients are always satisfied with their websites and apps.",
-  "GOOGLE": "On Google you can search for everything you need. Knowing how to use it effectively is very useful when troubleshooting.",
-  "AUTHOR_NAME": "Calixto Bocamba",
-  "AUTHOR_DESCRIPTION": "Web Developer",
-  "DESCRIPTION_2": "There are many programming and web development courses here, from beginner to professional level.",
-  "YOUTUBE": "On YouTube you can find all kinds of videos, from basic concepts and daily issues to advanced topics."
+      "TITLE": "My learning methodology.",
+      "SUBTITLE": "Tools I use daily to stay up to date.",
+      "GOOGLE_TIP": " Google is my primary tool for troubleshooting and technical documentation.",
+      "UDEMY_TIP": "A key platform for my ongoing training and in-depth study of Angular and new technologies.",
+      "YOUTUBE_TIP": "A constant source of hands-on tutorials for understanding complex concepts visually."
 },
 
 "CLIENTS": {

@@ -28,14 +28,13 @@
     "SERVICES_THAT_CAN_HELP_YOU": "Servicios que te pueden ayudar",
 
     "DESIGN": "Diseño",
-    "DESIGN_DESCRIPTION": "Desde una web, pasando por una app, hasta un logotipo...",
-    "READ_MORE": "Leer más",
+    "DESIGN_DESCRIPTION": "Me gusta crear interfaces limpias y fáciles de usar. Me centro en que el usuario encuentre lo que busca sin complicaciones, cuidando siempre que la web se vea bien en cualquier dispositivo....",
 
     "DEVELOPMENT": "Desarrollo",
-    "DEVELOPMENT_DESCRIPTION": "Las aplicaciones web y móviles que imaginas a medida...",
+    "DEVELOPMENT_DESCRIPTION": "Desarrollo aplicaciones web dinámicas utilizando Angular. Me gusta escribir código ordenado y estructurado para que el proyecto sea fácil de mejorar en el futuro...",
 
     "MARKETING": "Marketing",
-    "MARKETING_DESCRIPTION": "Le damos visibilidad a tu proyecto digital..."
+    "MARKETING_DESCRIPTION": "Me aseguro de que las webs carguen rápido y funcionen correctamente. Pongo especial atención en los detalles técnicos para que la página sea eficiente y agradable al navegar..."
   },
 
     "PROJECTS": {
@@ -49,24 +48,20 @@
     },
 
     "STATS": {
-      "SUBTITLE": "Agencia de diseño y desarrollo",
-      "TITLE": "Estadísticas de trabajo realizado",
-      "DESCRIPTION": "Aquí puedes ver un resumen de nuestras estadísticas en estos años de trabajo.",
-      "YEARS": "Años activos",
+      "SUBTITLE": "Datos que reflejan mi dedicación y crecimiento técnico.",
+      "TITLE": "Mi trayectoria profesional",
+      "YEARS": "Años de formacion",
       "COMPLETED_PROJECTS": "Proyectos realizados",
-      "PROFESSIONALS": "Profesionales",
-      "CLIENTS": "Clientes contentos"
+      "TECHNOLOGIES": "Tecnologias Dominadas",
+      "CHALLENGES_OVERCOME": "Retos resueltos"
     },
 
     "REVIEW": {
-      "SUBTITLE": "Reseñas",
-      "TITLE": "¿Qué dicen nuestros clientes?",
-      "DESCRIPTION": "Nuestros clientes siempre salen satisfechos con sus webs y apps.",
-      "GOOGLE": "En Google podrás buscar todo lo que necesites. Es importante saber manejarlo con soltura; será muy útil a la hora de buscar errores.",
-      "AUTHOR_NAME": "Calixto Bocamba",
-      "AUTHOR_DESCRIPTION": "Desarrollador web",
-      "DESCRIPTION_2": "Aquí hay muchos cursos de programación y desarrollo web para empezar desde cero hasta convertirse en un profesional.",
-      "YOUTUBE": "En YouTube tienes todo tipo de vídeos que te serán de ayuda, desde los conceptos básicos y problemas del día a día hasta cosas más avanzadas."
+      "TITLE": "Mi metodología de aprendizaje",
+      "SUBTITLE": "Herramientas que uso diariamente para mantenerme al día.",
+      "GOOGLE_TIP": "Google es mi herramienta principal para la resolución de errores y documentación técnica.",
+      "UDEMY_TIP": "Plataforma clave para mi formación continua y profundización en Angular y nuevas tecnologías.",
+      "YOUTUBE_TIP": "Fuente constante de tutoriales prácticos para entender conceptos complejos de forma visual."
     },
 
     "CLIENTS": {

@@ -28,15 +28,13 @@
     "SERVICES_THAT_CAN_HELP_YOU": "Des services qui peuvent vous aider",
 
     "DESIGN": "Conception",
-    "DESIGN_DESCRIPTION": "D’un site web à une application, jusqu’à un logo...",
-
-    "READ_MORE": "En savoir plus",
+    "DESIGN_DESCRIPTION": "J'aime créer des interfaces épurées et faciles à utiliser. Je veille à ce que l'utilisateur trouve facilement ce qu'il cherche, tout en m'assurant que le site s'affiche correctement sur n'importe quel appareil....",
 
     "DEVELOPMENT": "Développement",
-    "DEVELOPMENT_DESCRIPTION": "Les applications web et mobiles que vous imaginez, conçues sur mesure...",
+    "DEVELOPMENT_DESCRIPTION": "Je développe des applications web dynamiques à l'aide d'Angular. J'aime écrire du code clair et structuré afin que le projet puisse être facilement amélioré à l'avenir...",
 
     "MARKETING": "Marketing",
-    "MARKETING_DESCRIPTION": "Nous donnons de la visibilité à votre projet numérique..."
+    "MARKETING_DESCRIPTION": "Je veille à ce que les sites web se chargent rapidement et fonctionnent correctement. J'accorde une attention particulière aux détails techniques afin que le site soit performant et agréable à parcourir...."
   },
 
   "PROJECTS": {
@@ -50,25 +48,21 @@
   },
 
   "STATS": {
-      "SUBTITLE": "Agence de Conception et Développement",
-      "TITLE": "Statistiques de Travail",
-      "DESCRIPTION": "Vous pouvez voir ici un résumé de nos statistiques au fil des années.",
+      "SUBTITLE": "Des données qui témoignent de mon engagement et de mon évolution technique.",
+      "TITLE": "Mon parcours professionnel",
       "YEARS": "Années d'activité",
       "COMPLETED_PROJECTS": "Projets réalisés",
-      "PROFESSIONALS": "Professionnels",
-      "CLIENTS": "Clients satisfaits"
+      "TECHNOLOGIES": "Technologies maîtrisées",
+      "CHALLENGES_OVERCOME": "Défis relevés"
   },
 
   "REVIEW": {
-      "SUBTITLE": "Avis",
-      "TITLE": "Que disent nos clients ?",
-      "DESCRIPTION": "Nos clients sont toujours satisfaits de leurs sites web et applications.",
-      "GOOGLE": "Sur Google, vous pouvez rechercher tout ce dont vous avez besoin. Savoir l'utiliser efficacement est très utile pour résoudre des problèmes.",
-      "AUTHOR_NAME": "Calixto Bocamba",
-      "AUTHOR_DESCRIPTION": "Développeur Web",
-      "DESCRIPTION_2": "Vous trouverez ici de nombreux cours de programmation et de développement web, du niveau débutant au niveau professionnel.",
-      "YOUTUBE": "Sur YouTube, vous trouverez toutes sortes de vidéos, des concepts de base aux sujets avancés."
-  },
+      "TITLE": "Ma méthodologie d'apprentissage.",
+      "SUBTITLE": "Les outils que j'utilise au quotidien pour rester à jour.",
+      "GOOGLE_TIP": "Google est mon outil principal pour le dépannage et la documentation technique.",
+      "UDEMY_TIP": "Une plateforme essentielle pour ma formation continue et l'approfondissement de mes connaissances sur Angular et les nouvelles technologies.",
+      "YOUTUBE_TIP": "Une source constante de tutoriels pratiques pour comprendre visuellement des concepts complexes."
+    },
 
   "CLIENTS": {
       "SUBTITLE": "Meilleurs Clients",
