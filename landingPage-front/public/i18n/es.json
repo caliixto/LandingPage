@@ -65,46 +65,44 @@
     },
 
     "CLIENTS": {
-      "SUBTITLE": "Mejores clientes",
-      "TITLE": "Hemos creado soluciones para...",
-      "DESCRIPTION": "Desarrollamos a medida cualquier proyecto con las mejores tecnologías."
+      "TITLE": "Tecnologías que domino...",
+      "SUBTITLE": "Herramientas que utilizo para construir aplicaciones web eficientes."
     },
 
-    "NEWS": {
-      "SUBTITLE": "¿Qué está pasando?",
-      "TITLE": "Últimas noticias",
-      "DESCRIPTION": "Novedades sobre desarrollo web, desarrollo móvil y diseño digital.",
-      "LINK": "Cómo maquetar una web con HTML5 y CSS3",
-      "NEWS_DESCRIPTION": "¿Quieres dar tus primeros pasos en el desarrollo web y aprender a crear webs espectaculares?",
-      "READ_MORE": "Leer más",
-      "LINK_2": "Cómo aprender a programar con JavaScript",
-      "DESCRIPTION_2": "¿Quieres dar tus primeros pasos en la programación del lado del cliente?"
-    },
+  "NEWS": {
+      "SUBTITLE": "Enfoque técnico",
+      "TITLE": "Fundamentos de mi trabajo",
+      "DESCRIPTION": "Principios que aplico en cada desarrollo.",
+      "LINK": "Maquetación Responsiva y Accesible",
+      "NEWS_DESCRIPTION": "Pongo el foco en crear interfaces que se adapten a cualquier dispositivo, priorizando siempre la limpieza y la usabilidad desde el código base.",
+      "LINK_2": "Lógica y Funcionalidad con JS",
+      "DESCRIPTION_2": "Construyo aplicaciones dinámicas centradas en el comportamiento del lado del cliente, aplicando lógica estructurada para garantizar el rendimiento."
+  },
 
     "CONTACT": {
       "SUBTITLE": "Trabajemos juntos",
-      "TITLE": "¿Creamos tu nuevo proyecto?",
-      "BUTTON": "Pedir presupuesto"
+      "TITLE": "Busco nuevos retos. ¿Colaboramos?",
+      "BUTTON": "Contactame"
     },
 
     "FOOTER": {
-      "SERVICES": "Servicios",
-      "DESIGN": "Diseño",
-      "DEVELOPMENT": "Desarrollo",
-      "PROGRAMMING": "Programación",
-      "MARKETING": "Marketing",
-      "CONSULTING": "Consultoría",
-      "RESOURCES": "Recursos",
-      "BLOG": "Blog",
-      "TRAINING": "Formación",
-      "PORTFOLIO": "Portafolio",
-      "SUPPORT": "Soporte",
-      "CONTACT": "Contacto",
+      "FLEFT_TITLE": "¡Hablemos!",
+      "FLEFT_SUBTITLE": "¿Tienes alguna propuesta o quieres saber más sobre mi trabajo? Estaré encantado de charlar contigo.",
+      "COL1_TITLE": "Mi perfil",
+      "COL1_LINK1": "Sobre mí",
+      "COL1_LINK2": "Habilidades",
+      "COL1_LINK3": "Proyectos",
+      "COL2_TITLE": "Enlaces",
+      "COL2_LINK1": "LinkedIn",
+      "COL2_LINK2": "GitHub",
+      "COL2_LINK3": "Currículum",
+      "COL3_TITLE": "Contacto",
+      "COL3_LINK1": "Email directo",
       "PRIVACY_POLICY": "Política de privacidad",
       "TERMS_OF_USE": "Términos de uso",
-      "RIGHTS": "2025. Todos los derechos reservados a",
+      "RIGHTS": "2026. Todos los derechos reservados a",
       "AUTHOR": "Calixto Bocamba"
-    },
+},
     
     "FORM": {
       "CONTACT_INFORMATION": "Información de Contacto",

@@ -65,44 +65,42 @@
 },
 
 "CLIENTS": {
-  "SUBTITLE": "Top Clients",
-  "TITLE": "We have created solutions for...",
-  "DESCRIPTION": "We develop custom projects using the best technologies."
+  "TITLE": "Technologies I am proficient in...",
+  "SUBTITLE": "Top Clients"
 },
 
 "NEWS": {
-  "SUBTITLE": "What's happening?",
-  "TITLE": "Latest News",
-  "DESCRIPTION": "Updates on web development, mobile development and digital design.",
-  "LINK": "How to build a website with HTML5 and CSS3",
-  "NEWS_DESCRIPTION": "Do you want to take your first steps in web development and learn how to create amazing websites?",
-  "READ_MORE": "Read More",
-  "LINK_2": "How to learn programming with JavaScript",
-  "DESCRIPTION_2": "Do you want to take your first steps in client-side programming?"
+  "SUBTITLE": "Technical Approach",
+  "TITLE": "My Work Fundamentals",
+  "DESCRIPTION": "Principles I apply to every development.",
+  "LINK": "Responsive and Accessible Layout",
+  "NEWS_DESCRIPTION": "I focus on creating interfaces that adapt to any device, always prioritizing clean, usable, and high-quality code.",
+  "LINK_2": "Logic and Functionality with JS",
+  "DESCRIPTION_2": "I build dynamic applications focused on client-side behavior, applying structured logic to ensure optimal performance."
 },
 
 "CONTACT": {
   "SUBTITLE": "Let's work together",
-  "TITLE": "Shall we create your new project?",
-  "BUTTON": "Request a Quote"
+  "TITLE": "I'm looking for new challenges. Want to work together?",
+  "BUTTON": "Contact me"
 },
 
 "FOOTER": {
-  "SERVICES": "Services",
-  "DESIGN": "Design",
-  "DEVELOPMENT": "Development",
-  "PROGRAMMING": "Programming",
-  "MARKETING": "Marketing",
-  "CONSULTING": "Consulting",
-  "RESOURCES": "Resources",
-  "BLOG": "Blog",
-  "TRAINING": "Training",
-  "PORTFOLIO": "Portfolio",
-  "SUPPORT": "Support",
-  "CONTACT": "Contact",
+  "FLEFT_TITLE": "Let's talk!",
+  "FLEFT_SUBTITLE": "Do you have a proposal or want to know more about my work? I'd be happy to chat with you.",
+  "COL1_TITLE": "My profile",
+  "COL1_LINK1": "About me",
+  "COL1_LINK2": "Skills",
+  "COL1_LINK3": "Projects",
+  "COL2_TITLE": "Links",
+  "COL2_LINK1": "LinkedIn",
+  "COL2_LINK2": "GitHub",
+  "COL2_LINK3": "Resume",
+  "COL3_TITLE": "Contact",
+  "COL3_LINK1": "Direct email",
   "PRIVACY_POLICY": "Privacy Policy",
   "TERMS_OF_USE": "Terms of Use",
-  "RIGHTS": "2025. All rights reserved to",
+  "RIGHTS": "2026. All rights reserved by",
   "AUTHOR": "Calixto Bocamba"
 },
 

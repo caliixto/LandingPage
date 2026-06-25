@@ -21,22 +21,20 @@ padding-bottom: 12rem;
     font-weight: 500;
 }
 
-.clients__description{
-    width: 40%;
-    text-align: left;
-    margin:0;
-    margin-bottom:6rem;
+.clients__subtitle{
+    padding-top: 3rem;
 }
+
 
 .clients__logos{
    display: flex; 
    flex-direction: row;
-   flex-wrap: wrap;
-   gap: 3rem;
+   justify-content: space-between;
+   margin-top: 6rem;
 }
 
 .clients__item{
-    width: calc(25% - 3rem);
+    width: 15%;
 }
 
 .clients__img{

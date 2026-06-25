@@ -155,8 +155,8 @@ ul{
 
 .stats__title,
 .clients__title{
-    font-size: 6.4rem;
-   color: var(--color-secondary);
+    font-size: 6rem;
+    color: var(--color-secondary);
     margin-bottom: 3rem;
 }
 
