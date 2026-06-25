@@ -37,18 +37,17 @@
 }
 
 .projects__all {
-  display: flex;
-  flex-direction: column; /* Una columna en móvil */
-  gap: 2rem;
-  width: 100%;
-  align-items: center;
+    display: flex;
+    flex-direction: row; /* Esto mantiene las tarjetas en fila en PC */
+    flex-wrap: wrap;
+    gap: 4rem;
+    justify-content: center;
 }
 
 .projects__project {
-  width: 100%;
-  max-width: 400px; /* Evita que crezca demasiado en móviles grandes */
-  display: flex;
-  flex-direction: column;
+    width: calc(33% - 4rem); /* Vuelve a poner 3 columnas o las que tuvieras */
+    display: flex;
+    flex-direction: column;
 }
 
 .project__container-img {
@@ -63,6 +62,18 @@
   height: 100%;
   object-fit: cover;
   transition: all 800ms ease-in-out;
+}
+
+@media (max-width: 1000px) {
+    .projects__all {
+        flex-direction: column; /* En móvil se apilan */
+        align-items: center;
+    }
+
+    .projects__project {
+        width: 90%; /* En móvil ocupan casi todo el ancho */
+        margin-bottom: 2rem;
+    }
 }
 
 /* --- ADAPTACIÓN A ESCRITORIO (A partir de 768px) --- */
