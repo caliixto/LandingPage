@@ -39,11 +39,8 @@
 
     "PROJECTS": {
       "SUBTITLE": "Nuestros Proyectos",
-      "TITLE": "Algunos de nuestros mejores trabajos",
+      "TITLE": "Algunos de mis mejores trabajos",
       "MAIN_ITEM": "Todos los trabajos",
-      "ITEM_1": "Desarrollo web",
-      "ITEM_2": "Desarrollo móvil",
-      "ITEM_3": "Diseño web",
       "SERVER_TEXT": "Despertando al servidor, un segundo por favor"
     },
 
