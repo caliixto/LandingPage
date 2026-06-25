@@ -71,7 +71,7 @@
     }
 
     .projects__project {
-        width: 90%; /* En móvil ocupan casi todo el ancho */
+        width: 90%;
         margin-bottom: 2rem;
     }
 }
@@ -94,11 +94,10 @@
   }
 
   .project__container-img {
-    height: 350px;
+    height: 250px;
   }
 }
 
-/* --- ESTILOS COMPLEMENTARIOS --- */
 .project__content {
   background-color: var(--color-secondary);
   padding: 3rem;
@@ -108,7 +107,7 @@
 .project__title {
   font-size: 2.4rem;
   color: var(--color-title);
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 
 .cargando {
