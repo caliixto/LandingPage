@@ -64,6 +64,10 @@
   transition: all 800ms ease-in-out;
 }
 
+.projects__project:hover .project__img {
+    transform: scale(1.1);
+}
+
 @media (max-width: 1000px) {
     .projects__all {
         flex-direction: column; /* En móvil se apilan */
