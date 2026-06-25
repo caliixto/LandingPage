@@ -35,18 +35,14 @@ cerrarSesion() {
   this.router.navigate(['/']);
 }
 
-// Aquí declaras la "caja" (la variable)
   fotoPerfil: string = ''; 
 
  ngOnInit() {
-  // 1. Recuperamos la URL que guardamos en el login
   const urlGuardada = localStorage.getItem('fotoPerfil');
 
-  // 2. Si existe algo guardado, se lo asignamos a nuestra variable
   if (urlGuardada) {
     this.fotoPerfil = urlGuardada;
   } else {
-    // Opcional: Pon una imagen por defecto si no hay nada guardado
     this.fotoPerfil = './img/perfil.jpg';
 
   }
