@@ -72,27 +72,15 @@
 }
 
 @media (max-width: 1000px) {
-  /* Forzamos al contenedor principal a adaptarse a su contenido */
-  .layout__projects {
-    padding: 4rem 2rem !important; /* Eliminamos el padding excesivo */
-    overflow: hidden;             /* Evita que formas absolute estiren la web */
-  }
+    .projects__all {
+        flex-direction: column; /* En móvil se apilan */
+        align-items: center;
+    }
 
-  .projects__grid {
-    display: block !important;    /* Cambiamos de flex a block para mayor control */
-    width: 100%;
-    margin: 0 !important;
-  }
-
-  .projects__all {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 2rem !important;         /* Controlamos el espacio entre tarjetas */
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
+    .projects__project {
+        width: 90%;
+        margin-bottom: 2rem;
+    }
 }
 
 /* --- ADAPTACIÓN A ESCRITORIO (A partir de 768px) --- */
