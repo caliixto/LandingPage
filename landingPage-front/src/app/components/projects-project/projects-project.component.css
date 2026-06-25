@@ -7,7 +7,7 @@
 .layout__projects {
   position: relative;
   background-color: var(--color-bg-proyects);
-  padding: 4rem 2rem; /* Reducido para móvil */
+  padding: 4rem 2rem;
   z-index: 1;
 }
 
@@ -38,14 +38,15 @@
 
 .projects__all {
     display: flex;
-    flex-direction: row; /* Esto mantiene las tarjetas en fila en PC */
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 4rem;
     justify-content: center;
+    padding-top: 2rem;
 }
 
 .projects__project {
-    width: calc(33% - 4rem); /* Vuelve a poner 3 columnas o las que tuvieras */
+    width: calc(33% - 4rem);
     display: flex;
     flex-direction: column;
 }
