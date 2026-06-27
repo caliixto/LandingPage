@@ -34,34 +34,29 @@ const save = (req, res) => {
 const restoreProjects= async (req, res) => {
     const defaultProjects = [
         {
-            titulo: "Agencia Creativa",
-            tags: "Marca, Web, Aplicacion",
-            imagen: "https://res.cloudinary.com/dejf1siaf/image/upload/v1781429610/landing-page-proyectos/cdqpnkjh6bnohdjun350.jpg" // URL real de Cloudinary
+            titulo: "Landing",
+            tags: "Crud, Admin",
+            imagen: "https://res.cloudinary.com/dejf1siaf/image/upload/v1782387785/landing-page-proyectos/jhnaqr8reqx1e05za8kd.jpg" // URL real de Cloudinary
         },
         {
-            titulo: "Gestion de Tareas",
-            tags: "Marca, Web, Aplicacion",
-            imagen: "https://res.cloudinary.com/dejf1siaf/image/upload/v1781429635/landing-page-proyectos/uyvzehxlxnu1fccn4rxg.jpg"
+            titulo: "GifApp",
+            tags: "Buscador, Gif",
+            imagen: "https://res.cloudinary.com/dejf1siaf/image/upload/v1782385462/landing-page-proyectos/be7nfz3gmlwwjmjzobtn.jpg"
         },
          {
-            titulo: "Agencial Digital",
-            tags: "Web, UI/UX",
-            imagen: "https://res.cloudinary.com/dejf1siaf/image/upload/v1781429662/landing-page-proyectos/ialzz1ncq4ehgs4jvydd.jpg" // URL real de Cloudinary
+            titulo: "GamePage",
+            tags: "Juegos, Gameplay, Noticias",
+            imagen: "https://res.cloudinary.com/dejf1siaf/image/upload/v1782388137/landing-page-proyectos/gi3hq97srzjjs2aaaacs.jpg" // URL real de Cloudinary
         },
         {
-            titulo: "Potafolio Personal",
-            tags: "Logo, Web, Movil",
-            imagen: "https://res.cloudinary.com/dejf1siaf/image/upload/v1781429687/landing-page-proyectos/dkvvh3vy1qtlhxrdgokr.jpg"
+            titulo: "Plantilla Porfolio",
+            tags: "Diseño, Estetica",
+            imagen: "https://res.cloudinary.com/dejf1siaf/image/upload/v1782388401/landing-page-proyectos/sv5z7aqkf27dxyybw7u3.jpg"
         },
          {
-            titulo: "Red Social",
-            tags: "Diseño, Desarrollo",
-            imagen: "https://res.cloudinary.com/dejf1siaf/image/upload/v1781429715/landing-page-proyectos/ijuff3t5kmfep0lz2pqb.jpg" // URL real de Cloudinary
-        },
-        {
-            titulo: "Aplicacion Web",
-            tags: "Logo, Web, Aplicacion",
-            imagen: "https://res.cloudinary.com/dejf1siaf/image/upload/v1781429741/landing-page-proyectos/nliasionbjycmwnfkokd.jpg"
+            titulo: "Todo-List",
+            tags: "Login, Tareas, Calendario",
+            imagen: "https://res.cloudinary.com/dejf1siaf/image/upload/v1782388539/landing-page-proyectos/nhj5kigjxxjlcfwktuul.jpg" // URL real de Cloudinary
         }
     ];
 
