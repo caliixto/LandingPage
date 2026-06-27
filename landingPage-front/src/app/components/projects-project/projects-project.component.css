@@ -171,6 +171,16 @@
   font-weight: bold;
 }
 
+.cargando::after {
+  content: '.';
+  animation: carga 1.5s infinite;
+}
+
+:host-context(.dark)
+.cargando{
+color: var(--color-title);
+}
+
 @keyframes carga {
   0% { content: '.'; }
   33% { content: '..'; }

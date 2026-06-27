@@ -27,11 +27,14 @@
     transition: all 300ms ease;
 }
 
-/* Efecto hover suave */
+.social__link:hover .social__img {
+    transform: translateY(-5px);
+}
+
 :host-context(.dark)
 .social__link:hover .social__img {
-    color: var(--color-banner); /* El color de tu marca */
-    transform: translateY(-5px); /* Pequeño salto al pasar el ratón */
+    color: var(--color-hover-dark);
+    transform: translateY(-5px);
 }
 
 

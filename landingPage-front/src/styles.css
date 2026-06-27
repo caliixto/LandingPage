@@ -270,7 +270,7 @@ div[class*="dark"] {
  }
 
 
-.dark .project__title:hover{
+.dark .project__link-title:hover, .project__tag:hover{
     color: var(--color-hover-dark)!important;
 }
 
