@@ -89,6 +89,10 @@
   overflow: hidden;
 }
 
+.project__tag{
+  cursor: none;
+}
+
 @media (max-width: 1000px) {
     .projects__all {
         flex-direction: column; /* En móvil se apilan */
