@@ -19,8 +19,14 @@ const app = express();
 const port = process.env.PORT || 3977;
 
 // 3. Configurar CORS y, MUY IMPORTANTE, el parseo de datos ANTES de las rutas
-app.use(cors({
-origin: 'https://landing-page-pearl-mu-33.vercel.app'}));
+const corsOptions = {
+  origin: [
+    'https://landing-page-pearl-mu-33.vercel.app', 
+    'http://localhost:4200'
+  ],
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static('uploads'));

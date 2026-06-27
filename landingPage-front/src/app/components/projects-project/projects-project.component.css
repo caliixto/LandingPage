@@ -19,6 +19,7 @@
   align-items: center;
   min-height: auto !important;
   height: auto !important;
+  margin-bottom: 0 !important;
 }
 
 .projects__categories {
@@ -44,7 +45,7 @@
     flex-wrap: wrap;
     gap: 4rem;
     justify-content: center;
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 .projects__project {
@@ -55,7 +56,7 @@
 
 .project__container-img {
   width: 100%;
-  height: 200px;
+  height: 150px;
   border-radius: 20px 20px 0 0;
   overflow: hidden;
 }
@@ -71,16 +72,42 @@
     transform: scale(1.1);
 }
 
+.project__link-title:hover, .project__tag:hover{
+  color: var(--color--primary);
+}
+
+.projects__project-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
 @media (max-width: 1000px) {
     .projects__all {
         flex-direction: column; /* En móvil se apilan */
         align-items: center;
     }
 
+    .project__content{
+      padding: 2rem;
+    }
+
     .projects__project {
         width: 90%;
         margin-bottom: 2rem;
     }
+
+    .project__title {
+    font-size: 2rem; /* Un poco más pequeño para móvil */
+    margin-bottom: 1rem; /* Reducido de 3rem a 1rem */
+  }
 }
 
 /* --- ADAPTACIÓN A ESCRITORIO (A partir de 768px) --- */
@@ -90,7 +117,7 @@
   }
 
   .projects__all {
-    flex-direction: row; /* Volvemos a filas */
+    flex-direction: row;
     justify-content: center;
     gap: 4rem;
   }
@@ -101,21 +128,38 @@
   }
 
   .project__container-img {
-    height: 250px;
+    height: 345px;
+  }
+
+   .project__content{
+    border-top: 1px solid var(--color-borders);
+    padding: 2rem;
+    height: 150px;
+  }
+
+  .project__title{
+    padding-top: 2rem;
+  }
+
+  .projects__title{
+    padding-bottom: 6rem;
+  }
+
+  .projects__grid{
+    margin-bottom: 0;
   }
 }
 
+
 .project__content {
-  background-color: var(--color-secondary);
-  padding: 3rem;
-  border-radius: 0 0 30px 30px;
+    background-color: #f4f7f9; 
+    border-radius: 0 0 20px 20px; 
+    border-top: 1px solid var(--color-borders);  
+    padding: 2rem;
+    height: 100px;
+    box-sizing: border-box;
 }
 
-.project__title {
-  font-size: 2.4rem;
-  color: var(--color-title);
-  margin-bottom: 3rem;
-}
 
 .cargando {
   font-size: 2rem;
