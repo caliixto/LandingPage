@@ -251,11 +251,6 @@ div[class*="dark"] {
     background-color:var(--color-banner) ;
 }
 
-.project__content .dark{
-    background-color: var(--color-banner);
-}
-
-
 
 .project__title:hover{
     color: var(--color-hover-dark);
@@ -322,6 +317,12 @@ div[class*="dark"] {
   margin: 0 auto;
   padding: 0 3rem; /* Margen de seguridad para que el texto no toque el borde del móvil */
 }
+
+
+.project__content .dark{
+    background-color: var(--color-banner);
+}
+
 
 /* Estilos para el Banner en móviles */
 @media (max-width: 1000px) {
