@@ -251,9 +251,21 @@ div[class*="dark"] {
     background-color:var(--color-banner) ;
 }
 
+.dark .project__content{
+    background-color: var(--color-banner) !important;
+}
 
-.project__title:hover{
-    color: var(--color-hover-dark);
+.dark .project__title{
+    color: var(--color-title) !important;
+}
+
+ .dark .project__tag{
+    color: var(--color-title) !important;
+ }
+
+
+.dark .project__title:hover{
+    color: var(--color-hover-dark)!important;
 }
 
 .layout__contact::before{
@@ -319,11 +331,6 @@ div[class*="dark"] {
 }
 
 
-.project__content .dark{
-    background-color: var(--color-banner);
-}
-
-
 /* Estilos para el Banner en móviles */
 @media (max-width: 1000px) {
   .layout {
@@ -331,7 +338,6 @@ div[class*="dark"] {
     max-width: 100%;
   }
 
-  /* Ajustamos los títulos globales que son gigantes (6.7rem) */
   .services__title,
   .projects__title,
   .stats__title,
