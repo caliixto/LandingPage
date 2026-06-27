@@ -16,7 +16,7 @@
             @for (proyecto of listaproyectos; track proyecto._id) {
               <article class="projects__project">
               <div class="project__container-img">
-                <a href="#" class="project__link-img">
+                <a [href]="proyecto.linkEnVivo" target="_blank" class="project__link-img">
                 <img [src]="obtenerUrlImagen(proyecto.imagen)" [alt]="proyecto.titulo" class="project__img">
                 </a>
               </div>
