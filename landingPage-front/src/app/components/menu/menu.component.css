@@ -248,18 +248,33 @@ width: 100%;
 
 .translate-container {
   display: flex;
-  gap: 5px; /* Pequeña separación */
+  gap: 5px; 
   align-items: center;
+  padding: 2px; /* Este es el grosor de tu borde */
+  border-radius: 8px; 
+  background: linear-gradient(45deg, #ff00cc, #3333ff, #ff00cc);
+  box-shadow: 0 0 15px rgba(255, 0, 204, 0.5); /* Sombra color neón */
+  filter: brightness(1.2); /* Sube el brillo general del borde */
+  background-size: 200% 200%;
+  animation: bordeAnimado 3s ease infinite;
+  display: inline-block; 
 }
 
 
 /* Contenedor que agrupa los botones */
 .language-switcher {
+  background-color: #e0e0e0;
   display: flex;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   overflow: hidden; /* Esto hace que los botones queden "encerrados" */
   padding: 2px;
+}
+
+@keyframes bordeAnimado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .translate {

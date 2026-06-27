@@ -64,6 +64,7 @@
 }
 
 .formulario_contacto {
+  position: relative;
   flex: 0 0 60%; /* Ocupa el otro 50% */
   padding: 40px;
   background-color: #ffffff;
@@ -185,10 +186,10 @@ button[disabled] {
 
 /* Hacemos que el contenedor del campo sea el punto de referencia */
 .field {
-  margin-bottom: 28px; /* Subimos un pelín el margen para dejar hueco al error */
+  margin-bottom: 28px;
   display: flex;
   flex-direction: column;
-  position: relative; /* <-- Importante */
+  position: relative;
 }
 
 /* Posicionamos el error de forma absoluta para que NO empuje el resto del HTML */
@@ -202,4 +203,13 @@ button[disabled] {
   color: #ef4444;
   font-size: 1.1rem;
   display: block;
+}
+
+.btn-close{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  color: var(--color-title);
+  cursor: pointer;
 }

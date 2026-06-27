@@ -31,7 +31,6 @@ export class FormularioComponent {
         second: '2-digit'
         });
 
-    // 2. Juntamos los datos del formulario Y la nueva variable 'time'
         const datosEnvio = {
   ...this.formulario.value,
   time: fechaActual
@@ -45,25 +44,20 @@ emailjs.send(
 ).then((response) => {
   console.log('¡Correo enviado con éxito!', response.status, response.text);
 
-  // ÉXITO: Cambiamos el alert por Swal
   Swal.fire({
     title: '¡Mensaje enviado!',
-    text: 'Presupuesto solicitado correctamente. Nos pondremos en contacto contigo.',
+    text: '¡Mensaje recibido! Gracias por confiar en mi trabajo. Revisaré los detalles de tu proyecto y te contactaré lo antes posible.',
     icon: 'success',
     confirmButtonText: 'Aceptar',
     confirmButtonColor: '#00d1b2'
   });
 
-  // Limpiamos los inputs
   this.clear();
-
-  // Mandamos el aviso al padre
-  this.cerrar.emit();
+  this.desactivarFormulario();
 
 }).catch((error) => {
   console.error('Error al enviar el correo:', error);
 
-  // ERROR: Cambiamos el alert por Swal
   Swal.fire({
     title: 'Oops...',
     text: 'Hubo un problema al enviar el mensaje. Inténtalo de nuevo.',
@@ -74,13 +68,16 @@ emailjs.send(
 });
 
 } else {
-  // Si el usuario intenta darle al botón con campos vacíos
   this.formulario.markAllAsTouched();
 }
   }
 
   clear(){
     this.formulario.reset();
+  }
+
+  desactivarFormulario(){
+    this.cerrar.emit()
   }
 
 

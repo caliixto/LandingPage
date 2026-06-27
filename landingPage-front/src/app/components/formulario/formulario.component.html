@@ -14,6 +14,7 @@
   </div>
 
 <div class="formulario_contacto">
+    <button class="btn-close" (click)="desactivarFormulario()">X</button>
     <h2 >{{'FORM.CONTACT_FORM' |translate}}</h2>
     <form action="" [formGroup]="formulario" (ngSubmit)="onSubmit()" method="post">
         <div class="field">

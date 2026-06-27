@@ -26,13 +26,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem; /* Usamos gap en lugar de márgenes */
+  gap: 1.5rem;
   margin-bottom: 3rem;
   width: 100%;
 }
 
 .categories__item {
-  font-size: 1.6rem; /* Ajustado para móvil */
+  font-size: 1.6rem;
   font-weight: 500;
   cursor: pointer;
   padding: 0.5rem 1rem;
