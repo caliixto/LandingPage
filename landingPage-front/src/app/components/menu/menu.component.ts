@@ -13,7 +13,12 @@ export class MenuComponent {
 
   isNavbarFixed= window.scrollY > 120;
 
-  constructor(public loginService: LoginFormServicesService, private translate:TranslateService) {}
+  constructor(public loginService: LoginFormServicesService, private translate:TranslateService) {
+
+    const idiomaGuardado = localStorage.getItem('idioma_preferido') || 'es';
+    // Aplicamos el idioma recuperado
+    this.translate.use(idiomaGuardado);
+  }
 
   ngOnInit(){
     this.metodoQueEscuchaScroll();
@@ -34,6 +39,7 @@ export class MenuComponent {
 
 changeLanguage(lang: string) {
   this.translate.use(lang);
+  localStorage.setItem('idioma_preferido', lang);
 }
 
 //función de clic:
