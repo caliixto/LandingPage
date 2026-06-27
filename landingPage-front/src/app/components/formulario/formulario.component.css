@@ -209,7 +209,18 @@ button[disabled] {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: black;
+  background-color: var(--color-secondary);
   color: var(--color-title);
   cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+
+.btn-close:hover{
+  transform: scale(1.1);
+}
+
+:host-context(.dark)
+.btn-close{
+  background-color: black;
+  color: var(--color-title);
 }
