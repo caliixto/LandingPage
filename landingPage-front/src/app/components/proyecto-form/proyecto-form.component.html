@@ -8,6 +8,9 @@
     <label>Tags:</label>
     <input formControlName="tags" placeholder="Tags" class="form-control">
 
+    <label>URL del Proyecto:</label>
+    <input formControlName="linkEnVivo" placeholder="https://tu-proyecto.com" class="form-control" type="url">
+
     <label>Imagen:</label>
     <div *ngIf="esModoEdicion && proyectoAEditar?.imagen" class="image-preview">
       <p>Imagen actual:</p>

@@ -18,7 +18,8 @@ export class ProyectoFormComponent implements OnInit {
 
   formulario = new FormGroup({
     titulo: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]),
-    tags: new FormControl('', [Validators.required])
+    tags: new FormControl('', [Validators.required]),
+    linkEnVivo: new FormControl('',[Validators.required])
   });
 
   @Output() cerrar = new EventEmitter();
@@ -48,6 +49,7 @@ export class ProyectoFormComponent implements OnInit {
     const formData = new FormData();
     formData.append('titulo', this.formulario.get('titulo')?.value || '');
     formData.append('tags', this.formulario.get('tags')?.value || '');
+    formData.append('linkEnVivo', this.formulario.get('linkEnVivo')?.value || '');
 
     if (this.archivoSeleccionado) {
       formData.append('file0', this.archivoSeleccionado);

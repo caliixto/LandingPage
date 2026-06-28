@@ -6,12 +6,12 @@ const Project = require("../models/project");
 const save = (req, res) => {
     let body = req.body;
     
-    // Cloudinary nos devuelve la URL pública en 'req.file.path'
+    // Cloudinary 
     let urlImagen = req.file ? req.file.path : null;
     console.log("Archivo subido a Cloudinary:", urlImagen);
 
     // Validación
-    if (!body.titulo || !body.tags || !urlImagen) {
+    if (!body.titulo || !body.tags || !body.linkEnVivo || !urlImagen) {
         return res.status(400).send({ status: "error", message: "Faltan datos o la imagen no se subió" });
     }
 
@@ -19,7 +19,8 @@ const save = (req, res) => {
     let projectoToSave = new Project({
         titulo: body.titulo,
         tags: body.tags,
-        imagen: urlImagen // Aquí va la URL de Cloudinary
+        linkEnVivo: body.linkEnVivo,
+        imagen: urlImagen
     });
 
     projectoToSave.save().then(projectSaved => {
@@ -98,7 +99,7 @@ const updateProject = (req, res) => {
         updateData.imagen = req.file.path;
     }
 
-    // 3. Eliminamos el ID del objeto de actualización para evitar conflictos con Mongoose
+    // 3. Eliminamos el ID del objeto
     delete updateData.id;
 
     Project.findByIdAndUpdate(id, updateData, { new: true })
