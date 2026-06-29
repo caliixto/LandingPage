@@ -23,7 +23,7 @@ ngOnInit(): void {
       next: (data:any) => {
         this.listaproyectos = data.projects; 
         this.cargando = false;
-        console.log("Ahora sí, array de proyectos:", this.listaproyectos);
+        console.log("Array de proyectos:", this.listaproyectos);
       },
       error: (error) => {
         console.error(error);
