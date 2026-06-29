@@ -20,6 +20,7 @@ export class AdminPanelComponent {
   mostrarFormulario: boolean = false;
   public proyectos:any;
   proyectoAEditar: any = null;
+  proyectosEliminados: any[] = [];
   
   constructor(public authService: LoginFormServicesService, 
     private router: Router, private _adminProjectService:AdminProjectServiceService,
@@ -83,6 +84,10 @@ borrarProyecto(id:string) {
       const urlBorrado = `${this.proyectoService.url}deleteProject/${id}`;
       this.http.delete(urlBorrado).subscribe(
         (res:any) => {
+        const proyectoGuardado = this.proyectos.find((p: any) => p._id === id);
+        if (proyectoGuardado) {
+          this.proyectosEliminados.push(proyectoGuardado);
+        }
           this.proyectos = this.proyectos.filter((p:any) => p._id !== id);
           Swal.fire('¡Eliminado!', 'El proyecto ha sido borrado.', 'success');
         },
@@ -97,29 +102,26 @@ borrarProyecto(id:string) {
 cargando: boolean = false;
 
 restaurar() {
+  if (this.proyectosEliminados.length === 0) {
+    Swal.fire('Info', 'No hay nada en la papelera para restaurar.', 'info');
+    return;
+  }
   Swal.fire({
-    title: '¿Estás seguro?',
-    text: "Esto cargará los proyectos iniciales en la base de datos.",
-    icon: 'warning',
+    title: '¿Restaurar Proyectos eliminados?',
+    text: `Vas a recuperar ${this.proyectosEliminados.length} proyectos.`,
+    icon: 'question',
     showCancelButton: true,
     confirmButtonColor: '#f39c12',
     cancelButtonColor: '#7f8c8d',
-    confirmButtonText: 'Sí, restaurar',
+    confirmButtonText: 'Sí, recuperar',
     cancelButtonText: 'Cancelar'
   }).then((result) => {
     if (result.isConfirmed) {
-      this.cargando = true;
-      this._projectService.restoreProjects().subscribe({
-        next: () => {
-          this.cargando = false;
-          this.getprojectsAdmin();
-          Swal.fire('¡Hecho!', 'Base de datos restaurada.', 'success');
-        },
-        error: () => {
-          this.cargando = false;
-          Swal.fire('Error', 'No se pudo completar la restauración.', 'error');
-        }
-      });
+      this.proyectos = [...this.proyectos, ...this.proyectosEliminados];
+      
+      this.proyectosEliminados = [];
+      
+      Swal.fire('¡Hecho!', 'Proyectos recuperados.', 'success');
     }
   });
 }
