@@ -40,6 +40,10 @@ cerrarSesion() {
 
  ngOnInit() {
   const urlGuardada = localStorage.getItem('fotoPerfil');
+  const papeleraGuardada = localStorage.getItem('papelera');
+  if (papeleraGuardada) {
+    this.proyectosEliminados = JSON.parse(papeleraGuardada);
+  }
 
   if (urlGuardada) {
     this.fotoPerfil = urlGuardada;
@@ -79,14 +83,13 @@ borrarProyecto(id:string) {
     confirmButtonText: 'Sí, borrarlo'
   }).then((result) => {
     if (result.isConfirmed) {
-      // Aquí va tu llamada al servicio
-
       const urlBorrado = `${this.proyectoService.url}deleteProject/${id}`;
       this.http.delete(urlBorrado).subscribe(
         (res:any) => {
         const proyectoGuardado = this.proyectos.find((p: any) => p._id === id);
         if (proyectoGuardado) {
           this.proyectosEliminados.push(proyectoGuardado);
+          localStorage.setItem('papelera', JSON.stringify(this.proyectosEliminados));
         }
           this.proyectos = this.proyectos.filter((p:any) => p._id !== id);
           Swal.fire('¡Eliminado!', 'El proyecto ha sido borrado.', 'success');
